@@ -1,0 +1,194 @@
+"""Optional local regression suite. Requires Python Playwright and Chromium."""
+
+import functools
+import http.server
+import json
+from pathlib import Path
+import threading
+import unittest
+
+from playwright.sync_api import sync_playwright
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+class QuietHandler(http.server.SimpleHTTPRequestHandler):
+    def log_message(self, *_args):
+        pass
+
+
+class CatalogTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        handler = functools.partial(QuietHandler, directory=str(ROOT))
+        cls.server = http.server.ThreadingHTTPServer(("127.0.0.1", 0), handler)
+        cls.thread = threading.Thread(target=cls.server.serve_forever, daemon=True)
+        cls.thread.start()
+        cls.url = f"http://127.0.0.1:{cls.server.server_port}/"
+        cls.playwright = sync_playwright().start()
+        cls.browser = cls.playwright.chromium.launch()
+        cls.catalog = json.loads((ROOT / "packs.json").read_text())
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.browser.close()
+        cls.playwright.stop()
+        cls.server.shutdown()
+        cls.server.server_close()
+        cls.thread.join()
+
+    def setUp(self):
+        self.context = self.browser.new_context(viewport={"width": 1440, "height": 1000}, color_scheme="light")
+        self.page = self.context.new_page()
+        self.errors = []
+        self.requests = []
+        self.page.on("pageerror", lambda error: self.errors.append(str(error)))
+        self.page.on("request", lambda request: self.requests.append(request.url))
+
+    def tearDown(self):
+        self.context.close()
+        self.assertEqual(self.errors, [])
+
+    def open(self):
+        self.page.goto(self.url)
+        self.page.wait_for_function("document.querySelector('#results-status').textContent.includes('in the collection')")
+
+    def count(self, expected):
+        self.assertEqual(self.page.locator("[data-pack-id]").count(), expected)
+
+    def test_initial_catalog_and_links(self):
+        self.open()
+        self.count(len(self.catalog))
+        self.assertEqual(self.page.locator(".coming-card").count(), 1)
+        for pack in self.catalog:
+            card = self.page.locator(f'[data-pack-id="{pack["id"]}"]')
+            self.assertEqual(card.locator(".card-actions .primary").get_attribute("href"), pack["pagesUrl"])
+            self.assertEqual(card.locator(".repo-link").get_attribute("href"), pack["repoUrl"])
+            self.assertEqual(card.get_by_role("link", name="Try", exact=False).count(), int(bool(pack["demoUrl"])))
+        self.assertTrue(self.page.get_by_text("Internal · Snowflake employees only", exact=True).is_visible())
+        self.assertTrue(all(url.startswith(self.url) for url in self.requests), self.requests)
+
+    def test_search_title_summary_feature_case_and_whitespace(self):
+        self.open()
+        for term, expected in [("loss triangle", 1), ("escalations", 1), ("  CORTEX   ANALYST  ", 1), ("Cortex", 3), ("", 3)]:
+            self.page.get_by_role("searchbox").fill(term)
+            self.count(expected)
+
+    def test_each_filter_and_combined_filters(self):
+        self.open()
+        for field, label in [("industry", "Industry"), ("function", "Function"), ("maturity", "Maturity")]:
+            group = self.page.get_by_role("group", name=label, exact=True)
+            for button in group.get_by_role("button").all():
+                value = button.get_attribute("data-value")
+                button.click()
+                expected = len([pack for pack in self.catalog if not value or pack[field] == value])
+                self.count(expected)
+                self.assertEqual(button.get_attribute("aria-pressed"), "true")
+            group.get_by_role("button", name="All", exact=True).click()
+        self.page.get_by_role("group", name="Industry", exact=True).get_by_role("button", name="Insurance", exact=True).click()
+        self.page.get_by_role("group", name="Function", exact=True).get_by_role("button", name="Operations", exact=True).click()
+        self.count(0)
+        self.assertTrue(self.page.locator("#empty-state").is_visible())
+        self.assertTrue(self.page.locator(".coming-card").is_visible())
+        self.page.get_by_role("button", name="Show all packs").click()
+        self.count(3)
+        self.assertTrue(self.page.get_by_role("searchbox").evaluate("node => node === document.activeElement"))
+
+    def test_search_empty_and_reset(self):
+        self.open()
+        self.page.get_by_role("searchbox").fill("no-such-pack-987")
+        self.count(0)
+        self.assertTrue(self.page.locator("#empty-state").is_visible())
+        self.page.get_by_role("button", name="Reset filters").click()
+        self.count(3)
+        self.assertFalse(self.page.locator("#empty-state").is_visible())
+
+    def test_mobile_dark_and_light_no_overflow(self):
+        self.open()
+        for width in [320, 375, 768, 1440]:
+            self.page.set_viewport_size({"width": width, "height": 900})
+            for scheme in ["light", "dark"]:
+                self.page.emulate_media(color_scheme=scheme, reduced_motion="reduce")
+                self.assertTrue(self.page.evaluate("document.documentElement.scrollWidth <= innerWidth"), (width, scheme))
+                background = self.page.evaluate("getComputedStyle(document.body).backgroundColor")
+                self.assertEqual(background, "rgb(13, 24, 34)" if scheme == "dark" else "rgb(255, 255, 255)")
+                for card in self.page.locator(".pack-card").all():
+                    self.assertTrue(card.evaluate("node => node.scrollWidth <= node.clientWidth"))
+                if width in [375, 1440]:
+                    self.page.screenshot(path=f"/tmp/snow-packs-{width}-{scheme}.png", full_page=True)
+
+    def test_keyboard_and_accessibility_structure(self):
+        self.open()
+        self.page.keyboard.press("Tab")
+        self.assertEqual(self.page.locator(":focus").inner_text(), "Skip to main content")
+        self.page.keyboard.press("Enter")
+        self.assertTrue(self.page.url.endswith("#main"))
+        self.assertEqual(self.page.locator("h1").count(), 1)
+        self.assertEqual(self.page.locator("main").count(), 1)
+        self.assertEqual(self.page.get_by_role("searchbox").get_attribute("id"), "search")
+        button = self.page.get_by_role("group", name="Industry", exact=True).get_by_role("button", name="Insurance", exact=True)
+        button.focus()
+        self.page.keyboard.press("Space")
+        self.count(1)
+        self.assertEqual(button.get_attribute("aria-pressed"), "true")
+        self.assertEqual(self.page.locator("#results-status").get_attribute("aria-live"), "polite")
+
+    def test_network_error_and_retry(self):
+        self.page.route("**/packs.json", lambda route: route.fulfill(status=503, body="Unavailable"))
+        self.page.goto(self.url)
+        self.page.locator("#load-error").wait_for(state="visible")
+        self.assertTrue(self.page.get_by_role("searchbox").is_disabled())
+        self.page.unroute("**/packs.json")
+        self.page.get_by_role("button", name="Try again", exact=True).click()
+        self.page.wait_for_function("document.querySelectorAll('[data-pack-id]').length === 3")
+        self.assertFalse(self.page.locator("#load-error").is_visible())
+
+    def test_invalid_catalog_rejected(self):
+        for data in [{"not": "an array"}, [{**self.catalog[0], "pagesUrl": "javascript:alert(1)"}], [self.catalog[0], self.catalog[0]]]:
+            with self.subTest(data_type=type(data).__name__):
+                self.page.route("**/packs.json", lambda route, _request, payload=data: route.fulfill(json=payload))
+                self.page.goto(self.url)
+                self.page.locator("#load-error").wait_for(state="visible")
+                self.count(0)
+                self.page.unroute("**/packs.json")
+
+    def test_empty_catalog(self):
+        self.page.route("**/packs.json", lambda route: route.fulfill(json=[]))
+        self.open()
+        self.count(0)
+        self.assertTrue(self.page.locator("#empty-state").is_visible())
+        self.assertEqual(self.page.locator(".coming-card").count(), 1)
+
+    def test_new_entry_demo_button_dynamic_chips_and_safe_text(self):
+        new_pack = {**self.catalog[0], "id": "test-pack", "title": "<img src=x onerror=alert(1)>", "industry": "Retail", "function": "Marketing", "maturity": "Pilot-ready", "demoUrl": "https://example.com/demo", "tags": ["testkeyword"]}
+        self.page.route("**/packs.json", lambda route: route.fulfill(json=[*self.catalog, new_pack]))
+        self.open()
+        self.count(4)
+        self.assertEqual(self.page.locator("#pack-grid img").count(), 0)
+        self.page.get_by_role("group", name="Industry", exact=True).get_by_role("button", name="Retail", exact=True).click()
+        self.count(1)
+        self.assertEqual(self.page.get_by_role("link", name="Try <img src=x onerror=alert(1)> demo", exact=True).get_attribute("href"), new_pack["demoUrl"])
+        self.page.get_by_role("searchbox").fill("testkeyword")
+        self.count(1)
+
+    def test_no_javascript_fallback(self):
+        context = self.browser.new_context(java_script_enabled=False)
+        try:
+            page = context.new_page()
+            page.goto(self.url)
+            self.assertTrue(page.get_by_role("link", name="browse the catalog in our README").is_visible())
+        finally:
+            context.close()
+
+    def test_readme_catalog_matches_json(self):
+        readme = (ROOT / "README.md").read_text()
+        for pack in self.catalog:
+            rows = [line for line in readme.splitlines() if line.startswith("|") and f'**{pack["title"]}' in line]
+            self.assertEqual(len(rows), 1)
+            for field in ["industry", "function", "maturity", "pagesUrl", "repoUrl"]:
+                self.assertIn(pack[field], rows[0])
+        self.assertTrue((ROOT / ".nojekyll").exists())
+
+
+if __name__ == "__main__":
+    unittest.main()

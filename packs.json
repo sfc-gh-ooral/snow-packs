@@ -1,0 +1,45 @@
+[
+  {
+    "id": "loss-triangle-suite",
+    "title": "Loss Triangle Suite",
+    "summary": "Make reserve reviews more consistent by exploring loss development, comparing insurance segments, and investigating anomalies with AI-assisted actuarial Q&A.",
+    "industry": "Insurance",
+    "function": "Finance",
+    "features": ["Cortex Agents", "Cortex Analyst", "Semantic Views", "Snowflake SQL"],
+    "maturity": "Demo",
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-loss-triangle-analysis/",
+    "demoUrl": "",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-loss-triangle-analysis",
+    "author": "Oz Oral",
+    "updated": "2026-10"
+  },
+  {
+    "id": "contact-driver-analytics",
+    "title": "Contact Driver Analytics",
+    "summary": "Find opportunities to reduce repeat contacts and escalations by connecting call drivers, sentiment trends, and transcript insights in one view.",
+    "industry": "Financial Services",
+    "function": "Operations",
+    "features": ["Cortex AI", "Sentiment Analysis", "Text Classification", "Snowflake SQL"],
+    "maturity": "Demo",
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-contact-driver-analytics/",
+    "demoUrl": "",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-contact-driver-analytics",
+    "author": "Oz Oral",
+    "updated": "2026-10"
+  },
+  {
+    "id": "snow-owl",
+    "title": "Snow Owl",
+    "summary": "Prepare for more informed discovery conversations with sourced research organized into reusable account context.",
+    "industry": "Cross-industry",
+    "function": "Sales",
+    "features": ["Cortex Agents", "Cortex Search", "Snowflake Tasks"],
+    "maturity": "Demo",
+    "pagesUrl": "https://effective-adventure-kmekk65.pages.github.io/",
+    "demoUrl": "",
+    "repoUrl": "https://github.com/snowflake-corp/snow-owl",
+    "author": "Oz Oral",
+    "updated": "2026-10",
+    "access": "internal"
+  }
+]
