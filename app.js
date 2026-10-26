@@ -45,9 +45,12 @@
       }
       if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(pack.id) || ids.has(pack.id)) throw new Error("Invalid or duplicate pack ID.");
       if (!/^\d{4}-(0[1-9]|1[0-2])$/.test(pack.updated)) throw new Error("Invalid review month.");
-      if (!Array.isArray(pack.features) || !pack.features.length || pack.features.some(tag => typeof tag !== "string" || !tag.trim())) throw new Error("Invalid feature tags.");
+      if (pack.workInProgress !== undefined && typeof pack.workInProgress !== "boolean") throw new Error("Invalid work-in-progress flag.");
+      const placeholder = pack.workInProgress === true;
+      if (!Array.isArray(pack.features) || (!placeholder && !pack.features.length) || pack.features.some(tag => typeof tag !== "string" || !tag.trim())) throw new Error("Invalid feature tags.");
+      if (placeholder && (pack.features.length || [pack.pagesUrl, pack.repoUrl, pack.demoUrl].some(url => url !== ""))) throw new Error("Placeholders must not claim capabilities or link to unfinished resources.");
       if (pack.tags !== undefined && (!Array.isArray(pack.tags) || pack.tags.some(tag => typeof tag !== "string"))) throw new Error("Invalid search tags.");
-      if (!safeUrl(pack.pagesUrl) || !safeUrl(pack.repoUrl) || !safeUrl(pack.demoUrl, true)) throw new Error("Pack links must be HTTPS.");
+      if (!safeUrl(pack.pagesUrl, placeholder) || !safeUrl(pack.repoUrl, placeholder) || !safeUrl(pack.demoUrl, true)) throw new Error("Pack links must be HTTPS.");
       if (pack.access !== undefined && !["public", "internal"].includes(pack.access)) throw new Error("Invalid access label.");
       ids.add(pack.id);
     }
@@ -96,6 +99,12 @@
     const heading = element("h3", "", pack.title);
     heading.id = headingId;
     card.append(badges, heading, element("p", "pack-summary", pack.summary));
+    if (pack.workInProgress) {
+      card.classList.add("wip-card");
+      card.insertBefore(element("p", "wip-label", "Work in progress"), heading);
+      card.append(element("p", "wip-note", "Planned concept. Example and code are not yet available."));
+      return card;
+    }
     if (internal) card.append(element("p", "access-note", "Internal · Snowflake employees only"));
     const features = element("ul", "feature-tags");
     features.setAttribute("aria-label", "Snowflake features and capabilities");
@@ -124,23 +133,16 @@
     return card;
   }
 
-  function comingCard() {
-    const card = element("article", "pack-card coming-card");
-    const icon = element("span", "coming-icon", "+");
-    icon.setAttribute("aria-hidden", "true");
-    card.append(icon, element("h3", "", "More to explore soon."), element("p", "", "Check back for more ideas across industries and business challenges."));
-    return card;
-  }
-
   function render() {
     const terms = search.value.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
     const matches = packs.filter(pack => {
       const content = [pack.title, pack.summary, pack.industry, pack.function, ...pack.features, ...(pack.tags || [])].join(" ").toLocaleLowerCase();
       return terms.every(term => content.includes(term)) && Object.entries(selection).every(([key, value]) => !value || pack[key] === value);
     });
-    grid.replaceChildren(...matches.map(packCard), comingCard());
+    grid.replaceChildren(...matches.map(packCard));
     empty.hidden = matches.length !== 0;
-    status.textContent = `${matches.length} ${matches.length === 1 ? "pack" : "packs"} shown · ${packs.length} in the collection`;
+    const planned = matches.filter(pack => pack.workInProgress).length;
+    status.textContent = `${matches.length} ${matches.length === 1 ? "pack" : "packs"} shown · ${packs.length} in the collection · ${planned} work in progress`;
   }
 
   function reset() {

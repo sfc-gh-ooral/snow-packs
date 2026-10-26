@@ -106,9 +106,9 @@ legend { font-size: .72rem; font-weight: 700; margin-bottom: 6px; }
 .repo-link { padding: 10px; font-size: .75rem; font-weight: 650; }
 .access-note { color: var(--accent); font-size: .72rem; font-weight: 650; margin-bottom: 16px; }
 .example-note { font-size: .68rem; margin: 12px 0 0; }
-.coming-card { background: transparent; border-style: dashed; box-shadow: none; justify-content: center; min-height: 210px; }
-.coming-card::before { display: none; }.coming-card h3 { font-size: 1.3rem; }.coming-card p { font-size: .85rem; }.coming-card a { font-size: .8rem; }
-.coming-icon { font-size: 1.8rem; color: var(--accent); margin-bottom: 14px; }
+.wip-card { border-style: dashed; box-shadow: none; }
+.wip-label { align-self: flex-start; padding: 4px 9px; border: 1px solid var(--accent); border-radius: 4px; color: var(--accent); font-size: .7rem; font-weight: 700; margin-bottom: 16px; }
+.wip-note { margin: auto 0 0; padding-top: 16px; border-top: 1px solid var(--line); font-size: .75rem; }
 .catalog-note { font-size: .72rem; margin: 24px 0 0; }
 .message-box { padding: 28px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); margin-bottom: 24px; }
 .message-box > a { display: inline-block; margin: 12px; }.message-box p { font-size: .9rem; }.empty-state { text-align: center; }.empty-symbol { font-size: 2.5rem; color: var(--accent); }

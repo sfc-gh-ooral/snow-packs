@@ -59,18 +59,22 @@ class CatalogTests(unittest.TestCase):
     def test_initial_catalog_and_links(self):
         self.open()
         self.count(len(self.catalog))
-        self.assertEqual(self.page.locator(".coming-card").count(), 1)
+        self.assertEqual(self.page.locator(".coming-card").count(), 0)
         for pack in self.catalog:
             card = self.page.locator(f'[data-pack-id="{pack["id"]}"]')
+            if pack.get("workInProgress"):
+                self.assertEqual(card.locator("a, button, .feature-tags, time").count(), 0)
+                self.assertTrue(card.get_by_text("Work in progress", exact=True).is_visible())
+                continue
             self.assertEqual(card.locator(".card-actions .primary").get_attribute("href"), pack["pagesUrl"])
             self.assertEqual(card.locator(".repo-link").get_attribute("href"), pack["repoUrl"])
             self.assertEqual(card.get_by_role("link", name="Try", exact=False).count(), int(bool(pack["demoUrl"])))
-        self.assertTrue(self.page.get_by_text("Internal · Snowflake employees only", exact=True).is_visible())
+        self.assertEqual(self.page.locator('[data-pack-id="snow-owl"], a[href*="snow-owl"], a[href*="effective-adventure"]').count(), 0)
         self.assertTrue(all(url.startswith(self.url) for url in self.requests), self.requests)
 
     def test_search_title_summary_feature_case_and_whitespace(self):
         self.open()
-        for term, expected in [("loss triangle", 1), ("escalations", 1), ("  CORTEX   ANALYST  ", 1), ("Cortex", 3), ("", 3)]:
+        for term, expected in [("loss triangle", 1), ("escalations", 1), ("  CORTEX   ANALYST  ", 1), ("Cortex", 2), ("", len(self.catalog)), ("due diligence", 1)]:
             self.page.get_by_role("searchbox").fill(term)
             self.count(expected)
 
@@ -89,9 +93,9 @@ class CatalogTests(unittest.TestCase):
         self.page.get_by_role("group", name="Function", exact=True).get_by_role("button", name="Operations", exact=True).click()
         self.count(0)
         self.assertTrue(self.page.locator("#empty-state").is_visible())
-        self.assertTrue(self.page.locator(".coming-card").is_visible())
+        self.assertEqual(self.page.locator(".pack-card").count(), 0)
         self.page.get_by_role("button", name="Show all packs").click()
-        self.count(3)
+        self.count(len(self.catalog))
         self.assertTrue(self.page.get_by_role("searchbox").evaluate("node => node === document.activeElement"))
 
     def test_search_empty_and_reset(self):
@@ -100,7 +104,7 @@ class CatalogTests(unittest.TestCase):
         self.count(0)
         self.assertTrue(self.page.locator("#empty-state").is_visible())
         self.page.get_by_role("button", name="Reset filters").click()
-        self.count(3)
+        self.count(len(self.catalog))
         self.assertFalse(self.page.locator("#empty-state").is_visible())
 
     def test_mobile_dark_and_light_no_overflow(self):
@@ -129,7 +133,7 @@ class CatalogTests(unittest.TestCase):
         button = self.page.get_by_role("group", name="Industry", exact=True).get_by_role("button", name="Insurance", exact=True)
         button.focus()
         self.page.keyboard.press("Space")
-        self.count(1)
+        self.count(sum(pack["industry"] == "Insurance" for pack in self.catalog))
         self.assertEqual(button.get_attribute("aria-pressed"), "true")
         self.assertEqual(self.page.locator("#results-status").get_attribute("aria-live"), "polite")
 
@@ -140,7 +144,7 @@ class CatalogTests(unittest.TestCase):
         self.assertTrue(self.page.get_by_role("searchbox").is_disabled())
         self.page.unroute("**/packs.json")
         self.page.get_by_role("button", name="Try again", exact=True).click()
-        self.page.wait_for_function("document.querySelectorAll('[data-pack-id]').length === 3")
+        self.page.wait_for_function("expected => document.querySelectorAll('[data-pack-id]').length === expected", arg=len(self.catalog))
         self.assertFalse(self.page.locator("#load-error").is_visible())
 
     def test_invalid_catalog_rejected(self):
@@ -157,13 +161,13 @@ class CatalogTests(unittest.TestCase):
         self.open()
         self.count(0)
         self.assertTrue(self.page.locator("#empty-state").is_visible())
-        self.assertEqual(self.page.locator(".coming-card").count(), 1)
+        self.assertEqual(self.page.locator(".coming-card").count(), 0)
 
     def test_new_entry_example_button_dynamic_chips_and_safe_text(self):
         new_pack = {**self.catalog[0], "id": "test-pack", "title": "<img src=x onerror=alert(1)>", "industry": "Retail", "function": "Marketing", "demoUrl": "https://example.com/showcase", "tags": ["testkeyword"]}
         self.page.route("**/packs.json", lambda route: route.fulfill(json=[*self.catalog, new_pack]))
         self.open()
-        self.count(4)
+        self.count(len(self.catalog) + 1)
         self.assertEqual(self.page.locator("#pack-grid img").count(), 0)
         self.page.get_by_role("group", name="Industry", exact=True).get_by_role("button", name="Retail", exact=True).click()
         self.count(1)
@@ -193,8 +197,8 @@ class CatalogTests(unittest.TestCase):
         for heading in ["See what could change.", "Try it with sample data.", "Make it work for you."]:
             self.assertTrue(self.page.get_by_role("heading", name=heading, exact=True).is_visible())
         self.assertEqual(self.page.get_by_role("navigation").get_by_role("link").count(), 1)
-        self.assertEqual(self.page.locator(".repo-link").count(), len(self.catalog))
-        self.assertTrue(self.page.get_by_text("Internal · Snowflake employees only", exact=True).is_visible())
+        self.assertEqual(self.page.locator(".repo-link").count(), sum(not pack.get("workInProgress") for pack in self.catalog))
+        self.assertEqual(self.page.locator('[data-pack-id="snow-owl"], a[href*="snow-owl"], a[href*="effective-adventure"]').count(), 0)
 
     def test_only_industry_and_function_dimensions(self):
         self.open()
@@ -203,6 +207,38 @@ class CatalogTests(unittest.TestCase):
         for pack in self.catalog:
             self.assertNotIn("maturity", pack)
 
+    def test_placeholder_catalog_and_search(self):
+        self.assertEqual(len(self.catalog), 12)
+        placeholders = [pack for pack in self.catalog if pack.get("workInProgress")]
+        self.assertEqual(len(placeholders), 10)
+        for pack in placeholders:
+            self.assertEqual(pack["features"], [])
+            self.assertTrue(all(pack[key] == "" for key in ["pagesUrl", "repoUrl", "demoUrl"]))
+        self.open()
+        self.assertEqual(self.page.locator(".pack-card").count(), 12)
+        self.assertEqual(self.page.locator(".wip-label").count(), 10)
+        self.assertIn("10 work in progress", self.page.locator("#results-status").inner_text())
+        self.page.get_by_role("searchbox").fill("payment fraud")
+        self.count(1)
+        self.assertTrue(self.page.get_by_role("heading", name="Payment Fraud Insights").is_visible())
+        self.assertEqual(self.page.locator("#pack-grid a").count(), 0)
+
+    def test_invalid_placeholders_rejected(self):
+        placeholder = next(pack for pack in self.catalog if pack.get("workInProgress"))
+        invalid = [
+            {**placeholder, "workInProgress": "true"},
+            {**placeholder, "pagesUrl": "https://example.com/unfinished"},
+            {**placeholder, "features": ["Unverified capability"]},
+            {**placeholder, "workInProgress": False},
+        ]
+        for pack in invalid:
+            with self.subTest(pack=pack):
+                self.page.route("**/packs.json", lambda route, _request, payload=pack: route.fulfill(json=[payload]))
+                self.page.goto(self.url)
+                self.page.locator("#load-error").wait_for(state="visible")
+                self.count(0)
+                self.page.unroute("**/packs.json")
+
     def test_readme_catalog_matches_json(self):
         readme = (ROOT / "README.md").read_text()
         for pack in self.catalog:
@@ -210,6 +246,8 @@ class CatalogTests(unittest.TestCase):
             self.assertEqual(len(rows), 1)
             for field in ["industry", "function", "pagesUrl", "repoUrl"]:
                 self.assertIn(pack[field], rows[0])
+            if pack.get("workInProgress"):
+                self.assertIn("Work in progress", rows[0])
         self.assertTrue((ROOT / ".nojekyll").exists())
 
 

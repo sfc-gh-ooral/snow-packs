@@ -2,7 +2,7 @@
 
 **Ideas for your industry. A head start for your business.**
 
-Snow Packs is a catalog of industry-specific Snowflake showcases and starting points. Each pack connects a business challenge to a sample-data experience and reusable example code. Browse for inspiration, explore an example, and adapt it to your own environment with Cortex Code.
+Snow Packs is a catalog of industry-specific Snowflake showcases and starting points. Published examples connect business challenges to sample-data experiences and reusable code. Work-in-progress entries preview planned financial-services concepts; they do not yet include examples or code. Browse for inspiration, explore an example, and adapt it to your own environment with Cortex Code.
 
 **[Browse the catalog](https://sfc-gh-ooral.github.io/snow-packs/) · [Contribute a pack](CONTRIBUTING.md) · [Propose an idea](https://github.com/sfc-gh-ooral/snow-packs/issues/new?template=pack-proposal.md)**
 
@@ -18,11 +18,20 @@ Snow Packs is a catalog of industry-specific Snowflake showcases and starting po
 | --- | --- | --- | --- |
 | **Loss Triangle Suite** — Make reserve reviews more consistent with loss development analysis, segment comparisons, and AI-assisted actuarial Q&A. | Insurance | Finance | [View pack](https://sfc-gh-ooral.github.io/sfguide-loss-triangle-analysis/) · [Local example setup](https://github.com/sfc-gh-ooral/sfguide-loss-triangle-analysis#quick-start-mock-data) · [Repo](https://github.com/sfc-gh-ooral/sfguide-loss-triangle-analysis) |
 | **Contact Driver Analytics** — Find opportunities to reduce repeat contacts and escalations with call-driver, sentiment, and transcript insights. | Financial Services | Operations | [View pack](https://sfc-gh-ooral.github.io/sfguide-contact-driver-analytics/) · [Local example setup](https://github.com/sfc-gh-ooral/sfguide-contact-driver-analytics#quick-start-mock-data) · [Repo](https://github.com/sfc-gh-ooral/sfguide-contact-driver-analytics) |
-| **Snow Owl (internal)** — Prepare for more informed discovery conversations with sourced research and reusable account context. | Cross-industry | Sales | [View pack — employee access](https://effective-adventure-kmekk65.pages.github.io/) · [Internal repo](https://github.com/snowflake-corp/snow-owl) |
+| **Credit Risk Monitor** — Borrower trends, concentrations, and early warning signals. | Banking | Risk | Work in progress |
+| **Liquidity & Cash Flow** — Cash positions, funding needs, and liquidity scenarios. | Banking | Finance | Work in progress |
+| **AML Investigation Workbench** — Transaction patterns and case evidence for investigator-led reviews. | Banking | Compliance | Work in progress |
+| **KYC & Onboarding Insights** — Documentation gaps, onboarding bottlenecks, and review queues. | Banking | Compliance | Work in progress |
+| **Payment Fraud Insights** — Suspicious payment patterns and investigation outcomes. | Payments | Risk | Work in progress |
+| **Claims Triage Insights** — Claim complexity and handling delays for adjuster-led prioritization. | Insurance | Claims | Work in progress |
+| **Underwriting Submission Review** — Submission completeness, risk context, and portfolio fit. | Insurance | Underwriting | Work in progress |
+| **Trade Surveillance Workbench** — Order and execution patterns in market context. | Capital Markets | Compliance | Work in progress |
+| **Client Portfolio Review** — Holdings, concentration, and allocation drift for advisor conversations. | Wealth Management | Advisory | Work in progress |
+| **Investment Research Workbench** — Company filings, research notes, and supporting evidence. | Asset Management | Investments | Work in progress |
 
-**More packs coming.** [Propose the next one](https://github.com/sfc-gh-ooral/snow-packs/issues/new?template=pack-proposal.md).
+**12 packs: 2 published examples and 10 work-in-progress concepts.** [Propose the next one](https://github.com/sfc-gh-ooral/snow-packs/issues/new?template=pack-proposal.md).
 
-The two public packs provide local synthetic-data quick starts, not hosted examples, and currently support fork/clone rather than GitHub's **Use this template** button. Snow Owl is a clearly labeled, access-controlled internal reference: it is not a public customer deployment template, and its private content is not mirrored here. A sign-in redirect or an unauthenticated 404 for its repository is expected.
+The two public packs provide local synthetic-data quick starts, not hosted examples, and currently support fork/clone rather than GitHub's **Use this template** button. The ten placeholders describe intended use cases only, without implementation claims or release dates.
 
 Packs are showcases and starting points, not production certifications. Review each pack's setup requirements, validation evidence, costs, and limitations before adapting it.
 
@@ -48,7 +57,7 @@ Never put customer data, secrets, or identifying business logic into a public is
 
 Read the [pack standard](CONTRIBUTING.md), then open a PR adding **one entry to `packs.json` and one row to the README catalog**. The site, cards, filters, counts, and feature search update from JSON alone; the README row is the separate human-readable mirror. No HTML or JavaScript edits are needed to add a pack.
 
-Every new public pack needs a landing page, a no-connection synthetic-data example, capability callouts, deploy/customization instructions, a named owner, and a last-reviewed date. Existing entries are an initial inventory, not a certification that every standard is already met.
+Before publishing an example, each pack needs a landing page, a no-connection synthetic-data example, capability callouts, deploy/customization instructions, a named owner, and a last-reviewed date. Existing entries are an initial inventory, not a certification that every standard is already met.
 
 ## Run this catalog locally
 

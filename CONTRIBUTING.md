@@ -4,7 +4,7 @@ A pack starts with a business outcome, not a feature tour. Make it easy for some
 
 ## The pack standard
 
-Every new public pack must include:
+Before a pack offers a published example, it must include:
 
 1. **A GitHub Pages landing page** explaining the business problem and solution vision, with screenshots or a video of the end product. Use synthetic examples and accessible image descriptions or video captions.
 2. **A synthetic-data example mode** that needs no Snowflake connection, credentials, or access to customer data. A local example is fine; document its prerequisites and commands. Clearly distinguish mocked AI responses from live inference.
@@ -48,10 +48,9 @@ Replace example URLs with verified, permanent HTTPS URLs. Never submit authentic
 
 Optional fields:
 
+- `workInProgress`: boolean, default `false`. Use `true` for an approved placeholder concept. Set `features` to `[]` and `pagesUrl`, `repoUrl`, and `demoUrl` to empty strings. Describe the intended use case as planned, without implementation claims or release dates. The site shows **Work in progress** with no action links or capability tags. This is a placeholder flag, not a readiness tier or filter. Remove the flag and supply verified capabilities and destinations when the example is published.
 - `access`: `public` (default) or `internal`. Internal listings require maintainer approval and public-safe descriptions only. This flag is a label, **not an access control**: all JSON is public. The destination must enforce authentication.
 - `tags`: additional plain-text search terms. Feature tags are already searchable without this field.
-
-Snow Owl is an explicitly approved internal reference. It is not evidence that a customer can access or deploy it; its Pages and repository links remain access-controlled. Internal reference exceptions must be disclosed in the README and review, not silently treated as compliant public packs.
 
 ## Document validation and limitations
 
