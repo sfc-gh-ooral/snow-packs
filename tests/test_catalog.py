@@ -223,6 +223,24 @@ class CatalogTests(unittest.TestCase):
         self.assertTrue(self.page.get_by_role("heading", name="Payment Fraud Insights").is_visible())
         self.assertEqual(self.page.locator("#pack-grid a").count(), 0)
 
+    def test_available_packs_stand_out_and_sort_first(self):
+        self.page.route("**/packs.json", lambda route: route.fulfill(json=list(reversed(self.catalog))))
+        self.open()
+        expected = [pack["id"] for pack in reversed(self.catalog) if not pack.get("workInProgress")]
+        self.assertEqual(self.page.locator(".pack-card").evaluate_all("cards => cards.slice(0, 2).map(card => card.dataset.packId)"), expected)
+        self.assertEqual(self.page.locator(".available-label").all_text_contents(), ["Explore now"] * 2)
+        for scheme in ["light", "dark"]:
+            self.page.emulate_media(color_scheme=scheme)
+            published = self.page.locator(".available-card").first
+            planned = self.page.locator(".wip-card").first
+            self.assertNotEqual(published.evaluate("node => getComputedStyle(node).backgroundColor"), planned.evaluate("node => getComputedStyle(node).backgroundColor"))
+            self.assertEqual(planned.locator(":scope > :first-child").get_attribute("class"), "wip-label")
+            self.assertEqual(planned.locator(".wip-label").evaluate("node => getComputedStyle(node).textTransform"), "uppercase")
+            self.assertGreater(planned.locator(".wip-label").bounding_box()["width"], planned.bounding_box()["width"] * .7)
+            self.assertEqual(planned.locator("a, button").count(), 0)
+        self.page.get_by_role("group", name="Industry", exact=True).get_by_role("button", name="Insurance", exact=True).click()
+        self.assertEqual(self.page.locator(".pack-card").first.get_attribute("data-pack-id"), "loss-triangle-suite")
+
     def test_invalid_placeholders_rejected(self):
         placeholder = next(pack for pack in self.catalog if pack.get("workInProgress"))
         invalid = [

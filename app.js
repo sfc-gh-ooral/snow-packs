@@ -101,10 +101,12 @@
     card.append(badges, heading, element("p", "pack-summary", pack.summary));
     if (pack.workInProgress) {
       card.classList.add("wip-card");
-      card.insertBefore(element("p", "wip-label", "Work in progress"), heading);
+      card.prepend(element("p", "wip-label", "Work in progress"));
       card.append(element("p", "wip-note", "Planned concept. Example and code are not yet available."));
       return card;
     }
+    card.classList.add("available-card");
+    card.prepend(element("p", "available-label", internal ? "Employee access" : "Explore now"));
     if (internal) card.append(element("p", "access-note", "Internal · Snowflake employees only"));
     const features = element("ul", "feature-tags");
     features.setAttribute("aria-label", "Snowflake features and capabilities");
@@ -139,6 +141,7 @@
       const content = [pack.title, pack.summary, pack.industry, pack.function, ...pack.features, ...(pack.tags || [])].join(" ").toLocaleLowerCase();
       return terms.every(term => content.includes(term)) && Object.entries(selection).every(([key, value]) => !value || pack[key] === value);
     });
+    matches.sort((first, second) => Number(Boolean(first.workInProgress)) - Number(Boolean(second.workInProgress)));
     grid.replaceChildren(...matches.map(packCard));
     empty.hidden = matches.length !== 0;
     const planned = matches.filter(pack => pack.workInProgress).length;

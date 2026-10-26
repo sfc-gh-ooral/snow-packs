@@ -106,8 +106,14 @@ legend { font-size: .72rem; font-weight: 700; margin-bottom: 6px; }
 .repo-link { padding: 10px; font-size: .75rem; font-weight: 650; }
 .access-note { color: var(--accent); font-size: .72rem; font-weight: 650; margin-bottom: 16px; }
 .example-note { font-size: .68rem; margin: 12px 0 0; }
-.wip-card { border-style: dashed; box-shadow: none; }
-.wip-label { align-self: flex-start; padding: 4px 9px; border: 1px solid var(--accent); border-radius: 4px; color: var(--accent); font-size: .7rem; font-weight: 700; margin-bottom: 16px; }
+.available-card { border-color: var(--accent); border-top: 5px solid var(--blue); }
+.available-card::before, .wip-card::before { display: none; }
+.available-label { align-self: flex-start; background: var(--navy); color: #fff; padding: 7px 12px; border-radius: 4px; font-size: .75rem; font-weight: 750; letter-spacing: .07em; text-transform: uppercase; margin-bottom: 20px; }
+.available-card .card-actions .primary { flex: 1 1 auto; }
+.wip-card { background: var(--surface); border-style: dashed; box-shadow: none; }
+.wip-card h3 { color: var(--muted); font-size: 1.25rem; }
+.wip-card .badge { background: transparent; color: var(--muted); border: 1px solid var(--line); }
+.wip-label { padding: 12px; background: var(--line); color: var(--text); border-radius: 5px; font-size: .8rem; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; text-align: center; margin-bottom: 22px; }
 .wip-note { margin: auto 0 0; padding-top: 16px; border-top: 1px solid var(--line); font-size: .75rem; }
 .catalog-note { font-size: .72rem; margin: 24px 0 0; }
 .message-box { padding: 28px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); margin-bottom: 24px; }
