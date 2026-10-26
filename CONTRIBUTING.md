@@ -7,7 +7,7 @@ A pack starts with a business outcome, not a feature tour. Make it easy for some
 Every new public pack must include:
 
 1. **A GitHub Pages landing page** explaining the business problem and solution vision, with screenshots or a video of the end product. Use synthetic examples and accessible image descriptions or video captions.
-2. **A synthetic-data demo mode** that needs no Snowflake connection, credentials, or access to customer data. A local demo is fine; document its prerequisites and commands. Clearly distinguish mocked AI responses from live inference.
+2. **A synthetic-data example mode** that needs no Snowflake connection, credentials, or access to customer data. A local example is fine; document its prerequisites and commands. Clearly distinguish mocked AI responses from live inference.
 3. **In-app capability callouts** naming the Snowflake capability behind each component. Describe what is simulated versus executed; do not claim deployment modes or features that have not been verified.
 4. **A deployment README** with prerequisites, tested versions, account/region requirements, setup and teardown steps, data contracts, expected compute costs, and known limitations. Include a **Customize with Cortex Code** section with example prompts.
 5. **A clean public artifact:** no customer names, logos, data, identifiers, or identifiable business logic. No credentials, private keys, tokens, internal reports, or secrets in files, screenshots, URLs, or commit history. Use synthetic data from the start, not renamed customer records. Do not use official Snowflake logo files or trademarked imagery in this catalog.
@@ -20,7 +20,7 @@ Prefer enabling GitHub's **Template repository** option when appropriate so user
 1. Fork this hub and create a branch for your contribution.
 2. Verify your pack against the standard and test its links while signed out.
 3. Add one object to the array in [`packs.json`](packs.json), using the schema below. Reuse industry/function labels where possible; new labels automatically become filter chips.
-4. Add one row to the **Catalog** table in [`README.md`](README.md), with matching title, industry, function, maturity, and links.
+4. Add one row to the **Catalog** table in [`README.md`](README.md), with matching title, industry, function, and links.
 5. Serve this hub locally using `python3 -m http.server 8000 --bind 127.0.0.1`. Check search, all filter groups, empty results, keyboard navigation, narrow layout, and both system color schemes.
 6. Open a pull request and complete the pack-standard checklist. Include your review date and any exceptions or limitations.
 
@@ -36,7 +36,6 @@ Prefer enabling GitHub's **Template repository** option when appropriate so user
   "industry": "Retail",
   "function": "Operations",
   "features": ["Snowflake SQL"],
-  "maturity": "Demo",
   "pagesUrl": "https://YOUR-OWNER.github.io/YOUR-PACK/",
   "demoUrl": "",
   "repoUrl": "https://github.com/YOUR-OWNER/YOUR-PACK",
@@ -45,7 +44,7 @@ Prefer enabling GitHub's **Template repository** option when appropriate so user
 }
 ```
 
-Replace example URLs with verified, permanent HTTPS URLs. Never submit authentication nonces or expiring signed URLs. `id` must be unique and kebab-case; `updated` is `YYYY-MM`; `features` is a nonempty array of verified capabilities. `summary` is one sentence, business outcome first, without unmeasured promises. `demoUrl` must be an empty string if there is no hosted demo; the card omits **Try demo** and points readers to the repo. Do not put local-server addresses or deployment instructions in `demoUrl`.
+Replace example URLs with verified, permanent HTTPS URLs. Never submit authentication nonces or expiring signed URLs. `id` must be unique and kebab-case; `updated` is `YYYY-MM`; `features` is a nonempty array of verified capabilities. `summary` is one sentence, business outcome first, without unmeasured promises. `demoUrl` must be an empty string if there is no hosted example; the card omits **Try example** and points readers to the repo. Do not put local-server addresses or deployment instructions in `demoUrl`.
 
 Optional fields:
 
@@ -54,15 +53,11 @@ Optional fields:
 
 Snow Owl is an explicitly approved internal reference. It is not evidence that a customer can access or deploy it; its Pages and repository links remain access-controlled. Internal reference exceptions must be disclosed in the README and review, not silently treated as compliant public packs.
 
-## Choose maturity honestly
+## Document validation and limitations
 
-| Label | Required evidence |
-| --- | --- |
-| Demo | An illustrative synthetic-data experience; clearly identify simulated features and local versus hosted execution. |
-| PoC-ready | Documented deployment and data mapping tested in a clean account, with test date, prerequisites, costs, and limitations. |
-| Pilot-ready | PoC evidence plus scoped security review, least-privilege access, monitoring, rollback/teardown, and a named pilot support owner. |
+All packs are showcases and starting points. Clearly identify simulated features and local versus hosted execution. Record what was tested, when, and in which environment, along with prerequisites, costs, permissions, and teardown steps.
 
-No label means production-approved, supported by Snowflake Support, or suitable for regulated decisions without review. Initial catalog entries are conservatively labeled Demo; catalog metadata review is not end-to-end deployment validation.
+Catalog inclusion does not mean production approval, Snowflake Support coverage, or suitability for regulated decisions. Metadata review is not end-to-end deployment validation.
 
 ## Customize with Cortex Code: example prompts
 
@@ -70,16 +65,16 @@ Include prompts adapted to your pack, such as:
 
 > Explain the application's data contracts. Propose a mapping from my development schema and identify missing fields; do not change anything yet.
 
-> Add a new KPI with an explicit business definition and focused tests. Keep the no-connection demo functional.
+> Add a new KPI with an explicit business definition and focused tests. Keep the no-connection example functional.
 
 > Review deployment permissions and propose a least-privilege setup, cost controls, and teardown plan before executing changes.
 
 ## Review and maintenance
 
-Maintain the synthetic demo when APIs change. Retest links, update the last-reviewed date after review, and document breaking changes. Downgrade maturity when evidence is no longer current. Report exposed credentials through the hosting platform's private security process and revoke them immediately; never repeat them in an issue.
+Maintain the synthetic example when APIs change. Retest links, update the last-reviewed date after review, and document breaking changes. Update validation notes when evidence is no longer current. Report exposed credentials through the hosting platform's private security process and revoke them immediately; never repeat them in an issue.
 
 Use [the proposal form](https://github.com/sfc-gh-ooral/snow-packs/issues/new?template=pack-proposal.md) for ideas that are not ready for catalog inclusion. Additions are reviewed by maintainers; submitting a PR does not imply endorsement or certification.
 
 ## Disclaimer
 
-Snow Packs are field-built examples provided as-is, not official Snowflake products, and are not supported by Snowflake Support. They contain no customer data. Review and test before any production use.
+Snow Packs are illustrative examples provided as-is, not official Snowflake products, and are not supported by Snowflake Support. They contain no customer data. Review and test before any production use.

@@ -1,6 +1,6 @@
 ---
 name: Propose a Snow Pack
-about: Suggest a field-built industry solution for the catalog
+about: Suggest an industry showcase for the catalog
 title: '[Pack proposal] '
 ---
 
@@ -16,9 +16,9 @@ What decision or workflow does this improve? Describe the problem without custom
 
 List verified capabilities and distinguish proposed features from working ones.
 
-## Status
+## Progress
 
-Idea / In development / Demo / PoC-ready / Pilot-ready
+Describe what exists today and what remains to be built or tested.
 
 ## Owner
 
@@ -27,15 +27,15 @@ Name and GitHub handle:
 ## Links
 
 Landing page:
-Demo (hosted or local instructions):
+Example (hosted or local instructions):
 Repository:
 
 Use permanent URLs without tokens or authentication nonces. Clearly flag employee-only destinations.
 
-## Pack-standard readiness
+## Pack-standard checklist
 
 - [ ] Business vision and screenshots/video
-- [ ] No-connection synthetic-data demo
+- [ ] No-connection synthetic-data example
 - [ ] In-app Snowflake capability callouts
 - [ ] Deploy README and Customize with Cortex Code prompts
 - [ ] No customer identifiers, data, logic, logos, or secrets

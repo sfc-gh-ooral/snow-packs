@@ -76,7 +76,7 @@ class CatalogTests(unittest.TestCase):
 
     def test_each_filter_and_combined_filters(self):
         self.open()
-        for field, label in [("industry", "Industry"), ("function", "Function"), ("maturity", "Maturity")]:
+        for field, label in [("industry", "Industry"), ("function", "Function")]:
             group = self.page.get_by_role("group", name=label, exact=True)
             for button in group.get_by_role("button").all():
                 value = button.get_attribute("data-value")
@@ -159,15 +159,15 @@ class CatalogTests(unittest.TestCase):
         self.assertTrue(self.page.locator("#empty-state").is_visible())
         self.assertEqual(self.page.locator(".coming-card").count(), 1)
 
-    def test_new_entry_demo_button_dynamic_chips_and_safe_text(self):
-        new_pack = {**self.catalog[0], "id": "test-pack", "title": "<img src=x onerror=alert(1)>", "industry": "Retail", "function": "Marketing", "maturity": "Pilot-ready", "demoUrl": "https://example.com/demo", "tags": ["testkeyword"]}
+    def test_new_entry_example_button_dynamic_chips_and_safe_text(self):
+        new_pack = {**self.catalog[0], "id": "test-pack", "title": "<img src=x onerror=alert(1)>", "industry": "Retail", "function": "Marketing", "demoUrl": "https://example.com/showcase", "tags": ["testkeyword"]}
         self.page.route("**/packs.json", lambda route: route.fulfill(json=[*self.catalog, new_pack]))
         self.open()
         self.count(4)
         self.assertEqual(self.page.locator("#pack-grid img").count(), 0)
         self.page.get_by_role("group", name="Industry", exact=True).get_by_role("button", name="Retail", exact=True).click()
         self.count(1)
-        self.assertEqual(self.page.get_by_role("link", name="Try <img src=x onerror=alert(1)> demo", exact=True).get_attribute("href"), new_pack["demoUrl"])
+        self.assertEqual(self.page.get_by_role("link", name="Try <img src=x onerror=alert(1)> example", exact=True).get_attribute("href"), new_pack["demoUrl"])
         self.page.get_by_role("searchbox").fill("testkeyword")
         self.count(1)
 
@@ -176,16 +176,39 @@ class CatalogTests(unittest.TestCase):
         try:
             page = context.new_page()
             page.goto(self.url)
-            self.assertTrue(page.get_by_role("link", name="browse the catalog in our README").is_visible())
+            fallback = page.locator("noscript .message-box")
+            self.assertTrue(fallback.is_visible())
+            self.assertIn("Enable JavaScript to explore the pack collection", fallback.inner_text())
+            self.assertEqual(page.locator('a[href*="github.com/sfc-gh-ooral/snow-packs"]').count(), 0)
         finally:
             context.close()
+
+    def test_customer_facing_content_and_navigation(self):
+        self.open()
+        self.assertEqual(self.page.locator('a[href*="github.com/sfc-gh-ooral/snow-packs"]').count(), 0)
+        self.assertEqual(self.page.locator("#customers, #contribute").count(), 0)
+        copy = self.page.locator("body").inner_text().lower()
+        for phrase in ["solution engineers", "customers ask", "landing page", "contribute a pack", "propose a pack", "field-built", "maturity", "demo", "poc-ready", "pilot-ready"]:
+            self.assertNotIn(phrase, copy)
+        for heading in ["See what could change.", "Try it with sample data.", "Make it work for you."]:
+            self.assertTrue(self.page.get_by_role("heading", name=heading, exact=True).is_visible())
+        self.assertEqual(self.page.get_by_role("navigation").get_by_role("link").count(), 1)
+        self.assertEqual(self.page.locator(".repo-link").count(), len(self.catalog))
+        self.assertTrue(self.page.get_by_text("Internal · Snowflake employees only", exact=True).is_visible())
+
+    def test_only_industry_and_function_dimensions(self):
+        self.open()
+        self.assertEqual(self.page.locator("#filters legend").all_text_contents(), ["Industry", "Function"])
+        self.assertEqual(self.page.locator(".maturity, [data-filter='maturity']").count(), 0)
+        for pack in self.catalog:
+            self.assertNotIn("maturity", pack)
 
     def test_readme_catalog_matches_json(self):
         readme = (ROOT / "README.md").read_text()
         for pack in self.catalog:
             rows = [line for line in readme.splitlines() if line.startswith("|") and f'**{pack["title"]}' in line]
             self.assertEqual(len(rows), 1)
-            for field in ["industry", "function", "maturity", "pagesUrl", "repoUrl"]:
+            for field in ["industry", "function", "pagesUrl", "repoUrl"]:
                 self.assertIn(pack[field], rows[0])
         self.assertTrue((ROOT / ".nojekyll").exists())
 
