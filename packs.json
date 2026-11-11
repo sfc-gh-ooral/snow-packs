@@ -281,5 +281,53 @@
     "repoUrl": "",
     "author": "Snow Packs",
     "updated": "2026-10"
+  },
+  {
+    "id": "cyber-remediation-prioritization",
+    "title": "Cyber Remediation Prioritization",
+    "summary": "A planned remediation queue that ranks vulnerability findings by exploitability, exposure, and asset criticality to help security teams decide what to fix first.",
+    "industry": "Banking",
+    "function": "Risk",
+    "outcome": "manage-risk",
+    "workInProgress": true,
+    "features": [],
+    "tags": ["cybersecurity", "vulnerability management", "risk scoring", "remediation", "attack surface"],
+    "pagesUrl": "",
+    "demoUrl": "",
+    "repoUrl": "",
+    "author": "Siddharth Prasad",
+    "updated": "2026-11"
+  },
+  {
+    "id": "cyber-risk-copilot",
+    "title": "Cyber Risk Copilot",
+    "summary": "A planned natural-language assistant that helps security leaders and control owners explore cyber posture, exposure, ownership, and remediation status.",
+    "industry": "Financial Services",
+    "function": "Risk",
+    "outcome": "manage-risk",
+    "workInProgress": true,
+    "features": [],
+    "tags": ["cybersecurity", "security posture", "copilot", "natural language", "control owners"],
+    "pagesUrl": "",
+    "demoUrl": "",
+    "repoUrl": "",
+    "author": "Siddharth Prasad",
+    "updated": "2026-11"
+  },
+  {
+    "id": "account-takeover-detection",
+    "title": "Account Takeover Detection",
+    "summary": "A planned investigator view that connects identity, session, and transaction signals to help analysts spot cyber-enabled account takeover.",
+    "industry": "Banking",
+    "function": "Compliance",
+    "outcome": "catch-financial-crime",
+    "workInProgress": true,
+    "features": [],
+    "tags": ["account takeover", "cybersecurity", "fraud", "identity", "financial crime"],
+    "pagesUrl": "",
+    "demoUrl": "",
+    "repoUrl": "",
+    "author": "Siddharth Prasad",
+    "updated": "2026-11"
   }
 ]

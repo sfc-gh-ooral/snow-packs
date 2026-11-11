@@ -30,6 +30,9 @@ Snow Packs is a catalog of industry-specific Snowflake showcases and starting po
 | **Client Data Entitlements** — One wealth dataset for advisors, managers, compliance, and a research partner. | Wealth Management | Compliance | [View pack](https://sfc-gh-jacho.github.io/sfguide-fsi-client-entitlements/) · [Repo](https://github.com/sfc-gh-jacho/sfguide-fsi-client-entitlements) |
 | **Wealth Advisor Assistant** — Ranked next best actions, client meeting prep, and an AI coach that only sees each advisor's own clients. | Wealth Management | Advisory | [View pack](https://sfc-gh-ooral.github.io/sfguide-wealth-advisor-assistant/) · [Local example setup](https://github.com/sfc-gh-ooral/sfguide-wealth-advisor-assistant#quick-start-no-account) · [Try example](https://sfc-gh-ooral.github.io/sfguide-wealth-advisor-assistant/try/) · [Repo](https://github.com/sfc-gh-ooral/sfguide-wealth-advisor-assistant) |
 | **Investment Research Workbench** — Company filings, research notes, and supporting evidence. | Asset Management | Investments | Work in progress |
+| **Cyber Remediation Prioritization** — Rank vulnerability findings by exploitability, exposure, and asset criticality. | Banking | Risk | Work in progress |
+| **Cyber Risk Copilot** — Natural-language answers on cyber posture, exposure, ownership, and remediation status. | Financial Services | Risk | Work in progress |
+| **Account Takeover Detection** — Identity, session, and transaction signals for cyber-enabled fraud investigations. | Banking | Compliance | Work in progress |
 
 **14 packs: 8 published examples and 6 work-in-progress concepts.** [Propose the next one](https://github.com/sfc-gh-ooral/snow-packs/issues/new?template=pack-proposal.md).
 
