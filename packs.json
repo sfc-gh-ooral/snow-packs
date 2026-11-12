@@ -243,20 +243,28 @@
     "updated": "2026-11"
   },
   {
-    "id": "client-portfolio-review",
-    "title": "Client Portfolio Review",
-    "summary": "A planned view of holdings, concentration, and allocation drift to help advisors prepare for client portfolio conversations.",
+    "id": "wealth-advisor-assistant",
+    "title": "Wealth Advisor Assistant",
+    "summary": "Help advisors start each day with ranked next best actions, prepare for client meetings, and ask an AI coach that only sees their own clients.",
     "industry": "Wealth Management",
     "function": "Advisory",
     "outcome": "serve-clients",
-    "workInProgress": true,
-    "features": [],
-    "tags": ["wealth", "holdings", "asset allocation"],
-    "pagesUrl": "",
-    "demoUrl": "",
-    "repoUrl": "",
-    "author": "Snow Packs",
-    "updated": "2026-10"
+    "features": ["Cortex Agents", "Cortex Analyst", "Semantic Views", "Cortex Search", "Cortex AI_COMPLETE", "Sentiment Analysis", "Row Access Policies", "Snowflake SQL"],
+    "tags": ["wealth", "next best action", "advisor", "meeting prep", "attrition", "RMD", "cash drag", "concentration"],
+    "setup": "local",
+    "images": [
+      { "src": "assets/packs/wealth-advisor-assistant-1.jpg", "alt": "Morning brief: top next best actions ranked by priority, from rules materialized in Snowflake SQL" },
+      { "src": "assets/packs/wealth-advisor-assistant-2.jpg", "alt": "Ask as all three: one Cortex Agent question as Advisor A, Advisor B, and the branch manager, each scoped by row access policies" },
+      { "src": "assets/packs/wealth-advisor-assistant-3.jpg", "alt": "Client prep: holdings, concentration, and allocation drift, with an AI_COMPLETE meeting agenda" },
+      { "src": "assets/packs/wealth-advisor-assistant-4.jpg", "alt": "Coach: a Cortex Agent answers book questions through Cortex Analyst on a semantic view, limited to the advisor's own clients" },
+      { "src": "assets/packs/wealth-advisor-assistant-5.jpg", "alt": "Supervision log: append-only record of every AI interaction, with Cortex Guard flags and agent traces" },
+      { "src": "assets/packs/wealth-advisor-assistant-6.jpg", "alt": "Book overview: AUM trend, net flows, segmentation, and allocation drift for one advisor's book" }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-wealth-advisor-assistant/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-wealth-advisor-assistant/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-wealth-advisor-assistant",
+    "author": "Oz Oral",
+    "updated": "2026-11"
   },
   {
     "id": "investment-research-workbench",
