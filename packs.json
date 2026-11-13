@@ -281,5 +281,26 @@
     "repoUrl": "",
     "author": "Snow Packs",
     "updated": "2026-10"
+  },
+  {
+    "id": "verified-bank-research",
+    "title": "Verified Bank Research",
+    "summary": "Write a grounded one-page research note on a US bank and its peers, where the agent can only cite governed FFIEC/FDIC call-report data and a verifier flags any unsupported or hedged claim.",
+    "industry": "Banking",
+    "function": "Finance",
+    "outcome": "manage-risk",
+    "features": ["Cortex Agents", "Cortex Analyst", "Semantic Views", "Cortex AI_COMPLETE", "Streamlit in Snowflake", "Snowflake SQL"],
+    "tags": ["bank research", "call reports", "FFIEC", "FDIC", "peer analysis", "grounded AI", "verification", "hallucination guardrail"],
+    "setup": "snowflake",
+    "images": [
+      { "src": "assets/packs/verified-bank-research-1.jpg", "alt": "Gallery of verified research notes with status badges on synthetic data" },
+      { "src": "assets/packs/verified-bank-research-2.jpg", "alt": "A verified peer note: one-line takeaway, comparison table, and a Data Coverage footer" },
+      { "src": "assets/packs/verified-bank-research-3.jpg", "alt": "The verifier flagging a hedged draft as Needs review and listing the removed claims" }
+    ],
+    "pagesUrl": "https://sfc-gh-jsoliz.github.io/sfguide-verified-bank-research/",
+    "demoUrl": "https://sfc-gh-jsoliz.github.io/sfguide-verified-bank-research/try/",
+    "repoUrl": "https://github.com/sfc-gh-jsoliz/sfguide-verified-bank-research",
+    "author": "Javier Soliz",
+    "updated": "2026-11"
   }
 ]
