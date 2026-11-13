@@ -147,20 +147,28 @@
     "updated": "2026-11"
   },
   {
-    "id": "payment-fraud-insights",
-    "title": "Payment Fraud Insights",
-    "summary": "A planned view of suspicious payment patterns and investigation outcomes to help analysts examine fraud signals and false positives.",
+    "id": "card-fraud-console",
+    "title": "Card Fraud Analyst Console",
+    "summary": "Help fraud teams stop stolen-card spending as it happens, with payments scored on arrival, an explainable alert queue, AI case briefings, and a threshold that balances fraud caught against good customers declined.",
     "industry": "Payments",
     "function": "Risk",
     "outcome": "catch-financial-crime",
-    "workInProgress": true,
-    "features": [],
-    "tags": ["cards", "fraud", "transactions", "chargebacks"],
-    "pagesUrl": "",
-    "demoUrl": "",
-    "repoUrl": "",
-    "author": "Snow Packs",
-    "updated": "2026-10"
+    "features": ["Streamlit in Snowflake", "Window Functions", "HAVERSINE", "Cortex AI_COMPLETE", "Cortex AI_AGG", "Dynamic Data Masking"],
+    "tags": ["cards", "fraud", "transactions", "card testing", "account takeover", "impossible travel", "false positives", "chargebacks"],
+    "setup": "local",
+    "images": [
+      { "src": "assets/packs/card-fraud-console-1.jpg", "alt": "Overview: today's payments, alerts, dollars at risk, and 30 days of alerts by pattern on synthetic data" },
+      { "src": "assets/packs/card-fraud-console-2.jpg", "alt": "Live feed: payments replayed and scored as they arrive, with window functions and HAVERSINE in SQL" },
+      { "src": "assets/packs/card-fraud-console-3.jpg", "alt": "Alert queue: highest-risk payments first, filterable by card testing, account takeover, and impossible travel" },
+      { "src": "assets/packs/card-fraud-console-4.jpg", "alt": "Case review: each signal behind the score, a map of the card's jump between cities, and a Cortex AI_COMPLETE briefing" },
+      { "src": "assets/packs/card-fraud-console-5.jpg", "alt": "Threshold tuning: fraud dollars caught vs. good payments declined at every threshold, on synthetic labeled history" },
+      { "src": "assets/packs/card-fraud-console-6.jpg", "alt": "Patterns: a common point of purchase across alerted cards, and a Cortex AI_AGG summary of analyst notes" }
+    ],
+    "pagesUrl": "https://sfc-gh-jacho.github.io/sfguide-card-fraud-console/",
+    "demoUrl": "https://sfc-gh-jacho.github.io/sfguide-card-fraud-console/try/",
+    "repoUrl": "https://github.com/sfc-gh-jacho/sfguide-card-fraud-console",
+    "author": "Janet Cho",
+    "updated": "2026-11"
   },
   {
     "id": "claims-triage-insights",

@@ -74,7 +74,7 @@ class CatalogTests(unittest.TestCase):
 
     def test_search_title_summary_feature_case_and_whitespace(self):
         self.open()
-        for term, expected in [("loss triangle", 1), ("escalations", 1), ("  CORTEX   ANALYST  ", 2), ("Cortex", 5), ("MATCH_RECOGNIZE", 1), ("time travel", 1), ("structuring", 1), ("aggregation policies", 1), ("", len(self.catalog)), ("due diligence", 1)]:
+        for term, expected in [("loss triangle", 1), ("escalations", 1), ("  CORTEX   ANALYST  ", 3), ("Cortex", 6), ("MATCH_RECOGNIZE", 1), ("time travel", 1), ("structuring", 1), ("aggregation policies", 1), ("", len(self.catalog)), ("due diligence", 1)]:
             self.page.get_by_role("searchbox").fill(term)
             self.count(expected)
 
@@ -212,17 +212,17 @@ class CatalogTests(unittest.TestCase):
     def test_placeholder_catalog_and_search(self):
         self.assertEqual(len(self.catalog), 14)
         placeholders = [pack for pack in self.catalog if pack.get("workInProgress")]
-        self.assertEqual(len(placeholders), 6)
+        self.assertEqual(len(placeholders), 5)
         for pack in placeholders:
             self.assertEqual(pack["features"], [])
             self.assertTrue(all(pack[key] == "" for key in ["pagesUrl", "repoUrl", "demoUrl"]))
         self.open()
         self.assertEqual(self.page.locator(".pack-card").count(), 14)
-        self.assertEqual(self.page.locator(".wip-label").count(), 6)
-        self.assertIn("6 work in progress", self.page.locator("#results-status").inner_text())
-        self.page.get_by_role("searchbox").fill("payment fraud")
+        self.assertEqual(self.page.locator(".wip-label").count(), 5)
+        self.assertIn("5 work in progress", self.page.locator("#results-status").inner_text())
+        self.page.get_by_role("searchbox").fill("claims triage")
         self.count(1)
-        self.assertTrue(self.page.get_by_role("heading", name="Payment Fraud Insights").is_visible())
+        self.assertTrue(self.page.get_by_role("heading", name="Claims Triage Insights").is_visible())
         self.assertEqual(self.page.locator("#pack-grid a").count(), 0)
 
     def test_available_packs_stand_out_and_sort_first(self):
@@ -262,7 +262,7 @@ class CatalogTests(unittest.TestCase):
 
     def test_preview_carousel(self):
         self.open()
-        with_images = [pack for pack in self.catalog if pack.get("images") and not pack.get("demoUrl")]  # app packs show Try it! instead
+        with_images = [pack for pack in self.catalog if pack.get("images")]  # hosted apps show Try it! and Preview
         self.assertGreaterEqual(len(with_images), 2)
         self.assertEqual(self.page.locator("#pack-grid img").count(), 0)  # nothing loads until a preview opens
         self.assertEqual(self.page.locator(".wip-card .preview-toggle").count(), 0)
@@ -300,7 +300,7 @@ class CatalogTests(unittest.TestCase):
             page = context.new_page()
             page.goto(self.url)
             page.wait_for_function("document.querySelector('#results-status').textContent.includes('in the collection')")
-            card = page.locator(f'[data-pack-id="{next(p for p in self.catalog if p.get("images") and not p.get("demoUrl"))["id"]}"]')
+            card = page.locator(f'[data-pack-id="{next(p for p in self.catalog if p.get("images"))["id"]}"]')
             card.locator(".preview-toggle").tap()
             card.locator(".preview-panel").wait_for(state="visible")
             page.wait_for_timeout(400)
@@ -337,7 +337,7 @@ class CatalogTests(unittest.TestCase):
         self.assertTrue(self.page.locator("#hero-wall").is_hidden())
         self.assertTrue(self.page.locator(".hero-fallback").is_visible())
 
-    def test_try_it_replaces_preview_and_hero_is_lean(self):
+    def test_try_it_and_preview_and_hero_is_lean(self):
         self.open()
         for pack in [p for p in self.catalog if not p.get("workInProgress")]:
             card = self.page.locator(f'[data-pack-id="{pack["id"]}"]')
@@ -345,9 +345,7 @@ class CatalogTests(unittest.TestCase):
                 try_it = card.locator(".card-top").get_by_role("link", name=f'Try {pack["title"]} (opens in a new tab)')
                 self.assertEqual(try_it.get_attribute("href"), pack["demoUrl"])
                 self.assertEqual(try_it.inner_text().strip(), "▶ Try it!")
-                self.assertEqual(card.locator(".preview-toggle").count(), 0)
-            else:
-                self.assertEqual(card.locator(".preview-toggle").count(), 1 if pack.get("images") else 0)
+            self.assertEqual(card.locator(".preview-toggle").count(), 1 if pack.get("images") else 0)
             for a in card.locator("a").all():  # every link leaves the site in a new tab
                 self.assertEqual((a.get_attribute("target"), a.get_attribute("rel")), ("_blank", "noopener noreferrer"))
                 self.assertTrue(a.get_attribute("aria-label").endswith("(opens in a new tab)"))

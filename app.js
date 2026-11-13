@@ -257,9 +257,9 @@
     titleButton.addEventListener("click", () => openDetails(pack.id, titleButton));
     heading.append(titleButton);
     const quick = element("span", "card-quick");
-    // A hosted app beats screenshots: cards with one show Try it! instead of Preview.
+    // Hosted apps lead with Try it!; any card with screenshots also keeps its Preview.
     if (pack.demoUrl) quick.append(link("▶ Try it!", pack.demoUrl, "try-link", `Try ${pack.title}${internal ? "; employee sign-in required" : ""}`));
-    else if (pack.images) quick.append(previewToggle(pack, card));
+    if (pack.images) quick.append(previewToggle(pack, card));
     if (quick.childElementCount) badges.append(quick);
     if (internal) card.append(element("p", "access-note", "Internal · Snowflake employees only"));
     const features = element("ul", "feature-tags");
