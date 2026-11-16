@@ -53,23 +53,19 @@ Write for a customer seeing it for the first time. The landing page is your pitc
 
 ### Capture screenshots with CoCo
 
-Capture screenshots with a **script**, not by hand. A headless browser at a fixed window size produces large, sharp, identical images on any laptop. You don't need to maximize a window or plug in a monitor, and you can rerun the script whenever the UI changes. Because it starts a fresh browser with no sign-in, account details can't end up in a shot.
+Capture screenshots however works for your app. The simplest way is to let CoCo run the finished app and take them in its built-in browser:
 
-- **Should:** Add `scripts/capture-screenshots.mjs` and an `npm run capture` command. Copy the [Wealth Advisor Assistant script](https://github.com/sfc-gh-ooral/sfguide-wealth-advisor-assistant/blob/main/scripts/capture-screenshots.mjs) as a starting point. It:
-  - serves your no-account example (e.g., `docs/try/`) locally, with no dev server or Snowflake account;
-  - opens each screen in headless Chromium (Playwright) at a **1600×1000** viewport, the catalog's 16:10 shape, with a fixed locale and time zone;
-  - clicks through the steps you list (open a drill-down, ask the agent, switch personas);
-  - writes landing-page images to `docs/images/` at 1.25× (2000×1250 PNG) and catalog cards at 0.6× (960×600 JPG), ready for section 11.
-- **Should not:** Attach the script to your everyday, signed-in browser (e.g., Chrome over a remote-debugging port). That session can show account URLs, user names, and internal tabs. Use it only for an app that cannot run without signing in, and review every frame.
+1. **Maximize the CoCo browser window** first, so screenshots are full-size and the layout isn't squeezed into a narrow panel.
+2. Ask CoCo to start the app on its synthetic data (the no-account mode, if it has one) and open it in the built-in browser.
+3. Ask it to click through the main workflow and screenshot each key screen, for example: "Run the app, click through the overview, a drill-down, and the AI Q&A, and take a full-window screenshot of each. Save them to `docs/images/`."
+4. Review every image: synthetic data only, no account URLs, user names, tokens, or internal tabs.
+5. Ask CoCo to add the images to the landing page with captions and alt text, then check the page at desktop and phone width.
 
-To set it up, ask CoCo: "Copy the capture script from the Wealth Advisor Assistant pack, adapt the `SHOTS` list to my app's main workflow, run it, and show me every image." Then:
+A capture script (for example, Playwright) or your own screenshot tool works too. Whatever you use, aim for 16:10 shots, and don't capture from your everyday, signed-in browser: it can show account URLs, user names, and internal tabs.
 
-1. Review every image: synthetic data only, no account URLs, user names, tokens, or internal tabs.
-2. Ask CoCo to add the images to the landing page with captions and alt text, then check the page at desktop and phone width.
+Keep images in the repository (e.g., `docs/images/`), ideally under 500 KB each, and refresh them whenever the UI changes.
 
-Keep images in the repository (e.g., `docs/images/`), ideally under 500 KB each. The built-in CoCo browser still works if you can't run a script: maximize its window first so shots aren't squeezed into a narrow panel.
-
-**Optional video.** A 15–30 second captioned clip or GIF of the main workflow helps a lot on the landing page. Record it the same way: Playwright's video recording, or frames from a headless run, encoded locally with a tool such as ffmpeg. Every number on screen must come from the pack's synthetic data. Don't add claims, stock footage, or mock UI.
+**Optional video.** A 15–30 second captioned clip or GIF of the main workflow helps a lot on the landing page. Record it with any screen recorder, or a tool such as Playwright, and encode it locally (e.g., with ffmpeg). Every number on screen must come from the pack's synthetic data. Don't add claims, stock footage, or mock UI.
 
 ## 4. The app
 
@@ -96,7 +92,7 @@ Already have a working SQL script or notebook? Ask CoCo to build the app on top 
 - "Add a 'View as' role switcher that shows how the same data looks to each persona, using the row access and masking policies in the script."
 - "Add a Sample / Live switch to the header. When there's no Snowflake connection, show the setup steps instead of switching. In Sample mode, make each AI button wait a few seconds and show staged reasoning steps that match what the live call does."
 
-Then ask CoCo to run the app, click through the workflow, and capture the screenshots for the landing page and catalog card with a capture script (see [Capture screenshots with CoCo](#capture-screenshots-with-coco)).
+Then ask CoCo to run the app, click through the workflow, and capture the screenshots for the landing page and catalog card (see [Capture screenshots with CoCo](#capture-screenshots-with-coco)).
 
 ## 5. Snowflake setup and sample data
 
@@ -155,7 +151,7 @@ Then ask CoCo to run the app, click through the workflow, and capture the screen
 
 1. Fork this repository and create a branch.
 2. Add one object to [`packs.json`](packs.json) using the schema below.
-3. Add **2 to 8 card preview screenshots** of your app's key screens (main dashboard first), saved as `assets/packs/<id>-1.jpg`, `<id>-2.jpg`, and so on: 16:10, 960×600, ideally under 100 KB each. A capture script can write these for you. Readers see them in a carousel when they hover or tap **Preview** on your card (cards with a `demoUrl` show **Try it!** instead) and in the pack's details. They live in this repository, not yours, so the catalog never loads outside images.
+3. Add **2 to 8 card preview screenshots** of your app's key screens (main dashboard first), saved as `assets/packs/<id>-1.jpg`, `<id>-2.jpg`, and so on: 16:10, 960×600, ideally under 100 KB each. Readers see them in a carousel when they hover or tap **Preview** on your card (cards with a `demoUrl` show **Try it!** instead) and in the pack's details. They live in this repository, not yours, so the catalog never loads outside images.
 4. Add one matching row to the **Catalog** table in [`README.md`](README.md).
 5. Serve this site locally with `python3 -m http.server 8000 --bind 127.0.0.1`. Check search, filters, empty results, keyboard navigation, narrow layout, and both color schemes.
 6. Open a pull request, complete the checklist, and note any skipped **Should** items or limitations.
