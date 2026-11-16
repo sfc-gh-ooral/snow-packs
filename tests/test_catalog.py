@@ -74,7 +74,7 @@ class CatalogTests(unittest.TestCase):
 
     def test_search_title_summary_feature_case_and_whitespace(self):
         self.open()
-        for term, expected in [("loss triangle", 1), ("escalations", 1), ("  CORTEX   ANALYST  ", 3), ("Cortex", 6), ("MATCH_RECOGNIZE", 1), ("time travel", 1), ("structuring", 1), ("aggregation policies", 1), ("", len(self.catalog)), ("due diligence", 1)]:
+        for term, expected in [("loss triangle", 1), ("escalations", 1), ("  CORTEX   ANALYST  ", 4), ("Cortex", 7), ("MATCH_RECOGNIZE", 1), ("time travel", 1), ("structuring", 1), ("aggregation policies", 1), ("", len(self.catalog)), ("due diligence", 1)]:
             self.page.get_by_role("searchbox").fill(term)
             self.count(expected)
 
@@ -210,14 +210,14 @@ class CatalogTests(unittest.TestCase):
             self.assertNotIn("maturity", pack)
 
     def test_placeholder_catalog_and_search(self):
-        self.assertEqual(len(self.catalog), 17)
+        self.assertEqual(len(self.catalog), 18)
         placeholders = [pack for pack in self.catalog if pack.get("workInProgress")]
         self.assertEqual(len(placeholders), 8)
         for pack in placeholders:
             self.assertEqual(pack["features"], [])
             self.assertTrue(all(pack[key] == "" for key in ["pagesUrl", "repoUrl", "demoUrl"]))
         self.open()
-        self.assertEqual(self.page.locator(".pack-card").count(), 17)
+        self.assertEqual(self.page.locator(".pack-card").count(), 18)
         self.assertEqual(self.page.locator(".wip-label").count(), 8)
         self.assertIn("8 work in progress", self.page.locator("#results-status").inner_text())
         self.page.get_by_role("searchbox").fill("claims triage")
@@ -248,7 +248,8 @@ class CatalogTests(unittest.TestCase):
             self.assertGreater(planned.locator(".wip-label").bounding_box()["width"], planned.bounding_box()["width"] * .7)
             self.assertEqual(planned.locator("a, button").count(), 0)
         self.page.get_by_label("Industry", exact=True).select_option("Insurance")
-        self.assertEqual(self.page.locator(".pack-card").first.get_attribute("data-pack-id"), "loss-triangle-suite")
+        first_insurance = next(pack["id"] for pack in reversed(self.catalog) if pack["industry"] == "Insurance" and not pack.get("workInProgress"))
+        self.assertEqual(self.page.locator(".pack-card").first.get_attribute("data-pack-id"), first_insurance)
 
     def test_setup_notes_match_where_examples_run(self):
         self.open()

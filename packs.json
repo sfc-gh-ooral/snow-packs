@@ -67,6 +67,30 @@
     "updated": "2026-10"
   },
   {
+    "id": "insurance-sales-agent",
+    "title": "Insurance Sales Performance Agent",
+    "summary": "Help insurance sales teams explain loss ratios, dealer performance, and market share in plain English, alongside the reports they already use.",
+    "industry": "Insurance",
+    "function": "Sales",
+    "outcome": "serve-clients",
+    "features": ["Cortex Agents", "Cortex Analyst", "Semantic Views", "AI_COMPLETE", "Row Access Policies"],
+    "tags": ["dealer", "vehicle service contract", "GAP", "tire and wheel", "loss ratio", "attach rate", "market share", "verified queries", "sales"],
+    "setup": "local",
+    "images": [
+      { "src": "assets/packs/insurance-sales-agent-1.jpg", "alt": "Territory overview: written premium, contracts, attach rate, loss ratio, and market share with year-over-year changes; Southeast contracts down 13.8% (semantic view metrics)" },
+      { "src": "assets/packs/insurance-sales-agent-2.jpg", "alt": "Cortex Agent explaining the Southeast decline with three named dealers, a chart, the SQL used, and a verified query badge" },
+      { "src": "assets/packs/insurance-sales-agent-3.jpg", "alt": "Dealer detail: GAP loss ratio split into frequency and severity, plus an AI_COMPLETE visit prep brief saved to My insights" },
+      { "src": "assets/packs/insurance-sales-agent-4.jpg", "alt": "My insights: pinned agent answers and visit briefs with the rep's notes, ready to export" },
+      { "src": "assets/packs/insurance-sales-agent-5.jpg", "alt": "Dealer explorer Movers tab ranking the biggest decliners and gainers year over year" },
+      { "src": "assets/packs/insurance-sales-agent-6.jpg", "alt": "Rep view: a row access policy limits the dealer explorer to one territory" }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-insurance-sales-agent/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-insurance-sales-agent/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-insurance-sales-agent",
+    "author": "Oz Oral",
+    "updated": "2026-11"
+  },
+  {
     "id": "regulatory-audit-time-travel",
     "title": "Regulatory Reporting with Time Travel",
     "summary": "Show a regulator exactly what a report said on the filing date, what changed afterward, and who changed it, without restoring backups.",
