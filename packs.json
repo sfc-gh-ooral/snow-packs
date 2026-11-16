@@ -299,6 +299,28 @@
     "updated": "2026-11"
   },
   {
+    "id": "cyber-risk-copilot",
+    "title": "Cyber Risk Copilot",
+    "summary": "Help security leaders and control owners ask plain-English questions about cyber posture, exposure, ownership, and remediation status, with answers tied to governed data and cited policy text.",
+    "industry": "Financial Services",
+    "function": "Risk",
+    "outcome": "manage-risk",
+    "features": ["Cortex Agents", "Cortex Analyst", "Cortex Search", "Semantic Views", "Streamlit", "Snowflake SQL"],
+    "tags": ["cybersecurity", "security posture", "copilot", "natural language", "control owners", "vulnerability management", "remediation", "SLA"],
+    "setup": "local",
+    "images": [
+      { "src": "assets/packs/cyber-risk-copilot-1.jpg", "alt": "Posture overview: open findings, open critical, SLA breach rate and age, with headline numbers from a semantic view" },
+      { "src": "assets/packs/cyber-risk-copilot-2.jpg", "alt": "Services and findings: services ranked by open critical findings, with a priority list for the selected service" },
+      { "src": "assets/packs/cyber-risk-copilot-3.jpg", "alt": "Ask the copilot in Snowflake mode: a Cortex Agent answers a remediation-deadline question with policy text found by Cortex Search" },
+      { "src": "assets/packs/cyber-risk-copilot-4.jpg", "alt": "Ask the copilot in sample mode: a ranked data answer and cited policy sources, labelled Sample AI response" }
+    ],
+    "pagesUrl": "https://sfc-gh-siprasad.github.io/sfguide-cyber-risk-copilot/",
+    "demoUrl": "https://sfc-gh-siprasad.github.io/sfguide-cyber-risk-copilot/try/",
+    "repoUrl": "https://github.com/sfc-gh-siprasad/sfguide-cyber-risk-copilot",
+    "author": "Siddharth Prasad",
+    "updated": "2026-11"
+  },
+  {
     "id": "investment-research-workbench",
     "title": "Investment Research Workbench",
     "summary": "A planned workspace for organizing company filings, research notes, and supporting evidence to help analysts compare investment themes.",
@@ -324,22 +346,6 @@
     "workInProgress": true,
     "features": [],
     "tags": ["cybersecurity", "vulnerability management", "risk scoring", "remediation", "attack surface"],
-    "pagesUrl": "",
-    "demoUrl": "",
-    "repoUrl": "",
-    "author": "Siddharth Prasad",
-    "updated": "2026-11"
-  },
-  {
-    "id": "cyber-risk-copilot",
-    "title": "Cyber Risk Copilot",
-    "summary": "A planned natural-language assistant that helps security leaders and control owners explore cyber posture, exposure, ownership, and remediation status.",
-    "industry": "Financial Services",
-    "function": "Risk",
-    "outcome": "manage-risk",
-    "workInProgress": true,
-    "features": [],
-    "tags": ["cybersecurity", "security posture", "copilot", "natural language", "control owners"],
     "pagesUrl": "",
     "demoUrl": "",
     "repoUrl": "",
