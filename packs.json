@@ -115,20 +115,28 @@
     "updated": "2026-11"
   },
   {
-    "id": "credit-risk-monitor",
-    "title": "Credit Risk Monitor",
-    "summary": "A planned exploration of borrower trends, portfolio concentrations, and early warning signals to support credit reviews.",
+    "id": "credit-risk-model-studio",
+    "title": "Credit Risk Model Studio",
+    "summary": "Help consumer lending risk teams build, validate, and monitor a default model in Snowflake without moving data to laptops, and act on early warnings.",
     "industry": "Banking",
     "function": "Risk",
     "outcome": "manage-risk",
-    "workInProgress": true,
-    "features": [],
-    "tags": ["lending", "loans", "credit exposure"],
-    "pagesUrl": "",
-    "demoUrl": "",
-    "repoUrl": "",
-    "author": "Snow Packs",
-    "updated": "2026-10"
+    "features": ["Feature Store", "Snowflake ML", "Model Registry", "ML Observability", "Model Explainability (Preview)", "AI_COMPLETE", "Dynamic Tables", "Tasks"],
+    "tags": ["credit risk", "consumer lending", "default model", "PD", "model risk management", "MRM", "SR 11-7", "model validation", "drift", "PSI", "champion challenger", "early warning", "reason codes", "SHAP", "XGBoost", "vintage curves", "expected loss"],
+    "setup": "local",
+    "images": [
+      { "src": "assets/packs/credit-risk-model-studio-1.jpg", "alt": "Portfolio overview: active loans, balance, 30+ DPD rate, and expected loss, with a utilization drift alert and vintage loss curves (Snowflake SQL and Model Registry batch scores)" },
+      { "src": "assets/packs/credit-risk-model-studio-2.jpg", "alt": "Monitoring: revolving utilization PSI of 0.34 above the 0.25 alert, PSI by feature over time, and a stability heatmap (ML Observability model monitor)" },
+      { "src": "assets/packs/credit-risk-model-studio-3.jpg", "alt": "Model workbench: champion V1 vs. challenger V2 out-of-time AUC, KS, and Gini, calibration, feature importance, and training runs (Snowflake ML, Feature Store, Model Registry)" },
+      { "src": "assets/packs/credit-risk-model-studio-4.jpg", "alt": "Model card: fairness by segment showing new-to-credit underprediction, registry versions, and an AI_COMPLETE-drafted documentation section labeled as a sample" },
+      { "src": "assets/packs/credit-risk-model-studio-5.jpg", "alt": "Early-warning queue after the validator promotes V2: performing accounts ranked by 3-month change in default probability with SHAP reason codes (model.run and explain)" },
+      { "src": "assets/packs/credit-risk-model-studio-6.jpg", "alt": "Account drill-down: default-probability gauge, SHAP reason codes, 12 months of payments and utilization, and outreach, watchlist, or dismiss actions" }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-credit-risk-model-studio/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-credit-risk-model-studio/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-credit-risk-model-studio",
+    "author": "Oz Oral",
+    "updated": "2026-11"
   },
   {
     "id": "liquidity-and-cash-flow",

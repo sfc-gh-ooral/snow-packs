@@ -212,14 +212,14 @@ class CatalogTests(unittest.TestCase):
     def test_placeholder_catalog_and_search(self):
         self.assertEqual(len(self.catalog), 21)
         placeholders = [pack for pack in self.catalog if pack.get("workInProgress")]
-        self.assertEqual(len(placeholders), 6)
+        self.assertEqual(len(placeholders), 5)
         for pack in placeholders:
             self.assertEqual(pack["features"], [])
             self.assertTrue(all(pack[key] == "" for key in ["pagesUrl", "repoUrl", "demoUrl"]))
         self.open()
         self.assertEqual(self.page.locator(".pack-card").count(), 21)
-        self.assertEqual(self.page.locator(".wip-label").count(), 6)
-        self.assertIn("6 work in progress", self.page.locator("#results-status").inner_text())
+        self.assertEqual(self.page.locator(".wip-label").count(), 5)
+        self.assertIn("5 work in progress", self.page.locator("#results-status").inner_text())
         self.page.get_by_role("searchbox").fill("claims triage")
         self.count(1)
         self.assertTrue(self.page.get_by_role("heading", name="Claims Triage Insights").is_visible())
