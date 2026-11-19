@@ -6,16 +6,48 @@
     "industry": "Banking",
     "function": "Compliance",
     "outcome": "catch-financial-crime",
-    "features": ["Streamlit in Snowflake", "Cortex AI_EXTRACT", "Cortex AI_COMPLETE", "JAROWINKLER_SIMILARITY", "Dynamic Data Masking", "Row Access Policies"],
-    "tags": ["know your customer", "due diligence", "onboarding", "sanctions screening", "identity verification", "PEP"],
+    "features": [
+      "Streamlit in Snowflake",
+      "Cortex AI_EXTRACT",
+      "Cortex AI_COMPLETE",
+      "JAROWINKLER_SIMILARITY",
+      "Dynamic Data Masking",
+      "Row Access Policies"
+    ],
+    "tags": [
+      "know your customer",
+      "due diligence",
+      "onboarding",
+      "sanctions screening",
+      "identity verification",
+      "PEP"
+    ],
     "setup": "local",
     "images": [
-      { "src": "assets/packs/kyc-onboarding-workbench-1.jpg", "alt": "Overview: onboarding KPIs, daily applications by status, and the open work queue on synthetic data" },
-      { "src": "assets/packs/kyc-onboarding-workbench-2.jpg", "alt": "Identity check: Cortex AI_EXTRACT reads a synthetic license and flags a surname mismatch with the application" },
-      { "src": "assets/packs/kyc-onboarding-workbench-3.jpg", "alt": "Explainable risk score: each point traced to a named factor, with what-if weights for the whole book" },
-      { "src": "assets/packs/kyc-onboarding-workbench-4.jpg", "alt": "Screening: JAROWINKLER_SIMILARITY matches against sanctions, PEP, and adverse-media lists, with corroborating fields" },
-      { "src": "assets/packs/kyc-onboarding-workbench-5.jpg", "alt": "Analyst decision: a Cortex AI_COMPLETE case summary grounded in the case facts, next to the open alerts" },
-      { "src": "assets/packs/kyc-onboarding-workbench-6.jpg", "alt": "Governance: the same applicant records viewed as an auditor, with masking applied to tax IDs, birth dates, and document numbers" }
+      {
+        "src": "assets/packs/kyc-onboarding-workbench-1.jpg",
+        "alt": "Overview: onboarding KPIs, daily applications by status, and the open work queue on synthetic data"
+      },
+      {
+        "src": "assets/packs/kyc-onboarding-workbench-2.jpg",
+        "alt": "Identity check: Cortex AI_EXTRACT reads a synthetic license and flags a surname mismatch with the application"
+      },
+      {
+        "src": "assets/packs/kyc-onboarding-workbench-3.jpg",
+        "alt": "Explainable risk score: each point traced to a named factor, with what-if weights for the whole book"
+      },
+      {
+        "src": "assets/packs/kyc-onboarding-workbench-4.jpg",
+        "alt": "Screening: JAROWINKLER_SIMILARITY matches against sanctions, PEP, and adverse-media lists, with corroborating fields"
+      },
+      {
+        "src": "assets/packs/kyc-onboarding-workbench-5.jpg",
+        "alt": "Analyst decision: a Cortex AI_COMPLETE case summary grounded in the case facts, next to the open alerts"
+      },
+      {
+        "src": "assets/packs/kyc-onboarding-workbench-6.jpg",
+        "alt": "Governance: the same applicant records viewed as an auditor, with masking applied to tax IDs, birth dates, and document numbers"
+      }
     ],
     "pagesUrl": "https://sfc-gh-jacho.github.io/sfguide-kyc-onboarding-workbench/",
     "demoUrl": "https://sfc-gh-jacho.github.io/sfguide-kyc-onboarding-workbench/try/",
@@ -30,14 +62,35 @@
     "industry": "Insurance",
     "function": "Finance",
     "outcome": "manage-risk",
-    "features": ["Cortex Agents", "Cortex Analyst", "Semantic Views", "Cortex AI_COMPLETE", "Snowflake SQL"],
+    "features": [
+      "Cortex Agents",
+      "Cortex Analyst",
+      "Semantic Views",
+      "Cortex AI_COMPLETE",
+      "Snowflake SQL"
+    ],
     "setup": "local",
     "images": [
-      { "src": "assets/packs/loss-triangle-suite-1.jpg", "alt": "Portfolio dashboard: reserve KPIs, paid loss development by accident year, and anomaly flags computed in Snowflake views" },
-      { "src": "assets/packs/loss-triangle-suite-2.jpg", "alt": "Cortex Agent with Cortex Analyst answering a reserve question over the semantic view, with the supporting triangle" },
-      { "src": "assets/packs/loss-triangle-suite-3.jpg", "alt": "Triangle explorer: cumulative paid losses with age-to-age factors and selected development factors" },
-      { "src": "assets/packs/loss-triangle-suite-4.jpg", "alt": "Segment analysis comparing development patterns across tiers, with insights written by AI_COMPLETE" },
-      { "src": "assets/packs/loss-triangle-suite-5.jpg", "alt": "Consistency test applying uniform selection rules across triangles and comparing prior and current ultimates" }
+      {
+        "src": "assets/packs/loss-triangle-suite-1.jpg",
+        "alt": "Portfolio dashboard: reserve KPIs, paid loss development by accident year, and anomaly flags computed in Snowflake views"
+      },
+      {
+        "src": "assets/packs/loss-triangle-suite-2.jpg",
+        "alt": "Cortex Agent with Cortex Analyst answering a reserve question over the semantic view, with the supporting triangle"
+      },
+      {
+        "src": "assets/packs/loss-triangle-suite-3.jpg",
+        "alt": "Triangle explorer: cumulative paid losses with age-to-age factors and selected development factors"
+      },
+      {
+        "src": "assets/packs/loss-triangle-suite-4.jpg",
+        "alt": "Segment analysis comparing development patterns across tiers, with insights written by AI_COMPLETE"
+      },
+      {
+        "src": "assets/packs/loss-triangle-suite-5.jpg",
+        "alt": "Consistency test applying uniform selection rules across triangles and comparing prior and current ultimates"
+      }
     ],
     "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-loss-triangle-analysis/",
     "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-loss-triangle-analysis/try/",
@@ -52,13 +105,30 @@
     "industry": "Financial Services",
     "function": "Operations",
     "outcome": "serve-clients",
-    "features": ["Cortex AI_COMPLETE", "AI_CLASSIFY", "Sentiment Analysis", "Snowflake SQL"],
+    "features": [
+      "Cortex AI_COMPLETE",
+      "AI_CLASSIFY",
+      "Sentiment Analysis",
+      "Snowflake SQL"
+    ],
     "setup": "local",
     "images": [
-      { "src": "assets/packs/contact-driver-analytics-1.jpg", "alt": "Dashboard: weekly call volume, sentiment, and escalation KPIs with a 13-week trend and calls by line of business" },
-      { "src": "assets/packs/contact-driver-analytics-2.jpg", "alt": "Top contact drivers by line of business, product, segment, and caller, with sentiment and resolution rate" },
-      { "src": "assets/packs/contact-driver-analytics-3.jpg", "alt": "Transcript explorer: Cortex sentiment, AI_CLASSIFY driver label, and AI_COMPLETE call summary beside the full conversation" },
-      { "src": "assets/packs/contact-driver-analytics-4.jpg", "alt": "AI insights: executive summary, key findings, and recommendations that AI_COMPLETE writes from driver statistics" }
+      {
+        "src": "assets/packs/contact-driver-analytics-1.jpg",
+        "alt": "Dashboard: weekly call volume, sentiment, and escalation KPIs with a 13-week trend and calls by line of business"
+      },
+      {
+        "src": "assets/packs/contact-driver-analytics-2.jpg",
+        "alt": "Top contact drivers by line of business, product, segment, and caller, with sentiment and resolution rate"
+      },
+      {
+        "src": "assets/packs/contact-driver-analytics-3.jpg",
+        "alt": "Transcript explorer: Cortex sentiment, AI_CLASSIFY driver label, and AI_COMPLETE call summary beside the full conversation"
+      },
+      {
+        "src": "assets/packs/contact-driver-analytics-4.jpg",
+        "alt": "AI insights: executive summary, key findings, and recommendations that AI_COMPLETE writes from driver statistics"
+      }
     ],
     "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-contact-driver-analytics/",
     "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-contact-driver-analytics/try/",
@@ -73,16 +143,50 @@
     "industry": "Insurance",
     "function": "Sales",
     "outcome": "serve-clients",
-    "features": ["Cortex Agents", "Cortex Analyst", "Semantic Views", "AI_COMPLETE", "Row Access Policies"],
-    "tags": ["dealer", "vehicle service contract", "GAP", "tire and wheel", "loss ratio", "attach rate", "market share", "verified queries", "sales"],
+    "features": [
+      "Cortex Agents",
+      "Cortex Analyst",
+      "Semantic Views",
+      "AI_COMPLETE",
+      "Row Access Policies"
+    ],
+    "tags": [
+      "dealer",
+      "vehicle service contract",
+      "GAP",
+      "tire and wheel",
+      "loss ratio",
+      "attach rate",
+      "market share",
+      "verified queries",
+      "sales"
+    ],
     "setup": "local",
     "images": [
-      { "src": "assets/packs/insurance-sales-agent-1.jpg", "alt": "Territory overview: written premium, contracts, attach rate, loss ratio, and market share with year-over-year changes; Southeast contracts down 13.8% (semantic view metrics)" },
-      { "src": "assets/packs/insurance-sales-agent-2.jpg", "alt": "Cortex Agent explaining the Southeast decline with three named dealers, a chart, the SQL used, and a verified query badge" },
-      { "src": "assets/packs/insurance-sales-agent-3.jpg", "alt": "Dealer detail: GAP loss ratio split into frequency and severity, plus an AI_COMPLETE visit prep brief saved to My insights" },
-      { "src": "assets/packs/insurance-sales-agent-4.jpg", "alt": "My insights: pinned agent answers and visit briefs with the rep's notes, ready to export" },
-      { "src": "assets/packs/insurance-sales-agent-5.jpg", "alt": "Dealer explorer Movers tab ranking the biggest decliners and gainers year over year" },
-      { "src": "assets/packs/insurance-sales-agent-6.jpg", "alt": "Rep view: a row access policy limits the dealer explorer to one territory" }
+      {
+        "src": "assets/packs/insurance-sales-agent-1.jpg",
+        "alt": "Territory overview: written premium, contracts, attach rate, loss ratio, and market share with year-over-year changes; Southeast contracts down 13.8% (semantic view metrics)"
+      },
+      {
+        "src": "assets/packs/insurance-sales-agent-2.jpg",
+        "alt": "Cortex Agent explaining the Southeast decline with three named dealers, a chart, the SQL used, and a verified query badge"
+      },
+      {
+        "src": "assets/packs/insurance-sales-agent-3.jpg",
+        "alt": "Dealer detail: GAP loss ratio split into frequency and severity, plus an AI_COMPLETE visit prep brief saved to My insights"
+      },
+      {
+        "src": "assets/packs/insurance-sales-agent-4.jpg",
+        "alt": "My insights: pinned agent answers and visit briefs with the rep's notes, ready to export"
+      },
+      {
+        "src": "assets/packs/insurance-sales-agent-5.jpg",
+        "alt": "Dealer explorer Movers tab ranking the biggest decliners and gainers year over year"
+      },
+      {
+        "src": "assets/packs/insurance-sales-agent-6.jpg",
+        "alt": "Rep view: a row access policy limits the dealer explorer to one territory"
+      }
     ],
     "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-insurance-sales-agent/",
     "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-insurance-sales-agent/try/",
@@ -97,16 +201,45 @@
     "industry": "Banking",
     "function": "Compliance",
     "outcome": "prove-compliance",
-    "features": ["Time Travel", "Zero-Copy Cloning", "Streams", "Access History"],
-    "tags": ["regulatory reporting", "audit trail", "capital report", "filings", "undrop"],
+    "features": [
+      "Time Travel",
+      "Zero-Copy Cloning",
+      "Streams",
+      "Access History"
+    ],
+    "tags": [
+      "regulatory reporting",
+      "audit trail",
+      "capital report",
+      "filings",
+      "undrop"
+    ],
     "setup": "snowflake",
     "images": [
-      { "src": "assets/packs/regulatory-audit-time-travel-1.jpg", "alt": "Overview: reproduce a capital report as filed, explain what changed, and show who changed it" },
-      { "src": "assets/packs/regulatory-audit-time-travel-2.jpg", "alt": "Time Travel AT(TIMESTAMP): the report as filed next to today's numbers, by legal entity" },
-      { "src": "assets/packs/regulatory-audit-time-travel-3.jpg", "alt": "Zero-copy clone: a permanent snapshot of the filing that matches Time Travel exactly" },
-      { "src": "assets/packs/regulatory-audit-time-travel-4.jpg", "alt": "Streams: an audit log of every post-filing insert, update, and delete with old and new values" },
-      { "src": "assets/packs/regulatory-audit-time-travel-5.jpg", "alt": "Query history: who changed each row after the filing, with user, role, and statement" },
-      { "src": "assets/packs/regulatory-audit-time-travel-6.jpg", "alt": "UNDROP TABLE: a dropped table recovered instantly, with its history intact" }
+      {
+        "src": "assets/packs/regulatory-audit-time-travel-1.jpg",
+        "alt": "Overview: reproduce a capital report as filed, explain what changed, and show who changed it"
+      },
+      {
+        "src": "assets/packs/regulatory-audit-time-travel-2.jpg",
+        "alt": "Time Travel AT(TIMESTAMP): the report as filed next to today's numbers, by legal entity"
+      },
+      {
+        "src": "assets/packs/regulatory-audit-time-travel-3.jpg",
+        "alt": "Zero-copy clone: a permanent snapshot of the filing that matches Time Travel exactly"
+      },
+      {
+        "src": "assets/packs/regulatory-audit-time-travel-4.jpg",
+        "alt": "Streams: an audit log of every post-filing insert, update, and delete with old and new values"
+      },
+      {
+        "src": "assets/packs/regulatory-audit-time-travel-5.jpg",
+        "alt": "Query history: who changed each row after the filing, with user, role, and statement"
+      },
+      {
+        "src": "assets/packs/regulatory-audit-time-travel-6.jpg",
+        "alt": "UNDROP TABLE: a dropped table recovered instantly, with its history intact"
+      }
     ],
     "pagesUrl": "https://sfc-gh-jacho.github.io/sfguide-regulatory-audit-time-travel/",
     "demoUrl": "",
@@ -123,7 +256,11 @@
     "outcome": "manage-risk",
     "workInProgress": true,
     "features": [],
-    "tags": ["lending", "loans", "credit exposure"],
+    "tags": [
+      "lending",
+      "loans",
+      "credit exposure"
+    ],
     "pagesUrl": "",
     "demoUrl": "",
     "repoUrl": "",
@@ -139,7 +276,11 @@
     "outcome": "manage-risk",
     "workInProgress": true,
     "features": [],
-    "tags": ["treasury", "funding", "deposits"],
+    "tags": [
+      "treasury",
+      "funding",
+      "deposits"
+    ],
     "pagesUrl": "",
     "demoUrl": "",
     "repoUrl": "",
@@ -153,16 +294,46 @@
     "industry": "Banking",
     "function": "Compliance",
     "outcome": "catch-financial-crime",
-    "features": ["Dynamic Tables", "Row Access Policies", "Cortex AI", "Snowflake SQL"],
-    "tags": ["anti-money laundering", "financial crime", "transactions", "structuring", "alerts", "case management"],
+    "features": [
+      "Dynamic Tables",
+      "Row Access Policies",
+      "Cortex AI",
+      "Snowflake SQL"
+    ],
+    "tags": [
+      "anti-money laundering",
+      "financial crime",
+      "transactions",
+      "structuring",
+      "alerts",
+      "case management"
+    ],
     "setup": "snowflake",
     "images": [
-      { "src": "assets/packs/aml-transaction-monitoring-1.jpg", "alt": "Overview: from 500,000 synthetic transactions to a prioritized, explainable alert queue" },
-      { "src": "assets/packs/aml-transaction-monitoring-2.jpg", "alt": "Structuring rule in SQL: near-threshold cash deposits found with QUALIFY, each with an explanation" },
-      { "src": "assets/packs/aml-transaction-monitoring-3.jpg", "alt": "Risk scoring in a Dynamic Table: alerts ranked 0-100 and refreshed as transactions land" },
-      { "src": "assets/packs/aml-transaction-monitoring-4.jpg", "alt": "Case investigation: every transaction behind a structuring alert, near-threshold deposits flagged" },
-      { "src": "assets/packs/aml-transaction-monitoring-5.jpg", "alt": "Row access policy: investigators see only their region's alerts; managers see both" },
-      { "src": "assets/packs/aml-transaction-monitoring-6.jpg", "alt": "Cortex AI_COMPLETE: draft case summaries shown next to the facts they used" }
+      {
+        "src": "assets/packs/aml-transaction-monitoring-1.jpg",
+        "alt": "Overview: from 500,000 synthetic transactions to a prioritized, explainable alert queue"
+      },
+      {
+        "src": "assets/packs/aml-transaction-monitoring-2.jpg",
+        "alt": "Structuring rule in SQL: near-threshold cash deposits found with QUALIFY, each with an explanation"
+      },
+      {
+        "src": "assets/packs/aml-transaction-monitoring-3.jpg",
+        "alt": "Risk scoring in a Dynamic Table: alerts ranked 0-100 and refreshed as transactions land"
+      },
+      {
+        "src": "assets/packs/aml-transaction-monitoring-4.jpg",
+        "alt": "Case investigation: every transaction behind a structuring alert, near-threshold deposits flagged"
+      },
+      {
+        "src": "assets/packs/aml-transaction-monitoring-5.jpg",
+        "alt": "Row access policy: investigators see only their region's alerts; managers see both"
+      },
+      {
+        "src": "assets/packs/aml-transaction-monitoring-6.jpg",
+        "alt": "Cortex AI_COMPLETE: draft case summaries shown next to the facts they used"
+      }
     ],
     "pagesUrl": "https://sfc-gh-jacho.github.io/sfguide-aml-transaction-monitoring/",
     "demoUrl": "",
@@ -177,16 +348,50 @@
     "industry": "Payments",
     "function": "Risk",
     "outcome": "catch-financial-crime",
-    "features": ["Streamlit in Snowflake", "Window Functions", "HAVERSINE", "Cortex AI_COMPLETE", "Cortex AI_AGG", "Dynamic Data Masking"],
-    "tags": ["cards", "fraud", "transactions", "card testing", "account takeover", "impossible travel", "false positives", "chargebacks"],
+    "features": [
+      "Streamlit in Snowflake",
+      "Window Functions",
+      "HAVERSINE",
+      "Cortex AI_COMPLETE",
+      "Cortex AI_AGG",
+      "Dynamic Data Masking"
+    ],
+    "tags": [
+      "cards",
+      "fraud",
+      "transactions",
+      "card testing",
+      "account takeover",
+      "impossible travel",
+      "false positives",
+      "chargebacks"
+    ],
     "setup": "local",
     "images": [
-      { "src": "assets/packs/card-fraud-console-1.jpg", "alt": "Overview: today's payments, alerts, dollars at risk, and 30 days of alerts by pattern on synthetic data" },
-      { "src": "assets/packs/card-fraud-console-2.jpg", "alt": "Live feed: payments replayed and scored as they arrive, with window functions and HAVERSINE in SQL" },
-      { "src": "assets/packs/card-fraud-console-3.jpg", "alt": "Alert queue: highest-risk payments first, filterable by card testing, account takeover, and impossible travel" },
-      { "src": "assets/packs/card-fraud-console-4.jpg", "alt": "Case review: each signal behind the score, a map of the card's jump between cities, and a Cortex AI_COMPLETE briefing" },
-      { "src": "assets/packs/card-fraud-console-5.jpg", "alt": "Threshold tuning: fraud dollars caught vs. good payments declined at every threshold, on synthetic labeled history" },
-      { "src": "assets/packs/card-fraud-console-6.jpg", "alt": "Patterns: a common point of purchase across alerted cards, and a Cortex AI_AGG summary of analyst notes" }
+      {
+        "src": "assets/packs/card-fraud-console-1.jpg",
+        "alt": "Overview: today's payments, alerts, dollars at risk, and 30 days of alerts by pattern on synthetic data"
+      },
+      {
+        "src": "assets/packs/card-fraud-console-2.jpg",
+        "alt": "Live feed: payments replayed and scored as they arrive, with window functions and HAVERSINE in SQL"
+      },
+      {
+        "src": "assets/packs/card-fraud-console-3.jpg",
+        "alt": "Alert queue: highest-risk payments first, filterable by card testing, account takeover, and impossible travel"
+      },
+      {
+        "src": "assets/packs/card-fraud-console-4.jpg",
+        "alt": "Case review: each signal behind the score, a map of the card's jump between cities, and a Cortex AI_COMPLETE briefing"
+      },
+      {
+        "src": "assets/packs/card-fraud-console-5.jpg",
+        "alt": "Threshold tuning: fraud dollars caught vs. good payments declined at every threshold, on synthetic labeled history"
+      },
+      {
+        "src": "assets/packs/card-fraud-console-6.jpg",
+        "alt": "Patterns: a common point of purchase across alerted cards, and a Cortex AI_AGG summary of analyst notes"
+      }
     ],
     "pagesUrl": "https://sfc-gh-jacho.github.io/sfguide-card-fraud-console/",
     "demoUrl": "https://sfc-gh-jacho.github.io/sfguide-card-fraud-console/try/",
@@ -203,7 +408,11 @@
     "outcome": "serve-clients",
     "workInProgress": true,
     "features": [],
-    "tags": ["claims management", "adjusters", "first notice of loss"],
+    "tags": [
+      "claims management",
+      "adjusters",
+      "first notice of loss"
+    ],
     "pagesUrl": "",
     "demoUrl": "",
     "repoUrl": "",
@@ -219,7 +428,11 @@
     "outcome": "manage-risk",
     "workInProgress": true,
     "features": [],
-    "tags": ["commercial insurance", "submissions", "risk assessment"],
+    "tags": [
+      "commercial insurance",
+      "submissions",
+      "risk assessment"
+    ],
     "pagesUrl": "",
     "demoUrl": "",
     "repoUrl": "",
@@ -233,16 +446,45 @@
     "industry": "Capital Markets",
     "function": "Compliance",
     "outcome": "catch-financial-crime",
-    "features": ["MATCH_RECOGNIZE", "Dynamic Tables", "Dynamic Data Masking", "Snowflake SQL"],
-    "tags": ["market abuse", "trading", "orders", "market conduct", "alerts"],
+    "features": [
+      "MATCH_RECOGNIZE",
+      "Dynamic Tables",
+      "Dynamic Data Masking",
+      "Snowflake SQL"
+    ],
+    "tags": [
+      "market abuse",
+      "trading",
+      "orders",
+      "market conduct",
+      "alerts"
+    ],
     "setup": "snowflake",
     "images": [
-      { "src": "assets/packs/trade-surveillance-1.jpg", "alt": "Overview: explainable surveillance of 200,000 orders across four market-abuse rules" },
-      { "src": "assets/packs/trade-surveillance-2.jpg", "alt": "MATCH_RECOGNIZE: spoofing sequences found as a pattern over orders, with a plain-English explanation" },
-      { "src": "assets/packs/trade-surveillance-3.jpg", "alt": "Consolidated alert queue: 200,055 orders reduced to 12 planted cases on this synthetic data" },
-      { "src": "assets/packs/trade-surveillance-4.jpg", "alt": "Case investigation: the exact order-and-cancel timeline behind a spoofing alert" },
-      { "src": "assets/packs/trade-surveillance-5.jpg", "alt": "Dynamic Table: the alert queue refreshes itself as new orders land" },
-      { "src": "assets/packs/trade-surveillance-6.jpg", "alt": "Dynamic Data Masking: analysts see trader IDs; reviewers see consistent pseudonyms" }
+      {
+        "src": "assets/packs/trade-surveillance-1.jpg",
+        "alt": "Overview: explainable surveillance of 200,000 orders across four market-abuse rules"
+      },
+      {
+        "src": "assets/packs/trade-surveillance-2.jpg",
+        "alt": "MATCH_RECOGNIZE: spoofing sequences found as a pattern over orders, with a plain-English explanation"
+      },
+      {
+        "src": "assets/packs/trade-surveillance-3.jpg",
+        "alt": "Consolidated alert queue: 200,055 orders reduced to 12 planted cases on this synthetic data"
+      },
+      {
+        "src": "assets/packs/trade-surveillance-4.jpg",
+        "alt": "Case investigation: the exact order-and-cancel timeline behind a spoofing alert"
+      },
+      {
+        "src": "assets/packs/trade-surveillance-5.jpg",
+        "alt": "Dynamic Table: the alert queue refreshes itself as new orders land"
+      },
+      {
+        "src": "assets/packs/trade-surveillance-6.jpg",
+        "alt": "Dynamic Data Masking: analysts see trader IDs; reviewers see consistent pseudonyms"
+      }
     ],
     "pagesUrl": "https://sfc-gh-jacho.github.io/sfguide-trade-surveillance/",
     "demoUrl": "",
@@ -257,16 +499,47 @@
     "industry": "Wealth Management",
     "function": "Compliance",
     "outcome": "prove-compliance",
-    "features": ["Row Access Policies", "Dynamic Data Masking", "Tag-based Masking", "Aggregation Policies", "Secure Views"],
-    "tags": ["entitlements", "data governance", "advisors", "client data", "privacy", "research sharing"],
+    "features": [
+      "Row Access Policies",
+      "Dynamic Data Masking",
+      "Tag-based Masking",
+      "Aggregation Policies",
+      "Secure Views"
+    ],
+    "tags": [
+      "entitlements",
+      "data governance",
+      "advisors",
+      "client data",
+      "privacy",
+      "research sharing"
+    ],
     "setup": "snowflake",
     "images": [
-      { "src": "assets/packs/client-data-entitlements-1.jpg", "alt": "Overview: one wealth dataset for advisors, branch managers, compliance, and a research partner" },
-      { "src": "assets/packs/client-data-entitlements-2.jpg", "alt": "Row access policy driven by a mapping table: 50, 100, or 300 clients visible by role" },
-      { "src": "assets/packs/client-data-entitlements-3.jpg", "alt": "Masking and banding: the same client as each role sees them, with net worth banded" },
-      { "src": "assets/packs/client-data-entitlements-4.jpg", "alt": "Tag-based masking: a newly tagged column is protected the moment it arrives" },
-      { "src": "assets/packs/client-data-entitlements-5.jpg", "alt": "Aggregation policy: row-level partner queries blocked, grouped queries of 10+ clients allowed" },
-      { "src": "assets/packs/client-data-entitlements-6.jpg", "alt": "Secure view: de-identified sector exposure for the partner, with direct table access blocked" }
+      {
+        "src": "assets/packs/client-data-entitlements-1.jpg",
+        "alt": "Overview: one wealth dataset for advisors, branch managers, compliance, and a research partner"
+      },
+      {
+        "src": "assets/packs/client-data-entitlements-2.jpg",
+        "alt": "Row access policy driven by a mapping table: 50, 100, or 300 clients visible by role"
+      },
+      {
+        "src": "assets/packs/client-data-entitlements-3.jpg",
+        "alt": "Masking and banding: the same client as each role sees them, with net worth banded"
+      },
+      {
+        "src": "assets/packs/client-data-entitlements-4.jpg",
+        "alt": "Tag-based masking: a newly tagged column is protected the moment it arrives"
+      },
+      {
+        "src": "assets/packs/client-data-entitlements-5.jpg",
+        "alt": "Aggregation policy: row-level partner queries blocked, grouped queries of 10+ clients allowed"
+      },
+      {
+        "src": "assets/packs/client-data-entitlements-6.jpg",
+        "alt": "Secure view: de-identified sector exposure for the partner, with direct table access blocked"
+      }
     ],
     "pagesUrl": "https://sfc-gh-jacho.github.io/sfguide-fsi-client-entitlements/",
     "demoUrl": "",
@@ -281,16 +554,52 @@
     "industry": "Wealth Management",
     "function": "Advisory",
     "outcome": "serve-clients",
-    "features": ["Cortex Agents", "Cortex Analyst", "Semantic Views", "Cortex Search", "Cortex AI_COMPLETE", "Sentiment Analysis", "Row Access Policies", "Snowflake SQL"],
-    "tags": ["wealth", "next best action", "advisor", "meeting prep", "attrition", "RMD", "cash drag", "concentration"],
+    "features": [
+      "Cortex Agents",
+      "Cortex Analyst",
+      "Semantic Views",
+      "Cortex Search",
+      "Cortex AI_COMPLETE",
+      "Sentiment Analysis",
+      "Row Access Policies",
+      "Snowflake SQL"
+    ],
+    "tags": [
+      "wealth",
+      "next best action",
+      "advisor",
+      "meeting prep",
+      "attrition",
+      "RMD",
+      "cash drag",
+      "concentration"
+    ],
     "setup": "local",
     "images": [
-      { "src": "assets/packs/wealth-advisor-assistant-1.jpg", "alt": "Morning brief: top next best actions ranked by priority, from rules materialized in Snowflake SQL" },
-      { "src": "assets/packs/wealth-advisor-assistant-2.jpg", "alt": "Ask as all three: one Cortex Agent question as Advisor A, Advisor B, and the branch manager, each scoped by row access policies" },
-      { "src": "assets/packs/wealth-advisor-assistant-3.jpg", "alt": "Client prep: holdings, concentration, and allocation drift, with an AI_COMPLETE meeting agenda" },
-      { "src": "assets/packs/wealth-advisor-assistant-4.jpg", "alt": "Coach: a Cortex Agent answers book questions through Cortex Analyst on a semantic view, limited to the advisor's own clients" },
-      { "src": "assets/packs/wealth-advisor-assistant-5.jpg", "alt": "Supervision log: append-only record of every AI interaction, with Cortex Guard flags and agent traces" },
-      { "src": "assets/packs/wealth-advisor-assistant-6.jpg", "alt": "Book overview: AUM trend, net flows, segmentation, and allocation drift for one advisor's book" }
+      {
+        "src": "assets/packs/wealth-advisor-assistant-1.jpg",
+        "alt": "Morning brief: top next best actions ranked by priority, from rules materialized in Snowflake SQL"
+      },
+      {
+        "src": "assets/packs/wealth-advisor-assistant-2.jpg",
+        "alt": "Ask as all three: one Cortex Agent question as Advisor A, Advisor B, and the branch manager, each scoped by row access policies"
+      },
+      {
+        "src": "assets/packs/wealth-advisor-assistant-3.jpg",
+        "alt": "Client prep: holdings, concentration, and allocation drift, with an AI_COMPLETE meeting agenda"
+      },
+      {
+        "src": "assets/packs/wealth-advisor-assistant-4.jpg",
+        "alt": "Coach: a Cortex Agent answers book questions through Cortex Analyst on a semantic view, limited to the advisor's own clients"
+      },
+      {
+        "src": "assets/packs/wealth-advisor-assistant-5.jpg",
+        "alt": "Supervision log: append-only record of every AI interaction, with Cortex Guard flags and agent traces"
+      },
+      {
+        "src": "assets/packs/wealth-advisor-assistant-6.jpg",
+        "alt": "Book overview: AUM trend, net flows, segmentation, and allocation drift for one advisor's book"
+      }
     ],
     "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-wealth-advisor-assistant/",
     "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-wealth-advisor-assistant/try/",
@@ -305,14 +614,42 @@
     "industry": "Financial Services",
     "function": "Risk",
     "outcome": "manage-risk",
-    "features": ["Cortex Agents", "Cortex Analyst", "Cortex Search", "Semantic Views", "Streamlit", "Snowflake SQL"],
-    "tags": ["cybersecurity", "security posture", "copilot", "natural language", "control owners", "vulnerability management", "remediation", "SLA"],
+    "features": [
+      "Cortex Agents",
+      "Cortex Analyst",
+      "Cortex Search",
+      "Semantic Views",
+      "Streamlit",
+      "Snowflake SQL"
+    ],
+    "tags": [
+      "cybersecurity",
+      "security posture",
+      "copilot",
+      "natural language",
+      "control owners",
+      "vulnerability management",
+      "remediation",
+      "SLA"
+    ],
     "setup": "local",
     "images": [
-      { "src": "assets/packs/cyber-risk-copilot-1.jpg", "alt": "Posture overview: open findings, open critical, SLA breach rate and age, with headline numbers from a semantic view" },
-      { "src": "assets/packs/cyber-risk-copilot-2.jpg", "alt": "Services and findings: services ranked by open critical findings, with a priority list for the selected service" },
-      { "src": "assets/packs/cyber-risk-copilot-3.jpg", "alt": "Ask the copilot in Snowflake mode: a Cortex Agent answers a remediation-deadline question with policy text found by Cortex Search" },
-      { "src": "assets/packs/cyber-risk-copilot-4.jpg", "alt": "Ask the copilot in sample mode: a ranked data answer and cited policy sources, labelled Sample AI response" }
+      {
+        "src": "assets/packs/cyber-risk-copilot-1.jpg",
+        "alt": "Posture overview: open findings, open critical, SLA breach rate and age, with headline numbers from a semantic view"
+      },
+      {
+        "src": "assets/packs/cyber-risk-copilot-2.jpg",
+        "alt": "Services and findings: services ranked by open critical findings, with a priority list for the selected service"
+      },
+      {
+        "src": "assets/packs/cyber-risk-copilot-3.jpg",
+        "alt": "Ask the copilot in Snowflake mode: a Cortex Agent answers a remediation-deadline question with policy text found by Cortex Search"
+      },
+      {
+        "src": "assets/packs/cyber-risk-copilot-4.jpg",
+        "alt": "Ask the copilot in sample mode: a ranked data answer and cited policy sources, labelled Sample AI response"
+      }
     ],
     "pagesUrl": "https://sfc-gh-siprasad.github.io/sfguide-cyber-risk-copilot/",
     "demoUrl": "https://sfc-gh-siprasad.github.io/sfguide-cyber-risk-copilot/try/",
@@ -329,7 +666,11 @@
     "outcome": "serve-clients",
     "workInProgress": true,
     "features": [],
-    "tags": ["research", "filings", "investment analysis"],
+    "tags": [
+      "research",
+      "filings",
+      "investment analysis"
+    ],
     "pagesUrl": "",
     "demoUrl": "",
     "repoUrl": "",
@@ -343,19 +684,106 @@
     "industry": "Banking",
     "function": "Risk",
     "outcome": "manage-risk",
-    "features": ["Dynamic Tables", "Cortex AI_COMPLETE", "Streamlit", "Snowflake SQL"],
-    "tags": ["cybersecurity", "vulnerability management", "risk scoring", "remediation", "attack surface", "capacity planning", "known exploited", "SLA"],
+    "features": [
+      "Dynamic Tables",
+      "Cortex AI_COMPLETE",
+      "Streamlit",
+      "Snowflake SQL"
+    ],
+    "tags": [
+      "cybersecurity",
+      "vulnerability management",
+      "risk scoring",
+      "remediation",
+      "attack surface",
+      "capacity planning",
+      "known exploited",
+      "SLA"
+    ],
     "setup": "local",
     "images": [
-      { "src": "assets/packs/cyber-remediation-prioritization-1.jpg", "alt": "Priority queue: open findings ranked by an explainable risk score, with filters, tunable weights and risk by service, kept current by a Dynamic Table" },
-      { "src": "assets/packs/cyber-remediation-prioritization-2.jpg", "alt": "Finding detail in Snowflake mode: points per scoring factor and a recommended next action written by Cortex AI_COMPLETE" },
-      { "src": "assets/packs/cyber-remediation-prioritization-3.jpg", "alt": "Capacity planner: what 80 hours clears when the queue is ordered by severity only, risk score, or risk per hour" },
-      { "src": "assets/packs/cyber-remediation-prioritization-4.jpg", "alt": "Finding detail in sample mode: score breakdown, context and a templated recommendation labelled Sample AI response" }
+      {
+        "src": "assets/packs/cyber-remediation-prioritization-1.jpg",
+        "alt": "Priority queue: open findings ranked by an explainable risk score, with filters, tunable weights and risk by service, kept current by a Dynamic Table"
+      },
+      {
+        "src": "assets/packs/cyber-remediation-prioritization-2.jpg",
+        "alt": "Finding detail in Snowflake mode: points per scoring factor and a recommended next action written by Cortex AI_COMPLETE"
+      },
+      {
+        "src": "assets/packs/cyber-remediation-prioritization-3.jpg",
+        "alt": "Capacity planner: what 80 hours clears when the queue is ordered by severity only, risk score, or risk per hour"
+      },
+      {
+        "src": "assets/packs/cyber-remediation-prioritization-4.jpg",
+        "alt": "Finding detail in sample mode: score breakdown, context and a templated recommendation labelled Sample AI response"
+      }
     ],
     "pagesUrl": "https://sfc-gh-siprasad.github.io/sfguide-cyber-remediation-prioritization/",
     "demoUrl": "https://sfc-gh-siprasad.github.io/sfguide-cyber-remediation-prioritization/try/",
     "repoUrl": "https://github.com/sfc-gh-siprasad/sfguide-cyber-remediation-prioritization",
     "author": "Siddharth Prasad",
+    "updated": "2026-11"
+  },
+  {
+    "id": "auto-finance-self-service",
+    "title": "Auto Finance Self-Service Analytics",
+    "summary": "Help auto lending teams answer everyday questions in plain English from one governed semantic layer, and see which overlapping dashboards that layer already covers.",
+    "industry": "Banking",
+    "function": "Operations",
+    "outcome": "serve-clients",
+    "features": [
+      "Semantic Views",
+      "Cortex Analyst",
+      "Cortex Agents",
+      "Cortex Search",
+      "Cortex AI_EMBED",
+      "Cortex AI_COMPLETE"
+    ],
+    "tags": [
+      "auto finance",
+      "auto lending",
+      "dealer",
+      "dashboard rationalization",
+      "self-service analytics",
+      "verified queries",
+      "BI consolidation"
+    ],
+    "setup": "local",
+    "images": [
+      {
+        "src": "assets/packs/auto-finance-self-service-1.jpg",
+        "alt": "Overview: 300 dashboards, 40% near-duplicates and 80% covered by the semantic view, with October 2026 lending KPIs and a funded-volume trend"
+      },
+      {
+        "src": "assets/packs/auto-finance-self-service-2.jpg",
+        "alt": "Ask: funded volume by region from Cortex Analyst via a Cortex Agent, with a check that it matches the Regional Volume Summary dashboard"
+      },
+      {
+        "src": "assets/packs/auto-finance-self-service-3.jpg",
+        "alt": "Coverage map: AI_EMBED similarity groups dashboard copies under 12 core views, with coverage status from the semantic view"
+      },
+      {
+        "src": "assets/packs/auto-finance-self-service-4.jpg",
+        "alt": "Usage heat map and a retire queue where a person approves or keeps each near-duplicate dashboard with a note"
+      },
+      {
+        "src": "assets/packs/auto-finance-self-service-5.jpg",
+        "alt": "Accuracy scorecard: 11 questions through Cortex Analyst compared with legacy dashboard queries, pass rate by run"
+      },
+      {
+        "src": "assets/packs/auto-finance-self-service-6.jpg",
+        "alt": "Dealer drill-down: funnel, decline reasons, used-vehicle LTV trend, and an AI_COMPLETE narrative for the relationship manager"
+      },
+      {
+        "src": "assets/packs/auto-finance-self-service-7.jpg",
+        "alt": "Semantic model browser: governed metric definitions, owners, synonyms, and verified queries"
+      }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-auto-finance-self-service/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-auto-finance-self-service/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-auto-finance-self-service",
+    "author": "Oz Oral",
     "updated": "2026-11"
   },
   {
@@ -367,7 +795,13 @@
     "outcome": "catch-financial-crime",
     "workInProgress": true,
     "features": [],
-    "tags": ["account takeover", "cybersecurity", "fraud", "identity", "financial crime"],
+    "tags": [
+      "account takeover",
+      "cybersecurity",
+      "fraud",
+      "identity",
+      "financial crime"
+    ],
     "pagesUrl": "",
     "demoUrl": "",
     "repoUrl": "",
@@ -381,13 +815,38 @@
     "industry": "Banking",
     "function": "Finance",
     "outcome": "manage-risk",
-    "features": ["Cortex Agents", "Cortex Analyst", "Semantic Views", "Cortex AI_COMPLETE", "Streamlit in Snowflake", "Snowflake SQL"],
-    "tags": ["bank research", "call reports", "FFIEC", "FDIC", "peer analysis", "grounded AI", "verification", "hallucination guardrail"],
+    "features": [
+      "Cortex Agents",
+      "Cortex Analyst",
+      "Semantic Views",
+      "Cortex AI_COMPLETE",
+      "Streamlit in Snowflake",
+      "Snowflake SQL"
+    ],
+    "tags": [
+      "bank research",
+      "call reports",
+      "FFIEC",
+      "FDIC",
+      "peer analysis",
+      "grounded AI",
+      "verification",
+      "hallucination guardrail"
+    ],
     "setup": "snowflake",
     "images": [
-      { "src": "assets/packs/verified-bank-research-1.jpg", "alt": "Gallery of verified research notes with status badges on synthetic data" },
-      { "src": "assets/packs/verified-bank-research-2.jpg", "alt": "A verified peer note: one-line takeaway, comparison table, and a Data Coverage footer" },
-      { "src": "assets/packs/verified-bank-research-3.jpg", "alt": "The verifier flagging a hedged draft as Needs review and listing the removed claims" }
+      {
+        "src": "assets/packs/verified-bank-research-1.jpg",
+        "alt": "Gallery of verified research notes with status badges on synthetic data"
+      },
+      {
+        "src": "assets/packs/verified-bank-research-2.jpg",
+        "alt": "A verified peer note: one-line takeaway, comparison table, and a Data Coverage footer"
+      },
+      {
+        "src": "assets/packs/verified-bank-research-3.jpg",
+        "alt": "The verifier flagging a hedged draft as Needs review and listing the removed claims"
+      }
     ],
     "pagesUrl": "https://sfc-gh-jsoliz.github.io/sfguide-verified-bank-research/",
     "demoUrl": "https://sfc-gh-jsoliz.github.io/sfguide-verified-bank-research/try/",
