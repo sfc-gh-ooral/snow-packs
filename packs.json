@@ -145,7 +145,7 @@
     "industry": "Financial Services",
     "function": "Human Resources",
     "outcome": "manage-risk",
-    "features": ["Masking Policies", "Row Access Policies", "Aggregation Policies", "Snowflake ML Classification", "Dynamic Tables", "AI_SENTIMENT", "AI_CLASSIFY", "AI_AGG", "AI_COMPLETE", "Semantic Views", "Cortex Agents", "Cortex Analyst"],
+    "features": ["Dynamic Data Masking", "Row Access Policies", "Aggregation Policies (Preview)", "Snowflake ML Classification", "Dynamic Tables", "AI_SENTIMENT", "AI_CLASSIFY", "Cortex AI_AGG", "Cortex AI_COMPLETE", "Semantic Views", "Cortex Agents", "Cortex Analyst"],
     "tags": ["HR", "people analytics", "workforce", "headcount", "attrition", "flight risk", "pay equity", "compensation", "engagement survey", "employee sentiment", "span of control", "time to fill", "PII", "minimum group size", "view as persona", "CHRO", "HRBP"],
     "setup": "local",
     "images": [
@@ -155,7 +155,7 @@
       { "src": "assets/packs/workforce-intelligence-4.jpg", "alt": "Voice of employee: survey themes and sentiment over four cycles, schedule complaints concentrated in Payment Operations, and an AI summary (AI_CLASSIFY, AI_SENTIMENT, AI_AGG), labeled as a sample" },
       { "src": "assets/packs/workforce-intelligence-5.jpg", "alt": "Pay equity as the compensation analyst: raw vs. regression-adjusted gaps by job family and level, with Software Engineering L4 at -6.2% and an AI_COMPLETE explanation" },
       { "src": "assets/packs/workforce-intelligence-6.jpg", "alt": "CHRO view: risk by job family, location, and level, with groups under 10 people merged into a remainder group by an aggregation policy" },
-      { "src": "assets/packs/workforce-intelligence-7.jpg", "alt": "Ask HR data: a Cortex Agent over a semantic view answers as the HR business partner and explains that Technology requisitions are hidden by row access" }
+      { "src": "assets/packs/workforce-intelligence-7.jpg", "alt": "Ask HR data: a Cortex Agent over a semantic view answers as the HR business partner and explains why people are leaving Payment Operations (shift-change exits and the top exit reason), then that Technology requisitions are hidden by row access" }
     ],
     "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-workforce-intelligence/",
     "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-workforce-intelligence/try/",
