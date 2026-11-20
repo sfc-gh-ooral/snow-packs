@@ -848,7 +848,7 @@
     "industry": "Financial Services",
     "function": "Operations",
     "outcome": "manage-risk",
-    "features": ["Semantic Views", "Cortex Agents", "Cortex Analyst", "Cortex Search", "Cortex AI_EXTRACT", "Cortex AI_COMPLETE", "Object Tagging", "Snowflake Tasks"],
+    "features": ["Semantic Views", "Cortex Agents", "Cortex Analyst", "Cortex Search", "Cortex AI_EXTRACT", "Cortex AI_COMPLETE", "Object Tagging", "Tasks"],
     "tags": ["governed context", "business glossary", "agent consistency", "definitions", "data product owner", "conflicting definitions", "verified queries", "orchestrator agent", "evaluation", "account operations"],
     "setup": "local",
     "images": [
