@@ -756,5 +756,66 @@
     "repoUrl": "https://github.com/sfc-gh-jsoliz/sfguide-site-selection",
     "author": "Javier Soliz",
     "updated": "2026-11"
+  },
+  {
+    "id": "continuous-control-testing",
+    "title": "Continuous Control Testing",
+    "summary": "Help risk and audit teams test entire populations instead of samples, triage exceptions with an AI assistant, and keep evidence for every run.",
+    "industry": "Banking",
+    "function": "Risk",
+    "outcome": "prove-compliance",
+    "features": [
+      "Tasks",
+      "Dynamic Tables",
+      "Data Metric Functions",
+      "Cortex Agents",
+      "Cortex Analyst",
+      "Semantic Views",
+      "Cortex Search",
+      "Cortex AI_COMPLETE",
+      "AI_CLASSIFY",
+      "AI_SIMILARITY",
+      "Time Travel",
+      "Snowflake SQL"
+    ],
+    "tags": [
+      "control testing",
+      "full population",
+      "exceptions",
+      "data quality",
+      "triage",
+      "audit evidence",
+      "second line",
+      "orphaned access",
+      "dual approval"
+    ],
+    "setup": "local",
+    "images": [
+      {
+        "src": "assets/packs/continuous-control-testing-1.jpg",
+        "alt": "Control coverage: 1,930 records tested in October and 8 of 25 controls automated by Snowflake Tasks, with an exceptions-per-control heatmap from data metric functions and a quarterly sample vs. full population chart"
+      },
+      {
+        "src": "assets/packs/continuous-control-testing-2.jpg",
+        "alt": "Exception queue: 383 open exceptions in 169 clusters from a Dynamic Table, with a data metric function flagging feed batch WIRE-202608-03 as a likely data issue"
+      },
+      {
+        "src": "assets/packs/continuous-control-testing-3.jpg",
+        "alt": "Exception detail: the failed wire record, second-approver nulls by feed batch from a data metric function, and an AI_COMPLETE explanation suggesting Data issue for a reviewer to confirm"
+      },
+      {
+        "src": "assets/packs/continuous-control-testing-4.jpg",
+        "alt": "Triage: a ticket backlog where AI_CLASSIFY and AI_SIMILARITY run first, then a Cortex Agent with Cortex Analyst, Cortex Search and a data-quality tool drafts a finding and route, with Approve, Edit and Reject"
+      },
+      {
+        "src": "assets/packs/continuous-control-testing-5.jpg",
+        "alt": "Evidence pack: each August test run with its query ID, counts and dispositions, and a Time Travel recount of the source table as of the run"
+      }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-continuous-control-testing/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-continuous-control-testing/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-continuous-control-testing",
+    "author": "Oz Oral",
+    "updated": "2026-11"
   }
 ]
