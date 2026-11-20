@@ -237,7 +237,8 @@
     "industry": "Insurance",
     "function": "Claims",
     "outcome": "serve-clients",
-    "features": ["Cortex AI_PARSE_DOCUMENT", "Cortex AI_EXTRACT", "Cortex AI_CLASSIFY", "Cortex AI_COMPLETE", "Cortex Search", "Streams", "Tasks", "Directory Tables", "Snowflake SQL"],
+    "features": ["Cortex AI_PARSE_DOCUMENT", "Cortex AI_EXTRACT", "Cortex AI_CLASSIFY", "Cortex AI_COMPLETE", "Cortex Search", "Streams",
+      "Tasks", "Directory Tables", "Snowflake SQL"],
     "tags": ["claims", "first notice of loss", "FNOL", "triage", "adjusters", "document AI", "SIU", "repair estimate", "claims management"],
     "setup": "local",
     "images": [
@@ -1212,6 +1213,67 @@
     "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-payment-fraud-workbench/",
     "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-payment-fraud-workbench/try/",
     "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-payment-fraud-workbench",
+    "author": "Oz Oral",
+    "updated": "2026-11"
+  },
+  {
+    "id": "loan-file-review",
+    "title": "Mortgage Loan File Review",
+    "summary": "Help loan processors and QC reviewers extract borrower documents, verify them against the application, and clear conditions faster.",
+    "industry": "Banking",
+    "function": "Operations",
+    "outcome": "manage-risk",
+    "features": [
+      "Cortex AI_PARSE_DOCUMENT",
+      "Cortex AI_EXTRACT",
+      "Cortex AI_CLASSIFY",
+      "Cortex AI_COMPLETE",
+      "Cortex Search",
+      "Streams", "Tasks"
+    ],
+    "tags": [
+      "mortgage",
+      "loan processing",
+      "conditions",
+      "income verification",
+      "quality control",
+      "document AI",
+      "lending"
+    ],
+    "setup": "local",
+    "images": [
+      {
+        "src": "assets/packs/loan-file-review-1.jpg",
+        "alt": "Pipeline: 54 active loans by stage, 51 open conditions, 512 of 512 documents extracted, a sortable work queue and the files with a mismatch, from a stage, stream and task pipeline"
+      },
+      {
+        "src": "assets/packs/loan-file-review-2.jpg",
+        "alt": "Loan file: stated monthly income of $9,440 fails against $8,000.01 verified from the pay stub by AI_EXTRACT and a SQL tolerance rule, beside the parsed pay stub and its extracted fields"
+      },
+      {
+        "src": "assets/packs/loan-file-review-3.jpg",
+        "alt": "Loan file: an $18,500 mobile check deposit pulled from a bank statement with AI_EXTRACT table extraction fails the 50 percent of monthly income threshold"
+      },
+      {
+        "src": "assets/packs/loan-file-review-4.jpg",
+        "alt": "Borrower request: an editable email drafted with AI_COMPLETE for the open income condition, labeled as a sample response"
+      },
+      {
+        "src": "assets/packs/loan-file-review-5.jpg",
+        "alt": "QC sampling: findings by type against 158 post-closing reviews, the share of loans with a finding over time, the pre-closing sample, and an AI_COMPLETE QC narrative"
+      },
+      {
+        "src": "assets/packs/loan-file-review-6.jpg",
+        "alt": "Ask the file: Cortex Search and AI_COMPLETE answer the borrower's verified monthly income with the arithmetic and six numbered citations"
+      },
+      {
+        "src": "assets/packs/loan-file-review-7.jpg",
+        "alt": "Pipeline in dark mode: the same stage line, KPI tiles and work queue"
+      }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-loan-file-review/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-loan-file-review/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-loan-file-review",
     "author": "Oz Oral",
     "updated": "2026-11"
   }
