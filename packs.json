@@ -261,7 +261,7 @@
     "industry": "Insurance",
     "function": "Underwriting",
     "outcome": "manage-risk",
-    "features": ["AI_PARSE_DOCUMENT", "Cortex AI_EXTRACT", "AI_CLASSIFY", "Cortex AI_COMPLETE", "Cortex Search", "Cortex Agents", "Cortex Analyst", "Semantic Views", "Geospatial", "Snowflake SQL"],
+    "features": ["Cortex AI_PARSE_DOCUMENT", "Cortex AI_EXTRACT", "Cortex AI_CLASSIFY", "Cortex AI_COMPLETE", "Cortex Search", "Cortex Agents", "Cortex Analyst", "Semantic Views", "Geospatial", "Snowflake SQL"],
     "tags": ["commercial insurance", "submissions", "broker", "appetite", "loss runs", "document extraction", "accumulation", "coastal exposure"],
     "setup": "local",
     "images": [
