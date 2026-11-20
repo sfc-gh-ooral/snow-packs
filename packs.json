@@ -924,5 +924,69 @@
     "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-market-data-discovery",
     "author": "Oz Oral",
     "updated": "2026-11"
+  },
+  {
+    "id": "trade-reporting-validation",
+    "title": "Regulatory Trade Reporting Validation",
+    "summary": "Help broker-dealer reporting teams catch errors before submission, reconcile against the books, and work regulator feedback faster, for the Consolidated Audit Trail (CAT) and Customer and Account Information System (CAIS).",
+    "industry": "Capital Markets",
+    "function": "Compliance",
+    "outcome": "prove-compliance",
+    "features": [
+      "Dynamic Tables",
+      "Data Metric Functions",
+      "Anomaly Detection",
+      "Cortex Search",
+      "Cortex AI_COMPLETE",
+      "Cortex AI_SIMILARITY",
+      "Window Functions"
+    ],
+    "tags": [
+      "CAT",
+      "CAIS",
+      "consolidated audit trail",
+      "regulatory reporting",
+      "trade reporting",
+      "broker-dealer",
+      "rejects",
+      "linkage errors",
+      "reconciliation",
+      "books and records",
+      "entity matching",
+      "order lifecycle",
+      "evidence"
+    ],
+    "setup": "local",
+    "images": [
+      {
+        "src": "assets/packs/trade-reporting-validation-1.jpg",
+        "alt": "Submission health: 38 regulator rejects on the October 29 file against an average of 2.5 a day, check failures, repair backlog, and a deadline countdown, from Dynamic Tables"
+      },
+      {
+        "src": "assets/packs/trade-reporting-validation-2.jpg",
+        "alt": "Pre-submission checks: rule library results per trade date from a Dynamic Table and data metric functions, with failing route-linkage records from one desk"
+      },
+      {
+        "src": "assets/packs/trade-reporting-validation-3.jpg",
+        "alt": "Order timeline: firm, ATS, and books swimlanes; the routed order ID lost its PT- prefix at the ATS, so the route can't be linked"
+      },
+      {
+        "src": "assets/packs/trade-reporting-validation-4.jpg",
+        "alt": "Reject workbench: rejects clustered by root cause, a Cortex Search and AI_COMPLETE explanation with a suggested repair, and bulk assign and repair"
+      },
+      {
+        "src": "assets/packs/trade-reporting-validation-5.jpg",
+        "alt": "CAIS customer view: AI_SIMILARITY matches one customer across three accounts, conflicting fields in red, and a canonical record to approve"
+      },
+      {
+        "src": "assets/packs/trade-reporting-validation-6.jpg",
+        "alt": "Anomaly monitor: daily rejects and events per system against a SNOWFLAKE.ML.ANOMALY_DETECTION forecast band, with flagged days"
+      }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-trade-reporting-validation/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-trade-reporting-validation/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-trade-reporting-validation",
+    "author": "Oz Oral",
+    "updated": "2026-11"
   }
 ]
