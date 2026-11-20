@@ -845,5 +845,64 @@
     "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-governed-context-layer",
     "author": "Oz Oral",
     "updated": "2026-11"
+  },
+  {
+    "id": "market-data-discovery",
+    "title": "Market Data Discovery Agent",
+    "summary": "Help research and data teams find, understand, and query licensed market and reference data in plain English, from a provider share, without copying it into pipelines.",
+    "industry": "Wealth Management",
+    "function": "Investments",
+    "outcome": "serve-clients",
+    "features": [
+      "Secure Data Sharing",
+      "Cortex Agents",
+      "Cortex Analyst",
+      "Semantic Views",
+      "Cortex Search",
+      "Access History"
+    ],
+    "tags": [
+      "market data",
+      "reference data",
+      "data dictionary",
+      "zero-copy",
+      "corporate actions",
+      "adjusted close",
+      "license usage",
+      "ESG",
+      "concentration"
+    ],
+    "setup": "local",
+    "images": [
+      {
+        "src": "assets/packs/market-data-discovery-1.jpg",
+        "alt": "Dataset catalog: KPI tiles for 7 licensed datasets, 1,067,800 rows, 0 vendor tables copied and $296K annual license spend, a dictionary search showing CLOSE_UNADJ and CLOSE_ADJ, and the Guide panel docked on the right"
+      },
+      {
+        "src": "assets/packs/market-data-discovery-2.jpg",
+        "alt": "The Guide, a Cortex Agent, answering a split-adjusted price history question with a Sample AI response label, a chart of adjusted and unadjusted close, and dictionary sources found with Cortex Search"
+      },
+      {
+        "src": "assets/packs/market-data-discovery-3.jpg",
+        "alt": "Daily prices dataset page: adjusted versus as-printed close read from the provider tables behind the share, with a dashed line marking a 4-for-1 split"
+      },
+      {
+        "src": "assets/packs/market-data-discovery-4.jpg",
+        "alt": "Join to my book: client holdings joined to vendor prices in a view, with Technology share, accounts over 10% and before-and-after sector bars around a merger"
+      },
+      {
+        "src": "assets/packs/market-data-discovery-5.jpg",
+        "alt": "Review queue of accounts over a 10% single-name guideline, with a drawer showing where one client's weight came from and a confirmation that it was sent to the advisor"
+      },
+      {
+        "src": "assets/packs/market-data-discovery-6.jpg",
+        "alt": "Usage and value: 2 of 7 licensed datasets barely used, $76K a year on them, a weekly query chart from a synthetic usage log, with one live ACCESS_HISTORY column in Live mode, and upcoming renewals"
+      }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-market-data-discovery/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-market-data-discovery/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-market-data-discovery",
+    "author": "Oz Oral",
+    "updated": "2026-11"
   }
 ]
