@@ -1,7 +1,6 @@
 [
   {
     "id": "kyc-onboarding-workbench",
-    "featured": 1,
     "title": "KYC Onboarding Workbench",
     "summary": "Help compliance teams take each new customer from application to decision in one place, with AI-read identity documents, explainable risk scores, fuzzy watchlist screening, and an audit-ready decision trail.",
     "industry": "Banking",
@@ -26,7 +25,7 @@
   },
   {
     "id": "loss-triangle-suite",
-    "featured": 2,
+    "featured": 5,
     "title": "Loss Triangle Suite",
     "summary": "Make reserve reviews more consistent by exploring loss development, comparing insurance segments, and investigating anomalies with AI-assisted actuarial Q&A.",
     "industry": "Insurance",
@@ -118,7 +117,7 @@
   },
   {
     "id": "credit-risk-model-studio",
-    "featured": 5,
+    "featured": 4,
     "title": "Credit Risk Model Studio",
     "summary": "Help consumer lending risk teams build, validate, and monitor a default model in Snowflake without moving data to laptops, and act on early warnings.",
     "industry": "Banking",
@@ -143,6 +142,7 @@
   },
   {
     "id": "workforce-intelligence",
+    "featured": 3,
     "title": "Workforce Intelligence",
     "summary": "Give HR business partners governed, plain-English answers on headcount, attrition risk, and pay equity, with sensitive fields masked by role.",
     "industry": "Financial Services",
@@ -208,7 +208,6 @@
   },
   {
     "id": "card-fraud-console",
-    "featured": 4,
     "title": "Card Fraud Analyst Console",
     "summary": "Help fraud teams stop stolen-card spending as it happens, with payments scored on arrival, an explainable alert queue, AI case briefings, and a threshold that balances fraud caught against good customers declined.",
     "industry": "Payments",
@@ -313,6 +312,7 @@
   },
   {
     "id": "regulatory-qa-mcp",
+    "featured": 2,
     "title": "Regulatory Q&A Desk",
     "summary": "Help compliance teams check internal policies against regulations through a Snowflake-managed MCP server, with cited answers, AI gap verdicts, control-testing questions, and remediation tickets that a person approves, all governed by each caller's role.",
     "industry": "Banking",
@@ -337,7 +337,6 @@
   },
   {
     "id": "wealth-advisor-assistant",
-    "featured": 3,
     "title": "Wealth Advisor Assistant",
     "summary": "Help advisors start each day with ranked next best actions, prepare for client meetings, and ask an AI coach that only sees their own clients.",
     "industry": "Wealth Management",
@@ -362,7 +361,6 @@
   },
   {
     "id": "cyber-risk-copilot",
-    "featured": 6,
     "title": "Cyber Risk Copilot",
     "summary": "Help security leaders and control owners ask plain-English questions about cyber posture, exposure, ownership, and remediation status, with answers tied to governed data and cited policy text.",
     "industry": "Financial Services",
@@ -423,6 +421,7 @@
   },
   {
     "id": "auto-finance-portfolio-analytics",
+    "featured": 1,
     "title": "Auto Finance Portfolio Analytics",
     "summary": "Help auto lending teams spot delinquency and vintage losses early, work collections by roll risk, and catch dealer first-payment defaults, all on one governed semantic layer.",
     "industry": "Banking",
