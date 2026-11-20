@@ -758,6 +758,95 @@
     "updated": "2026-11"
   },
   {
+    "id": "client-account-views",
+    "title": "Client Account Views at App Speed",
+    "summary": "Help firms serve advisor- and client-facing account views directly from their analytics data, avoiding a duplicate operational reporting database.",
+    "industry": "Wealth Management",
+    "function": "Operations",
+    "outcome": "serve-clients",
+    "features": ["Interactive Tables", "Interactive Warehouses", "Dynamic Tables", "Cortex AI_COMPLETE", "Snowflake SQL"],
+    "tags": ["account summary", "positions", "holdings", "advisor platform", "low latency", "concurrency", "load test", "reconciliation", "reporting database", "API"],
+    "setup": "local",
+    "images": [
+      { "src": "assets/packs/client-account-views-1.jpg", "alt": "Account desk: an advisor's book beside the Hollis Family Trust account page, each widget showing its interactive table and captured latency" },
+      { "src": "assets/packs/client-account-views-2.jpg", "alt": "Call prep: a brief for the next client call drafted with Cortex AI_COMPLETE from the rows on the page, labeled as a sample AI response" },
+      { "src": "assets/packs/client-account-views-3.jpg", "alt": "Architecture compare: nightly ETL to a reporting database versus serving from Snowflake with dynamic and interactive tables, with the accounts where the copy disagrees" },
+      { "src": "assets/packs/client-account-views-4.jpg", "alt": "Load lab: a market-open replay of concurrent advisor sessions on an interactive warehouse, with p50, p95, p99 latency and throughput" },
+      { "src": "assets/packs/client-account-views-5.jpg", "alt": "Cost model: monthly cost of a duplicate reporting database versus serving from Snowflake, computed only from the numbers the reader enters" }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-client-account-views/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-client-account-views/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-client-account-views",
+    "author": "Oz Oral",
+    "updated": "2026-11"
+  },
+  {
+    "id": "governed-context-layer",
+    "title": "One Answer Across Agents",
+    "summary": "Help institutions give consistent answers when several AI agents touch the same data, by capturing business context once in governed semantic views and reusing it everywhere.",
+    "industry": "Financial Services",
+    "function": "Operations",
+    "outcome": "manage-risk",
+    "features": [
+      "Semantic Views",
+      "Cortex Agents",
+      "Cortex Analyst",
+      "Cortex Search",
+      "Cortex AI_EXTRACT",
+      "Cortex AI_COMPLETE",
+      "Object Tagging",
+      "Tasks"
+    ],
+    "tags": [
+      "governed context",
+      "business glossary",
+      "agent consistency",
+      "definitions",
+      "data product owner",
+      "conflicting definitions",
+      "verified queries",
+      "orchestrator agent",
+      "evaluation",
+      "account operations"
+    ],
+    "setup": "local",
+    "images": [
+      {
+        "src": "assets/packs/governed-context-layer-1.jpg",
+        "alt": "Veritome overview: two agents give 120,402 and 98,115 active accounts, a governed answer from a semantic view awaits owner approval, with agreement KPIs and open conflicts"
+      },
+      {
+        "src": "assets/packs/governed-context-layer-2.jpg",
+        "alt": "Side by side: ungoverned agents disagree on active accounts while governed Cortex Agents give the same number and cite the Accounts semantic view"
+      },
+      {
+        "src": "assets/packs/governed-context-layer-3.jpg",
+        "alt": "Conflict resolver: two wiki definitions mined with AI_EXTRACT side by side, with an AI_COMPLETE explanation of how they differ"
+      },
+      {
+        "src": "assets/packs/governed-context-layer-4.jpg",
+        "alt": "Context inventory: glossary of governed terms with a drawer showing the active account definition, semantic view expression, synonyms and owner"
+      },
+      {
+        "src": "assets/packs/governed-context-layer-5.jpg",
+        "alt": "After owner approval: all governed agents agree and the story rail shows every step done"
+      },
+      {
+        "src": "assets/packs/governed-context-layer-6.jpg",
+        "alt": "Domain composer: one orchestrator Cortex Agent routes a three-part question to the Accounts, Service and Advisors semantic views"
+      },
+      {
+        "src": "assets/packs/governed-context-layer-7.jpg",
+        "alt": "Consistency monitor: AI_COMPLETE-judged agreement, 100 percent for governed agents and 33 percent for ungoverned on the latest run"
+      }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-governed-context-layer/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-governed-context-layer/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-governed-context-layer",
+    "author": "Oz Oral",
+    "updated": "2026-11"
+  },
+  {
     "id": "continuous-control-testing",
     "title": "Continuous Control Testing",
     "summary": "Help risk and audit teams test entire populations instead of samples, triage exceptions with an AI assistant, and keep evidence for every run.",
@@ -773,8 +862,8 @@
       "Semantic Views",
       "Cortex Search",
       "Cortex AI_COMPLETE",
-      "AI_CLASSIFY",
-      "AI_SIMILARITY",
+      "Cortex AI_CLASSIFY",
+      "Cortex AI_SIMILARITY",
       "Time Travel",
       "Snowflake SQL"
     ],
