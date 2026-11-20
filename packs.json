@@ -231,20 +231,28 @@
     "updated": "2026-11"
   },
   {
-    "id": "claims-triage-insights",
-    "title": "Claims Triage Insights",
-    "summary": "A planned workspace for exploring claim complexity, handling delays, and supporting documents to inform adjuster-led prioritization.",
+    "id": "claims-intake-assistant",
+    "title": "Claims Intake and Triage Assistant",
+    "summary": "Help claims teams turn first notice of loss (FNOL) emails, forms, photos, and repair estimates into structured, triaged claims with an AI summary for every adjuster.",
     "industry": "Insurance",
     "function": "Claims",
     "outcome": "serve-clients",
-    "workInProgress": true,
-    "features": [],
-    "tags": ["claims management", "adjusters", "first notice of loss"],
-    "pagesUrl": "",
-    "demoUrl": "",
-    "repoUrl": "",
-    "author": "Snow Packs",
-    "updated": "2026-10"
+    "features": ["Cortex AI_PARSE_DOCUMENT", "Cortex AI_EXTRACT", "Cortex AI_CLASSIFY", "Cortex AI_COMPLETE", "Cortex Search", "Streams and Tasks", "Directory Tables", "Snowflake SQL"],
+    "tags": ["claims", "first notice of loss", "FNOL", "triage", "adjusters", "document AI", "SIU", "repair estimate", "claims management"],
+    "setup": "local",
+    "images": [
+      { "src": "assets/packs/claims-intake-assistant-1.jpg", "alt": "Intake inbox: every incoming document with its AI_CLASSIFY type, extraction status and lowest AI_EXTRACT confidence, fed by a stage, stream and task" },
+      { "src": "assets/packs/claims-intake-assistant-2.jpg", "alt": "Claim file: the AI_PARSE_DOCUMENT source document with extracted values highlighted, AI_EXTRACT fields with confidence, and an AI_COMPLETE summary with an AI_CLASSIFY tier suggesting an SIU referral" },
+      { "src": "assets/packs/claims-intake-assistant-3.jpg", "alt": "Estimate check: AI_EXTRACT table extraction of repair line items shows the estimate total is $1,250 more than the line items" },
+      { "src": "assets/packs/claims-intake-assistant-4.jpg", "alt": "Triage board: fast track, standard, complex and SIU lanes from AI_CLASSIFY, with red-flag tags, suggested adjusters, adjuster workload and cycle-time charts" },
+      { "src": "assets/packs/claims-intake-assistant-5.jpg", "alt": "Ask the claims file: Cortex Search and AI_COMPLETE trace a claim's medical bills with numbered citations" },
+      { "src": "assets/packs/claims-intake-assistant-6.jpg", "alt": "Damage photo: AI_COMPLETE describes a windshield crack in a synthetic illustration for a fast-track glass claim" }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-claims-intake-assistant/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-claims-intake-assistant/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-claims-intake-assistant",
+    "author": "Oz Oral",
+    "updated": "2026-11"
   },
   {
     "id": "underwriting-submission-review",
