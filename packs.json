@@ -864,5 +864,65 @@
     "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-governed-context-layer",
     "author": "Oz Oral",
     "updated": "2026-11"
+  },
+  {
+    "id": "market-data-discovery",
+    "title": "Market Data Discovery Agent",
+    "summary": "Help research and data teams find, understand, and query licensed market and reference data in plain English, in place from a share, without copying it into pipelines.",
+    "industry": "Wealth Management",
+    "function": "Investments",
+    "outcome": "serve-clients",
+    "features": [
+      "Secure Data Sharing",
+      "Cortex Agents",
+      "Cortex Analyst",
+      "Semantic Views",
+      "Cortex Search",
+      "Access History",
+      "Git Repository"
+    ],
+    "tags": [
+      "market data",
+      "reference data",
+      "data dictionary",
+      "zero-copy",
+      "corporate actions",
+      "adjusted close",
+      "license usage",
+      "ESG",
+      "concentration"
+    ],
+    "setup": "local",
+    "images": [
+      {
+        "src": "assets/packs/market-data-discovery-1.jpg",
+        "alt": "Catalog: seven licensed vendor datasets read in place from provider tables published to a share, with a data dictionary search"
+      },
+      {
+        "src": "assets/packs/market-data-discovery-2.jpg",
+        "alt": "Ask the data: a Cortex Agent checks the dictionary with Cortex Search and charts split-adjusted close, so a 4-for-1 split doesn't look like a crash"
+      },
+      {
+        "src": "assets/packs/market-data-discovery-3.jpg",
+        "alt": "Join to my book: client holdings joined to vendor prices in a view, with Technology exposure rising after a merger corporate action"
+      },
+      {
+        "src": "assets/packs/market-data-discovery-4.jpg",
+        "alt": "Concentration review: accounts above a 10% single-name guideline after the merger, exportable for advisor review"
+      },
+      {
+        "src": "assets/packs/market-data-discovery-5.jpg",
+        "alt": "Ask across vendor and firm data: top client holdings by ESG score, answered with Cortex Analyst on a semantic view"
+      },
+      {
+        "src": "assets/packs/market-data-discovery-6.jpg",
+        "alt": "Usage and value: queries, users, and last access per licensed dataset next to its cost, with ACCESS_HISTORY in live mode and renewal decisions"
+      }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-market-data-discovery/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-market-data-discovery/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-market-data-discovery",
+    "author": "Oz Oral",
+    "updated": "2026-11"
   }
 ]
