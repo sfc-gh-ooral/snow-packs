@@ -1181,6 +1181,69 @@
     "updated": "2026-11"
   },
   {
+    "id": "collections-copilot",
+    "title": "Collections Prioritization Copilot",
+    "summary": "Help collections teams contact the right delinquent customers first, with the right offer and a compliant, empathetic conversation guide.",
+    "industry": "Banking",
+    "function": "Operations",
+    "outcome": "manage-risk",
+    "features": [
+      "Snowpark ML",
+      "Model Registry",
+      "Dynamic Tables",
+      "Cortex AI_CLASSIFY",
+      "Cortex AI_COMPLETE",
+      "Cortex Agents",
+      "Cortex Analyst",
+      "Semantic Views"
+    ],
+    "tags": [
+      "collections",
+      "delinquency",
+      "roll rate",
+      "cure rate",
+      "promise to pay",
+      "hardship",
+      "contact strategy",
+      "call QA",
+      "debt collection compliance",
+      "auto loans",
+      "XGBoost"
+    ],
+    "setup": "local",
+    "images": [
+      {
+        "src": "assets/packs/collections-copilot-1.jpg",
+        "alt": "Portfolio: delinquent loans, 30+ DPD rate, past due, roll, cure, and promise-kept rates, with story cards from the queue Dynamic Table and loans by DPD bucket"
+      },
+      {
+        "src": "assets/packs/collections-copilot-2.jpg",
+        "alt": "Today's queue filtered to borrowers who answer evening texts: ranked by expected recovery times roll risk from a Snowpark ML model, with the contact plan, offer, and calls used out of 7"
+      },
+      {
+        "src": "assets/packs/collections-copilot-3.jpg",
+        "alt": "Account view for a borrower with two broken promises and a 93% roll risk: reach rate by channel and time, hardship eligibility, 6 of 7 calls used, and an AI_COMPLETE conversation guide labeled as a sample response"
+      },
+      {
+        "src": "assets/packs/collections-copilot-4.jpg",
+        "alt": "Account view for a flood-area borrower eligible for disaster forbearance, with the log promise, hardship enrollment, and schedule actions and an enrollment request confirmed"
+      },
+      {
+        "src": "assets/packs/collections-copilot-5.jpg",
+        "alt": "Call QA: 381 calls reviewed and 33 flagged, a transcript with threats and third-party disclosure flagged by AI_CLASSIFY, and an AI_COMPLETE coaching note labeled as a sample response"
+      },
+      {
+        "src": "assets/packs/collections-copilot-6.jpg",
+        "alt": "Ask: a Cortex Agent over a semantic view answers which accounts broke promises twice this month, labeled as a sample AI response"
+      }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-collections-copilot/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-collections-copilot/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-collections-copilot",
+    "author": "Oz Oral",
+    "updated": "2026-11"
+  },
+  {
     "id": "regulatory-change-tracker",
     "title": "Regulatory Change Tracker",
     "summary": "Help compliance teams read new rules and guidance, map obligations to internal policies and controls, and track the gaps to closure.",
