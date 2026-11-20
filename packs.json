@@ -854,7 +854,7 @@
     "function": "Investments",
     "outcome": "serve-clients",
     "features": [
-      "Secure Data Sharing (provider side)",
+      "Secure Data Sharing",
       "Cortex Agents",
       "Cortex Analyst",
       "Semantic Views",
