@@ -82,6 +82,7 @@ The app is what customers remember. Build an experience for the people who would
 - **Should:** Make simulated AI calls feel like real ones. In Sample mode, wait a few seconds before showing a scripted answer (for example, 4 to 8 seconds, with a little jitter) and show staged progress steps that name what the live path really does, such as "Applying row access policy", "Generating SQL with Cortex Analyst", and "Checking the response with Cortex Guard". Keep the scripted answer labeled as a sample. In Live mode, show the same steps while the real call runs, with no added delay, and report the measured latency. Keep the steps truthful: only list work the live path performs.
 - **Should:** Make the Snowflake capability visible in the UI, e.g., a small "Powered by Cortex Agents" or "Row access policy applied" badge on the component that uses it.
 - **Should:** Polish matters: consistent styling, realistic synthetic names and numbers, no empty states or error screens in the main flow.
+- **Should:** The hosted example is usable at phone width (about 390 px): no sideways page scroll, navigation reachable, and wide tables or charts scroll inside their own box.
 
 ### Add a front end with CoCo
 
