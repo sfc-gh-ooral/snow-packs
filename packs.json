@@ -1179,5 +1179,63 @@
     "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-loan-file-review",
     "author": "Oz Oral",
     "updated": "2026-11"
+  },
+  {
+    "id": "regulatory-change-tracker",
+    "title": "Regulatory Change Tracker",
+    "summary": "Help compliance teams read new rules and guidance, map obligations to internal policies and controls, and track the gaps to closure.",
+    "industry": "Financial Services",
+    "function": "Compliance",
+    "outcome": "prove-compliance",
+    "features": [
+      "Cortex AI_PARSE_DOCUMENT",
+      "Cortex AI_EXTRACT",
+      "Cortex AI_COMPLETE",
+      "Cortex AI_EMBED",
+      "Cortex Search",
+      "Cortex Agents",
+      "Streams and Tasks"
+    ],
+    "tags": [
+      "regulatory change",
+      "obligations",
+      "policy mapping",
+      "controls",
+      "gap tracking",
+      "horizon scanning",
+      "document AI"
+    ],
+    "setup": "local",
+    "images": [
+      {
+        "src": "assets/packs/regulatory-change-tracker-1.jpg",
+        "alt": "Change inbox: 25 synthetic notices with AI applicability badges and summaries, notices by regulator, and KPIs, from a stage, stream and task pipeline"
+      },
+      {
+        "src": "assets/packs/regulatory-change-tracker-2.jpg",
+        "alt": "Obligation map filtered to gaps: obligations matched to policies and controls by AI_EMBED similarity, with AI_COMPLETE coverage verdicts, a policy conflict and missing controls"
+      },
+      {
+        "src": "assets/packs/regulatory-change-tracker-3.jpg",
+        "alt": "Notice detail: a complaint rule shortens the final response deadline to 15 business days; AI_EXTRACT obligations show the 30-day procedure does not meet it"
+      },
+      {
+        "src": "assets/packs/regulatory-change-tracker-4.jpg",
+        "alt": "Gap tracker: gaps with type, owner, due date before the effective date, status and evidence, updated from the app"
+      },
+      {
+        "src": "assets/packs/regulatory-change-tracker-5.jpg",
+        "alt": "Ask the rulebook: a Cortex Agent with Cortex Search answers how long complaint records must be kept, citing the notice, two conflicting policies and a control"
+      },
+      {
+        "src": "assets/packs/regulatory-change-tracker-6.jpg",
+        "alt": "An annuity rule for insurers auto-dismissed by AI_COMPLETE with a reason, because the fictional bank sells no insurance"
+      }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-regulatory-change-tracker/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-regulatory-change-tracker/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-regulatory-change-tracker",
+    "author": "Oz Oral",
+    "updated": "2026-11"
   }
 ]
