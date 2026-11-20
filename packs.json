@@ -988,5 +988,70 @@
     "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-trade-reporting-validation",
     "author": "Oz Oral",
     "updated": "2026-11"
+  },
+  {
+    "id": "payment-fraud-workbench",
+    "title": "Payment Fraud Investigation Workbench",
+    "summary": "Help fraud analysts score card and real-time payments, see linked accounts and devices, and close cases faster with an AI case summary.",
+    "industry": "Payments",
+    "function": "Risk",
+    "outcome": "catch-financial-crime",
+    "features": [
+      "Snowpark ML",
+      "Feature Store",
+      "Model Registry",
+      "Dynamic Tables",
+      "Geospatial",
+      "Cortex AI_COMPLETE",
+      "Cortex Agents",
+      "Cortex Analyst",
+      "Semantic Views"
+    ],
+    "tags": [
+      "payment fraud",
+      "card fraud",
+      "card testing",
+      "account takeover",
+      "mule ring",
+      "impossible travel",
+      "P2P",
+      "instant payments",
+      "XGBoost",
+      "link analysis",
+      "alert queue",
+      "case management"
+    ],
+    "setup": "local",
+    "images": [
+      {
+        "src": "assets/packs/payment-fraud-workbench-1.jpg",
+        "alt": "Fraud overview: fraud rate in bps, losses, alerts, and precision, a daily alert chart, and a map of fraud by H3 cell with geospatial functions"
+      },
+      {
+        "src": "assets/packs/payment-fraud-workbench-2.jpg",
+        "alt": "Alert queue: XGBoost scores from the Model Registry, reason codes, SLA timers, and confirm, false positive, and escalate actions"
+      },
+      {
+        "src": "assets/packs/payment-fraud-workbench-3.jpg",
+        "alt": "Account takeover case: an AI case summary and next step drafted with AI_COMPLETE, labeled as a sample response"
+      },
+      {
+        "src": "assets/packs/payment-fraud-workbench-4.jpg",
+        "alt": "Impossible travel case: Boston to Miami in 28 minutes measured with ST_DISTANCE, beside a link graph from a recursive CTE"
+      },
+      {
+        "src": "assets/packs/payment-fraud-workbench-5.jpg",
+        "alt": "Model and rules: threshold slider with precision, recall, and alert volume, and feature importance from Feature Store velocity features"
+      },
+      {
+        "src": "assets/packs/payment-fraud-workbench-6.jpg",
+        "alt": "Ask: a Cortex Agent over a semantic view answers which merchants had card-testing patterns this week, labeled as a sample response"
+      }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-payment-fraud-workbench/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-payment-fraud-workbench/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-payment-fraud-workbench",
+    "author": "Oz Oral",
+    "updated": "2026-11"
   }
 ]
