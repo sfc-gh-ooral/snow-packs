@@ -946,7 +946,7 @@
       },
       {
         "src": "assets/packs/payment-fraud-workbench-2.jpg",
-        "alt": "Alert queue: XGBoost scores from the Snowpark ML Model Registry with reason codes, overdue SLA pills and actions, and an alert detail drawer"
+        "alt": "Alert queue: XGBoost scores with reason codes, overdue SLA pills and actions, and a detail drawer with the payment's Feature Store inputs and a re-score from the Model Registry, labeled Sample model response"
       },
       {
         "src": "assets/packs/payment-fraud-workbench-3.jpg",
@@ -958,11 +958,11 @@
       },
       {
         "src": "assets/packs/payment-fraud-workbench-5.jpg",
-        "alt": "Impossible travel case: a single-account link graph and a map path from a Miami swipe to a flagged far-away swipe measured with ST_DISTANCE"
+        "alt": "Impossible travel case: a map path from a Boston swipe to a flagged Miami swipe 28 minutes later, 2,019 km apart at 4,400 km/h by ST_DISTANCE, beside a single-account link graph"
       },
       {
         "src": "assets/packs/payment-fraud-workbench-6.jpg",
-        "alt": "Model and rules: threshold slider at 0.80 with precision, recall, alerts per day and fraud caught, from the Model Registry and Feature Store velocity features"
+        "alt": "Model and rules: threshold slider at 0.80 with precision, recall, alerts per day and fraud caught on labeled synthetic payments"
       },
       {
         "src": "assets/packs/payment-fraud-workbench-7.jpg",
