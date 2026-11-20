@@ -1063,6 +1063,67 @@
     "updated": "2026-11"
   },
   {
+    "id": "complaints-intelligence",
+    "title": "Complaints Intelligence",
+    "summary": "Help complaint teams classify every complaint across channels, spot emerging conduct-risk themes early, and evidence timely resolution.",
+    "industry": "Banking",
+    "function": "Compliance",
+    "outcome": "prove-compliance",
+    "features": [
+      "Cortex AI_CLASSIFY",
+      "Cortex AI_SENTIMENT",
+      "Cortex AI_EMBED",
+      "Cortex AI_REDACT",
+      "Cortex AI_AGG",
+      "Cortex AI_COMPLETE",
+      "Dynamic Tables",
+      "Cortex Agents",
+      "Cortex Analyst",
+      "Semantic Views"
+    ],
+    "tags": [
+      "complaints",
+      "UDAAP",
+      "fair lending",
+      "conduct risk",
+      "PII masking",
+      "duplicates",
+      "emerging themes"
+    ],
+    "setup": "local",
+    "images": [
+      {
+        "src": "assets/packs/complaints-intelligence-1.jpg",
+        "alt": "Overview: 40,141 complaints, 41 percent flagged high-risk, 94 percent resolved on time, and weekly volume by product, classified by AI_CLASSIFY in a Dynamic Table"
+      },
+      {
+        "src": "assets/packs/complaints-intelligence-2.jpg",
+        "alt": "Emerging themes: overdraft fee complaints up 1,010 percent in week 3, with an AI_AGG root-cause summary naming the app update and quotes masked by AI_REDACT"
+      },
+      {
+        "src": "assets/packs/complaints-intelligence-3.jpg",
+        "alt": "Complaint queue: the fair-lending review view, with discrimination allegations flagged by AI_CLASSIFY multi-label"
+      },
+      {
+        "src": "assets/packs/complaints-intelligence-4.jpg",
+        "alt": "Complaint detail: text with PII masked by AI_REDACT, AI category, flags, and sentiment, and an AI_COMPLETE response draft labeled as a sample response"
+      },
+      {
+        "src": "assets/packs/complaints-intelligence-5.jpg",
+        "alt": "Duplicates: the same customer reporting one problem through three channels, matched with AI_EMBED and VECTOR_COSINE_SIMILARITY"
+      },
+      {
+        "src": "assets/packs/complaints-intelligence-6.jpg",
+        "alt": "Regulatory view: AI subcategories rolled up to a regulator-style product and issue list with CSV export and an activity log"
+      }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-complaints-intelligence/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-complaints-intelligence/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-complaints-intelligence",
+    "author": "Oz Oral",
+    "updated": "2026-11"
+  },
+  {
     "id": "loan-file-review",
     "title": "Mortgage Loan File Review",
     "summary": "Help loan processors and QC reviewers extract borrower documents, verify them against the application, and clear conditions faster.",
@@ -1070,10 +1131,10 @@
     "function": "Operations",
     "outcome": "manage-risk",
     "features": [
-      "AI_PARSE_DOCUMENT",
-      "AI_EXTRACT",
-      "AI_CLASSIFY",
-      "AI_COMPLETE",
+      "Cortex AI_PARSE_DOCUMENT",
+      "Cortex AI_EXTRACT",
+      "Cortex AI_CLASSIFY",
+      "Cortex AI_COMPLETE",
       "Cortex Search",
       "Streams and Tasks"
     ],
