@@ -195,6 +195,7 @@ Not ready to build yet? Use [the proposal form](https://github.com/sfc-gh-ooral/
 Optional fields:
 
 - `authorUrl`: optional link for your name on the card, e.g. `https://www.linkedin.com/in/your-handle`. Only LinkedIn profile URLs are accepted. Add only your own profile. Not allowed on work-in-progress entries.
+- `featured`: set by the catalog maintainer, not in contributor PRs. Featured packs lead the default view; the rest alternate across industries, with hosted examples and newer packs first.
 - `outcome`: the business outcome tile the pack appears under: `catch-financial-crime`, `prove-compliance`, `manage-risk`, or `serve-clients`. Required for new packs. Ask the maintainers if none fits; new outcomes are added in `app.js`.
 - `images`: 2–8 preview screenshots, each `{ "src": "assets/packs/<id>-<n>.jpg", "alt": "…" }` (`.jpg`, `.png`, or `.webp`). The `alt` text doubles as the carousel caption, so describe what the screen shows and which capability powers it. Required for new packs; at least 1 is enforced. Not allowed on work-in-progress entries.
 - `setup`: `local` (default) when the app runs in no-account mode; `snowflake` only for older listings that run solely in the reader's account. See section 4. Not allowed on work-in-progress entries.
