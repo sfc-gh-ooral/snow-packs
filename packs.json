@@ -255,20 +255,28 @@
     "updated": "2026-11"
   },
   {
-    "id": "underwriting-submission-review",
-    "title": "Underwriting Submission Review",
-    "summary": "A planned exploration of submission completeness, risk context, and portfolio fit to support underwriter-led assessment.",
+    "id": "underwriting-submission-intelligence",
+    "title": "Underwriting Submission Intelligence",
+    "summary": "Help commercial underwriters clear submission backlogs by extracting broker submissions, checking appetite and completeness, and prioritizing the best-fit risks.",
     "industry": "Insurance",
     "function": "Underwriting",
     "outcome": "manage-risk",
-    "workInProgress": true,
-    "features": [],
-    "tags": ["commercial insurance", "submissions", "risk assessment"],
-    "pagesUrl": "",
-    "demoUrl": "",
-    "repoUrl": "",
-    "author": "Snow Packs",
-    "updated": "2026-10"
+    "features": ["Cortex AI_PARSE_DOCUMENT", "Cortex AI_EXTRACT", "Cortex AI_CLASSIFY", "Cortex AI_COMPLETE", "Cortex Search", "Cortex Agents", "Cortex Analyst", "Semantic Views", "Geospatial", "Snowflake SQL"],
+    "tags": ["commercial insurance", "submissions", "broker", "appetite", "loss runs", "document extraction", "accumulation", "coastal exposure"],
+    "setup": "local",
+    "images": [
+      { "src": "assets/packs/underwriting-submission-intelligence-1.jpg", "alt": "Submission queue ranked by fit score from AI_EXTRACT, AI_CLASSIFY, and a SQL scoring view, with completeness and appetite badges" },
+      { "src": "assets/packs/underwriting-submission-intelligence-2.jpg", "alt": "Submission detail: AI_EXTRACT fields with the source highlighted on the application, and AI_CLASSIFY revealing an out-of-appetite fireworks class" },
+      { "src": "assets/packs/underwriting-submission-intelligence-3.jpg", "alt": "Appetite check with Cortex Search guide passages, loss runs from AI_EXTRACT table extraction, and an AI_COMPLETE underwriting memo draft" },
+      { "src": "assets/packs/underwriting-submission-intelligence-4.jpg", "alt": "Decision panel: an editable AI_COMPLETE email asking the broker for missing loss runs, plus decline and move-to-quote actions" },
+      { "src": "assets/packs/underwriting-submission-intelligence-5.jpg", "alt": "Portfolio fit: new hotel locations against existing exposure by H3 cell, with distance to coast and coastal concentration from geospatial functions" },
+      { "src": "assets/packs/underwriting-submission-intelligence-6.jpg", "alt": "Ask: a Cortex Agent answers a pipeline question with Cortex Analyst SQL on a semantic view, with the results table" }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-underwriting-submission-intelligence/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-underwriting-submission-intelligence/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-underwriting-submission-intelligence",
+    "author": "Oz Oral",
+    "updated": "2026-11"
   },
   {
     "id": "trade-surveillance",
