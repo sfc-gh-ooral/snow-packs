@@ -817,5 +817,28 @@
     "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-continuous-control-testing",
     "author": "Oz Oral",
     "updated": "2026-11"
+  },
+  {
+    "id": "client-account-views",
+    "title": "Client Account Views at App Speed",
+    "summary": "Help firms serve advisor- and client-facing account views directly from their analytics data, avoiding a duplicate operational reporting database.",
+    "industry": "Wealth Management",
+    "function": "Operations",
+    "outcome": "serve-clients",
+    "features": ["Interactive Tables", "Interactive Warehouses", "Dynamic Tables", "Cortex AI_COMPLETE", "Snowflake SQL"],
+    "tags": ["account summary", "positions", "holdings", "advisor platform", "low latency", "concurrency", "load test", "reconciliation", "reporting database", "API"],
+    "setup": "local",
+    "images": [
+      { "src": "assets/packs/client-account-views-1.jpg", "alt": "Advisor account page: summary, holdings, and activity served from interactive tables, each widget with its measured query latency" },
+      { "src": "assets/packs/client-account-views-2.jpg", "alt": "Architecture compare: duplicate reporting database path vs serving from Snowflake, with reconciliation breaks the nightly copy caused" },
+      { "src": "assets/packs/client-account-views-3.jpg", "alt": "Load test: p50, p95, and p99 latency for a peak-hour burst of concurrent sessions on an interactive warehouse" },
+      { "src": "assets/packs/client-account-views-4.jpg", "alt": "Cost model: before and after monthly cost computed only from the inputs the reader enters" },
+      { "src": "assets/packs/client-account-views-5.jpg", "alt": "Performance vs benchmark chart and a call prep brief drafted with AI_COMPLETE, labeled as a sample response" }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-client-account-views/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-client-account-views/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-client-account-views",
+    "author": "Oz Oral",
+    "updated": "2026-11"
   }
 ]
