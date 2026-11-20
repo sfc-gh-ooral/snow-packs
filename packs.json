@@ -1061,5 +1061,62 @@
     "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-payment-fraud-workbench",
     "author": "Oz Oral",
     "updated": "2026-11"
+  },
+  {
+    "id": "loan-file-review",
+    "title": "Mortgage Loan File Review",
+    "summary": "Help loan processors and QC reviewers extract borrower documents, verify them against the application, and clear conditions faster.",
+    "industry": "Banking",
+    "function": "Operations",
+    "outcome": "manage-risk",
+    "features": [
+      "AI_PARSE_DOCUMENT",
+      "AI_EXTRACT",
+      "AI_CLASSIFY",
+      "AI_COMPLETE",
+      "Cortex Search",
+      "Streams and Tasks"
+    ],
+    "tags": [
+      "mortgage",
+      "loan processing",
+      "conditions",
+      "income verification",
+      "quality control",
+      "document AI",
+      "lending"
+    ],
+    "setup": "local",
+    "images": [
+      {
+        "src": "assets/packs/loan-file-review-1.jpg",
+        "alt": "Pipeline: 54 active loans, 51 open conditions and average days to close, loans by stage, and files that failed a check, from a stage, stream and task pipeline"
+      },
+      {
+        "src": "assets/packs/loan-file-review-2.jpg",
+        "alt": "Loan file: stated income of $9,440 fails against $8,000.01 verified from the pay stub by AI_EXTRACT and a SQL tolerance rule, with a link to the source document"
+      },
+      {
+        "src": "assets/packs/loan-file-review-3.jpg",
+        "alt": "Large deposit: an $18,500 mobile check deposit pulled from a bank statement with AI_EXTRACT table extraction fails the 50% of monthly income threshold"
+      },
+      {
+        "src": "assets/packs/loan-file-review-4.jpg",
+        "alt": "Request document: an editable borrower email drafted with AI_COMPLETE for the open income condition, labeled as a sample response"
+      },
+      {
+        "src": "assets/packs/loan-file-review-5.jpg",
+        "alt": "QC sampling: findings by type against 12 months of post-closing QC, the pre-closing sample, and an AI_COMPLETE QC narrative on a 168-day-old appraisal"
+      },
+      {
+        "src": "assets/packs/loan-file-review-6.jpg",
+        "alt": "Ask the file: Cortex Search and AI_COMPLETE answer the borrower's verified monthly income with the arithmetic and numbered citations"
+      }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-loan-file-review/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-loan-file-review/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-loan-file-review",
+    "author": "Oz Oral",
+    "updated": "2026-11"
   }
 ]
