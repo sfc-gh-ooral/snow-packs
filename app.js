@@ -141,6 +141,7 @@
   function validateCatalog(data) {
     if (!Array.isArray(data)) throw new Error("Catalog must be an array.");
     const ids = new Set();
+    const featured = new Set();
     const requiredText = ["id", "title", "summary", "industry", "function", "author", "updated"];
     const outcomeIds = new Set(OUTCOMES.map(outcome => outcome.id));
     for (const pack of data) {
@@ -160,6 +161,8 @@
       if (pack.images !== undefined && (placeholder || !Array.isArray(pack.images) || !pack.images.length || pack.images.length > 8 || pack.images.some(image => !image || typeof image.src !== "string" || !/^assets\/packs\/[a-z0-9-]+\.(jpg|png|webp)$/.test(image.src) || typeof image.alt !== "string" || !image.alt.trim()))) throw new Error("Invalid pack images.");
       if (pack.authorUrl !== undefined && (placeholder || !isLinkedInProfile(pack.authorUrl))) throw new Error("Owner links must be a LinkedIn profile URL.");
       if (pack.access !== undefined && !["public", "internal"].includes(pack.access)) throw new Error("Invalid access label.");
+      if (pack.featured !== undefined && (placeholder || !Number.isInteger(pack.featured) || pack.featured < 1 || featured.has(pack.featured))) throw new Error("Invalid featured position.");
+      if (pack.featured !== undefined) featured.add(pack.featured);
       ids.add(pack.id);
     }
     return data;
@@ -645,6 +648,27 @@
 
   // ---------- Render ----------
 
+  // Default order: maintainer-featured packs first, then the rest alternating across industries
+  // (hosted examples first, newest first within an industry), then work in progress.
+  function catalogOrder(list) {
+    const position = new Map(packs.map((pack, index) => [pack.id, index]));
+    const byInput = (a, b) => position.get(a.id) - position.get(b.id);
+    const featured = list.filter(pack => pack.featured).sort((a, b) => a.featured - b.featured);
+    const planned = list.filter(pack => pack.workInProgress).sort(byInput);
+    const groups = new Map();
+    for (const pack of list.filter(pack => !pack.featured && !pack.workInProgress)) {
+      if (!groups.has(pack.industry)) groups.set(pack.industry, []);
+      groups.get(pack.industry).push(pack);
+    }
+    for (const group of groups.values()) {
+      group.sort((a, b) => Number(Boolean(b.demoUrl)) - Number(Boolean(a.demoUrl)) || b.updated.localeCompare(a.updated) || byInput(a, b));
+    }
+    const queues = [...groups.values()].sort((a, b) => b.length - a.length || byInput(a[0], b[0]));
+    const mixed = [];
+    while (queues.some(queue => queue.length)) queues.forEach(queue => { if (queue.length) mixed.push(queue.shift()); });
+    return [...featured, ...mixed, ...planned];
+  }
+
   function render() {
     const terms = search.value.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
     const matches = packs.filter(pack => {
@@ -652,8 +676,7 @@
       const content = [pack.title, pack.summary, pack.industry, pack.function, outcome?.title || "", ...pack.features, ...(pack.tags || [])].join(" ").toLocaleLowerCase();
       return terms.every(term => content.includes(term)) && Object.entries(selection).every(([key, value]) => !value || pack[key] === value);
     });
-    matches.sort((first, second) => Number(Boolean(first.workInProgress)) - Number(Boolean(second.workInProgress)));
-    grid.replaceChildren(...matches.map(packCard));
+    grid.replaceChildren(...catalogOrder(matches).map(packCard));
     empty.hidden = matches.length !== 0;
     const planned = matches.filter(pack => pack.workInProgress).length;
     status.textContent = `${matches.length} ${matches.length === 1 ? "pack" : "packs"} shown · ${packs.length} in the collection · ${planned} work in progress`;

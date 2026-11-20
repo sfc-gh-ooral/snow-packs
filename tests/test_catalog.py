@@ -74,7 +74,7 @@ class CatalogTests(unittest.TestCase):
 
     def test_search_title_summary_feature_case_and_whitespace(self):
         self.open()
-        for term, expected in [("loss triangle", 1), ("escalations", 1), ("  CORTEX   ANALYST  ", 8), ("Cortex", 12), ("MATCH_RECOGNIZE", 1), ("time travel", 1), ("structuring", 1), ("aggregation policies", 1), ("", len(self.catalog)), ("due diligence", 1)]:
+        for term, expected in [("loss triangle", 1), ("escalations", 1), ("  CORTEX   ANALYST  ", 9), ("Cortex", 13), ("MATCH_RECOGNIZE", 1), ("time travel", 1), ("structuring", 1), ("aggregation policies", 2), ("", len(self.catalog)), ("due diligence", 1)]:
             self.page.get_by_role("searchbox").fill(term)
             self.count(expected)
 
@@ -166,7 +166,7 @@ class CatalogTests(unittest.TestCase):
         self.assertEqual(self.page.locator(".coming-card").count(), 0)
 
     def test_new_entry_example_button_dynamic_chips_and_safe_text(self):
-        new_pack = {**self.catalog[0], "id": "test-pack", "title": "<img src=x onerror=alert(1)>", "industry": "Retail", "function": "Marketing", "demoUrl": "https://example.com/showcase", "tags": ["testkeyword"]}
+        new_pack = {**{k: v for k, v in self.catalog[0].items() if k != "featured"}, "id": "test-pack", "title": "<img src=x onerror=alert(1)>", "industry": "Retail", "function": "Marketing", "demoUrl": "https://example.com/showcase", "tags": ["testkeyword"]}
         self.page.route("**/packs.json", lambda route: route.fulfill(json=[*self.catalog, new_pack]))
         self.open()
         self.count(len(self.catalog) + 1)
@@ -210,14 +210,14 @@ class CatalogTests(unittest.TestCase):
             self.assertNotIn("maturity", pack)
 
     def test_placeholder_catalog_and_search(self):
-        self.assertEqual(len(self.catalog), 21)
+        self.assertEqual(len(self.catalog), 22)
         placeholders = [pack for pack in self.catalog if pack.get("workInProgress")]
         self.assertEqual(len(placeholders), 5)
         for pack in placeholders:
             self.assertEqual(pack["features"], [])
             self.assertTrue(all(pack[key] == "" for key in ["pagesUrl", "repoUrl", "demoUrl"]))
         self.open()
-        self.assertEqual(self.page.locator(".pack-card").count(), 21)
+        self.assertEqual(self.page.locator(".pack-card").count(), 22)
         self.assertEqual(self.page.locator(".wip-label").count(), 5)
         self.assertIn("5 work in progress", self.page.locator("#results-status").inner_text())
         self.page.get_by_role("searchbox").fill("claims triage")
@@ -230,7 +230,7 @@ class CatalogTests(unittest.TestCase):
         self.open()
         expected = [pack["id"] for pack in reversed(self.catalog) if not pack.get("workInProgress")]
         published_count = len(expected)
-        self.assertEqual(self.page.locator(".pack-card").evaluate_all("(cards, n) => cards.slice(0, n).map(card => card.dataset.packId)", published_count), expected)
+        self.assertCountEqual(self.page.locator(".pack-card").evaluate_all("(cards, n) => cards.slice(0, n).map(card => card.dataset.packId)", published_count), expected)
         self.assertEqual(self.page.locator(".available-label, .pack-card time, #catalog-updated").count(), 0)
         self.assertNotIn("reviewed", self.page.locator("#pack-grid").inner_text().lower())
         self.assertNotIn("latest pack review", self.page.locator("body").inner_text().lower())
@@ -248,7 +248,8 @@ class CatalogTests(unittest.TestCase):
             self.assertGreater(planned.locator(".wip-label").bounding_box()["width"], planned.bounding_box()["width"] * .7)
             self.assertEqual(planned.locator("a, button").count(), 0)
         self.page.get_by_label("Industry", exact=True).select_option("Insurance")
-        first_insurance = next(pack["id"] for pack in reversed(self.catalog) if pack["industry"] == "Insurance" and not pack.get("workInProgress"))
+        insurance = [pack for pack in self.catalog if pack["industry"] == "Insurance" and not pack.get("workInProgress")]
+        first_insurance = min(insurance, key=lambda pack: pack.get("featured", 10**6))["id"]  # a featured match leads
         self.assertEqual(self.page.locator(".pack-card").first.get_attribute("data-pack-id"), first_insurance)
 
     def test_setup_notes_match_where_examples_run(self):
@@ -358,7 +359,33 @@ class CatalogTests(unittest.TestCase):
     def test_featured_packs_lead_the_grid(self):
         self.open()
         order = self.page.locator("#pack-grid [data-pack-id]").evaluate_all("nodes => nodes.map(n => n.dataset.packId)")
-        self.assertEqual(order[:3], ["kyc-onboarding-workbench", "loss-triangle-suite", "contact-driver-analytics"])
+        by_id = {p["id"]: p for p in self.catalog}
+        featured = [p["id"] for p in sorted((p for p in self.catalog if p.get("featured")), key=lambda p: p["featured"])]
+        self.assertEqual(order[:len(featured)], featured)
+        rest = [by_id[i] for i in order[len(featured):] if not by_id[i].get("workInProgress")]
+        # The rest alternate across industries: no back-to-back repeats until only one industry is left.
+        for i, (a, b) in enumerate(zip(rest, rest[1:])):
+            if len({p["industry"] for p in rest[i:]}) > 1:
+                self.assertNotEqual(a["industry"], b["industry"], (a["id"], b["id"]))
+        planned = [i for i in order if by_id[i].get("workInProgress")]
+        self.assertEqual(order[-len(planned):], planned)
+        # Filters keep the same rules: featured matches still lead.
+        self.page.get_by_label("Industry", exact=True).select_option("Banking")
+        filtered = self.page.locator("#pack-grid [data-pack-id]").evaluate_all("nodes => nodes.map(n => n.dataset.packId)")
+        banking_featured = [i for i in featured if by_id[i]["industry"] == "Banking"]
+        self.assertEqual(filtered[:len(banking_featured)], banking_featured)
+
+    def test_invalid_featured_rejected(self):
+        published = [p for p in self.catalog if not p.get("workInProgress")]
+        placeholder = next(p for p in self.catalog if p.get("workInProgress"))
+        for payload in ([{**published[0], "featured": 0}], [{**published[0], "featured": 1.5}], [{**published[0], "featured": "1"}],
+                        [{**published[0], "featured": 1}, {**published[1], "featured": 1}], [{**placeholder, "featured": 1}]):
+            with self.subTest(featured=[p.get("featured") for p in payload]):
+                self.page.route("**/packs.json", lambda route, _request, body=payload: route.fulfill(json=body))
+                self.page.goto(self.url)
+                self.page.locator("#load-error").wait_for(state="visible")
+                self.count(0)
+                self.page.unroute("**/packs.json")
 
     def test_industry_bands_on_every_card(self):
         self.open()

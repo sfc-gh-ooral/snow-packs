@@ -82,6 +82,7 @@ The app is what customers remember. Build an experience for the people who would
 - **Should:** Make simulated AI calls feel like real ones. In Sample mode, wait a few seconds before showing a scripted answer (for example, 4 to 8 seconds, with a little jitter) and show staged progress steps that name what the live path really does, such as "Applying row access policy", "Generating SQL with Cortex Analyst", and "Checking the response with Cortex Guard". Keep the scripted answer labeled as a sample. In Live mode, show the same steps while the real call runs, with no added delay, and report the measured latency. Keep the steps truthful: only list work the live path performs.
 - **Should:** Make the Snowflake capability visible in the UI, e.g., a small "Powered by Cortex Agents" or "Row access policy applied" badge on the component that uses it.
 - **Should:** Polish matters: consistent styling, realistic synthetic names and numbers, no empty states or error screens in the main flow.
+- **Should:** The hosted example is usable at phone width (about 390 px): no sideways page scroll, navigation reachable, and wide tables or charts scroll inside their own box.
 
 ### Add a front end with CoCo
 
@@ -195,6 +196,7 @@ Not ready to build yet? Use [the proposal form](https://github.com/sfc-gh-ooral/
 Optional fields:
 
 - `authorUrl`: optional link for your name on the card, e.g. `https://www.linkedin.com/in/your-handle`. Only LinkedIn profile URLs are accepted. Add only your own profile. Not allowed on work-in-progress entries.
+- `featured`: set by the catalog maintainer, not in contributor PRs. Featured packs lead the default view; the rest alternate across industries, with hosted examples and newer packs first.
 - `outcome`: the business outcome tile the pack appears under: `catch-financial-crime`, `prove-compliance`, `manage-risk`, or `serve-clients`. Required for new packs. Ask the maintainers if none fits; new outcomes are added in `app.js`.
 - `images`: 2–8 preview screenshots, each `{ "src": "assets/packs/<id>-<n>.jpg", "alt": "…" }` (`.jpg`, `.png`, or `.webp`). The `alt` text doubles as the carousel caption, so describe what the screen shows and which capability powers it. Required for new packs; at least 1 is enforced. Not allowed on work-in-progress entries.
 - `setup`: `local` (default) when the app runs in no-account mode; `snowflake` only for older listings that run solely in the reader's account. See section 4. Not allowed on work-in-progress entries.
