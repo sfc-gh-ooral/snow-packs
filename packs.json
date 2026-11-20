@@ -1029,5 +1029,68 @@
     "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-trade-reporting-validation",
     "author": "Oz Oral",
     "updated": "2026-11"
+  },
+  {
+    "id": "collections-copilot",
+    "title": "Collections Prioritization Copilot",
+    "summary": "Help collections teams contact the right delinquent customers first, with the right offer and a compliant, empathetic conversation guide.",
+    "industry": "Banking",
+    "function": "Operations",
+    "outcome": "manage-risk",
+    "features": [
+      "Snowpark ML",
+      "Model Registry",
+      "Dynamic Tables",
+      "Cortex AI_CLASSIFY",
+      "Cortex AI_COMPLETE",
+      "Cortex Agents",
+      "Cortex Analyst",
+      "Semantic Views"
+    ],
+    "tags": [
+      "collections",
+      "delinquency",
+      "roll rate",
+      "cure rate",
+      "promise to pay",
+      "hardship",
+      "contact strategy",
+      "call QA",
+      "debt collection compliance",
+      "auto loans",
+      "XGBoost"
+    ],
+    "setup": "local",
+    "images": [
+      {
+        "src": "assets/packs/collections-copilot-1.jpg",
+        "alt": "Calvessa portfolio screen: a dusk-gradient header, KPI tiles with sparklines for 1,999 delinquent loans, a 4.15% 30+ DPD rate, $2.11M past due, a 77% roll rate, a 20% cure rate and a 45% promise-kept rate, four story cards, the daily delinquency-rate chart and the roll ladder"
+      },
+      {
+        "src": "assets/packs/collections-copilot-2.jpg",
+        "alt": "Today's queue filtered to borrowers who text back in the evening, with the first row selected and a side drawer open showing days past due, past due, roll risk, the best way to reach (text in the evening) against their usual morning calls, the suggested offer and calls used out of 7"
+      },
+      {
+        "src": "assets/packs/collections-copilot-3.jpg",
+        "alt": "Account workspace for a borrower 42 days past due with a 94% roll risk and two broken promises: profile header, reach heatmap by channel and time of day, and a conversation guide panel labeled Sample AI response with its sources"
+      },
+      {
+        "src": "assets/packs/collections-copilot-4.jpg",
+        "alt": "Account workspace for a flood-area borrower in ZIP 70502 tagged Severe flooding (synthetic event): eligible for disaster forbearance, the Hardship action tab and the confirmation Enrollment requested for review"
+      },
+      {
+        "src": "assets/packs/collections-copilot-5.jpg",
+        "alt": "Call QA: 381 calls reviewed, 33 flagged, 12 high risk; the transcript TR900001 shown as chat bubbles where the agent threatens arrest and a workplace visit, with high-risk flags and a coaching note labeled Sample AI response"
+      },
+      {
+        "src": "assets/packs/collections-copilot-6.jpg",
+        "alt": "Ask screen: the question Which accounts broke promises twice this month? in a dusk chat bubble, answered with a count of accounts and a table, labeled Sample AI response, with the generated SQL and sources"
+      }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-collections-copilot/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-collections-copilot/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-collections-copilot",
+    "author": "Oz Oral",
+    "updated": "2026-11"
   }
 ]
