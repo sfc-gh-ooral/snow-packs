@@ -456,7 +456,7 @@
     "tags": ["account takeover", "cybersecurity", "fraud", "identity", "financial crime", "MFA fatigue", "credential stuffing", "impossible travel"],
     "setup": "local",
     "images": [
-      { "src": "assets/packs/account-takeover-detection-1.jpg", "alt": "Alert queue: customers ranked by the takeover rules they triggered, with tunable weights and threshold; rules run as SQL views using MATCH_RECOGNIZE and HAVERSINE" },
+      { "src": "assets/packs/account-takeover-detection-1.jpg", "alt": "Alert queue in sample mode: 99 customers with a rule hit, 50 alerts at score 40 or more, and customers ranked by the takeover rules they triggered, with rule filters and tunable weights" },
       { "src": "assets/packs/account-takeover-detection-2.jpg", "alt": "Case timeline in Snowflake mode: a case summary drafted by Cortex AI_COMPLETE beside the customer's logins, account changes and transfers" },
       { "src": "assets/packs/account-takeover-detection-3.jpg", "alt": "Rule performance: precision and recall per rule and by alert threshold, against synthetic investigation labels" },
       { "src": "assets/packs/account-takeover-detection-4.jpg", "alt": "Case timeline in sample mode: rule evidence and a templated case summary labelled Sample AI response" }
@@ -761,6 +761,90 @@
     "demoUrl": "https://sfc-gh-jsoliz.github.io/sfguide-site-selection/try/",
     "repoUrl": "https://github.com/sfc-gh-jsoliz/sfguide-site-selection",
     "author": "Javier Soliz",
+    "updated": "2026-11"
+  },
+  {
+    "id": "continuous-control-testing",
+    "title": "Continuous Control Testing",
+    "summary": "Help risk and audit teams test entire populations instead of samples, triage exceptions with an AI assistant, and keep evidence for every run.",
+    "industry": "Banking",
+    "function": "Risk",
+    "outcome": "prove-compliance",
+    "features": [
+      "Tasks",
+      "Dynamic Tables",
+      "Data Metric Functions",
+      "Cortex Agents",
+      "Cortex Analyst",
+      "Semantic Views",
+      "Cortex Search",
+      "Cortex AI_COMPLETE",
+      "AI_CLASSIFY",
+      "AI_SIMILARITY",
+      "Time Travel",
+      "Snowflake SQL"
+    ],
+    "tags": [
+      "control testing",
+      "full population",
+      "exceptions",
+      "data quality",
+      "triage",
+      "audit evidence",
+      "second line",
+      "orphaned access",
+      "dual approval"
+    ],
+    "setup": "local",
+    "images": [
+      {
+        "src": "assets/packs/continuous-control-testing-1.jpg",
+        "alt": "Control coverage: 8 of 25 controls tested monthly on the full population by a Snowflake task, with exceptions by month and an August Payments spike, open counts from a Dynamic Table"
+      },
+      {
+        "src": "assets/packs/continuous-control-testing-2.jpg",
+        "alt": "Exception queue: open exceptions grouped by root cause, with a data metric function flagging a wire feed batch that arrived without second approvers"
+      },
+      {
+        "src": "assets/packs/continuous-control-testing-3.jpg",
+        "alt": "Exception detail: the evidence row, feed quality by batch from a data metric function, and an AI_COMPLETE explanation suggesting Data issue for a reviewer to confirm"
+      },
+      {
+        "src": "assets/packs/continuous-control-testing-4.jpg",
+        "alt": "Triage assistant: a Cortex Agent with Cortex Analyst, Cortex Search, and stored-procedure tools drafts a finding and a route, with Approve, Edit, and Reject"
+      },
+      {
+        "src": "assets/packs/continuous-control-testing-5.jpg",
+        "alt": "Evidence pack: each monthly run with its query ID, counts, and dispositions, and a Time Travel recount of the source table as of the run"
+      }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-continuous-control-testing/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-continuous-control-testing/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-continuous-control-testing",
+    "author": "Oz Oral",
+    "updated": "2026-11"
+  },
+  {
+    "id": "client-account-views",
+    "title": "Client Account Views at App Speed",
+    "summary": "Help firms serve advisor- and client-facing account views directly from their analytics data, avoiding a duplicate operational reporting database.",
+    "industry": "Wealth Management",
+    "function": "Operations",
+    "outcome": "serve-clients",
+    "features": ["Interactive Tables", "Interactive Warehouses", "Dynamic Tables", "Cortex AI_COMPLETE", "Snowflake SQL"],
+    "tags": ["account summary", "positions", "holdings", "advisor platform", "low latency", "concurrency", "load test", "reconciliation", "reporting database", "API"],
+    "setup": "local",
+    "images": [
+      { "src": "assets/packs/client-account-views-1.jpg", "alt": "Advisor account page: summary, holdings, and activity served from interactive tables, each widget with its measured query latency" },
+      { "src": "assets/packs/client-account-views-2.jpg", "alt": "Architecture compare: duplicate reporting database path vs serving from Snowflake, with reconciliation breaks the nightly copy caused" },
+      { "src": "assets/packs/client-account-views-3.jpg", "alt": "Load test: p50, p95, and p99 latency for a peak-hour burst of concurrent sessions on an interactive warehouse" },
+      { "src": "assets/packs/client-account-views-4.jpg", "alt": "Cost model: before and after monthly cost computed only from the inputs the reader enters" },
+      { "src": "assets/packs/client-account-views-5.jpg", "alt": "Performance vs benchmark chart and a call prep brief drafted with AI_COMPLETE, labeled as a sample response" }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-client-account-views/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-client-account-views/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-client-account-views",
+    "author": "Oz Oral",
     "updated": "2026-11"
   }
 ]
