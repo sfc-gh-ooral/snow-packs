@@ -74,7 +74,7 @@ class CatalogTests(unittest.TestCase):
 
     def test_search_title_summary_feature_case_and_whitespace(self):
         self.open()
-        for term, expected in [("loss triangle", 1), ("escalations", 1), ("  CORTEX   ANALYST  ", 20), ("Cortex", 25), ("MATCH_RECOGNIZE", 1), ("time travel", 2), ("structuring", 1), ("aggregation policies", 2), ("", len(self.catalog)), ("due diligence", 1)]:
+        for term, expected in [("loss triangle", 1), ("escalations", 1), ("  CORTEX   ANALYST  ", 20), ("Cortex", 26), ("MATCH_RECOGNIZE", 1), ("time travel", 2), ("structuring", 1), ("aggregation policies", 2), ("", len(self.catalog)), ("due diligence", 1)]:
             self.page.get_by_role("searchbox").fill(term)
             self.count(expected)
 
@@ -210,14 +210,14 @@ class CatalogTests(unittest.TestCase):
             self.assertNotIn("maturity", pack)
 
     def test_placeholder_catalog_and_search(self):
-        self.assertEqual(len(self.catalog), 34)
+        self.assertEqual(len(self.catalog), 35)
         placeholders = [pack for pack in self.catalog if pack.get("workInProgress")]
         self.assertEqual(len(placeholders), 5)
         for pack in placeholders:
             self.assertEqual(pack["features"], [])
             self.assertTrue(all(pack[key] == "" for key in ["pagesUrl", "repoUrl", "demoUrl"]))
         self.open()
-        self.assertEqual(self.page.locator(".pack-card").count(), 34)
+        self.assertEqual(self.page.locator(".pack-card").count(), 35)
         self.assertEqual(self.page.locator(".wip-label").count(), 5)
         self.assertIn("5 work in progress", self.page.locator("#results-status").inner_text())
         self.page.get_by_role("searchbox").fill("investment research workbench")

@@ -967,6 +967,70 @@
     "updated": "2026-11"
   },
   {
+    "id": "trade-reporting-validation",
+    "title": "Regulatory Trade Reporting Validation",
+    "summary": "Help broker-dealer reporting teams catch errors before submission, reconcile against the books, and work regulator feedback faster, for the Consolidated Audit Trail (CAT) and Customer and Account Information System (CAIS).",
+    "industry": "Capital Markets",
+    "function": "Compliance",
+    "outcome": "prove-compliance",
+    "features": [
+      "Dynamic Tables",
+      "Data Metric Functions",
+      "Anomaly Detection",
+      "Cortex Search",
+      "Cortex AI_COMPLETE",
+      "Cortex AI_SIMILARITY",
+      "Window Functions"
+    ],
+    "tags": [
+      "CAT",
+      "CAIS",
+      "consolidated audit trail",
+      "regulatory reporting",
+      "trade reporting",
+      "broker-dealer",
+      "rejects",
+      "linkage errors",
+      "reconciliation",
+      "books and records",
+      "entity matching",
+      "order lifecycle",
+      "evidence"
+    ],
+    "setup": "local",
+    "images": [
+      {
+        "src": "assets/packs/trade-reporting-validation-1.jpg",
+        "alt": "Cadrel submission health for trade date October 29: a reject-spike banner reading 38 rejects against a 7.8 per-day average with 26 LNK-01 linkage breaks from ALGO-X, KPI tiles for 542 events, 38 check failures, 38 rejects, 100 percent caught before submission and a repair backlog of 68, and a stacked bar chart of rejects by error code that spikes on October 29"
+      },
+      {
+        "src": "assets/packs/trade-reporting-validation-2.jpg",
+        "alt": "Rule library for October 29: six rule tiles with pass or fail status, R-LNK-01 selected with 26 failures out of 52 routes and R-SEQ-02 with 12, and a table of failing records from ALGO-X program trading routed to NW-ATS with PT-prefixed routed order IDs"
+      },
+      {
+        "src": "assets/packs/trade-reporting-validation-3.jpg",
+        "alt": "Order lifecycle for O-261029-03543: a swimlane timeline across the firm CAT feed, the destination ATS and the books with the ROUTE event flagged in coral, and a route linkage panel showing the firm routed order ID PT-261029-03543 against the ATS ID 261029-03543"
+      },
+      {
+        "src": "assets/packs/trade-reporting-validation-4.jpg",
+        "alt": "Reject workbench: root-cause clusters with LNK-01 ALGO-X program trading selected, 30 rejects all caught by a check, an AI explanation labeled Sample AI response with what happened, the likely root cause and three suggested repair steps, and three cited FAQ sources from Cortex Search"
+      },
+      {
+        "src": "assets/packs/trade-reporting-validation-5.jpg",
+        "alt": "CAIS customers: three account records for Elena Marchetti with similarity scores of 0.977 and 0.956, conflicting customer ID, name, date of birth and address in coral, and a proposed canonical record with one dropdown per field, an approval note and an approve button"
+      },
+      {
+        "src": "assets/packs/trade-reporting-validation-6.jpg",
+        "alt": "Anomaly monitor: 15 flagged days across source systems, and small charts of regulator rejects per day for ALGO-X, MANUAL, OMS-A and OMS-B with a shaded expected range and amber anomaly points, including ALGO-X rejecting 26 on October 29 against an expected 0 to 1"
+      }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-trade-reporting-validation/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-trade-reporting-validation/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-trade-reporting-validation",
+    "author": "Oz Oral",
+    "updated": "2026-11"
+  },
+  {
     "id": "complaints-intelligence",
     "title": "Complaints Intelligence",
     "summary": "Help complaint teams classify every complaint across channels, spot emerging conduct-risk themes early, and evidence timely resolution.",
