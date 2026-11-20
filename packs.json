@@ -756,5 +756,28 @@
     "repoUrl": "https://github.com/sfc-gh-jsoliz/sfguide-site-selection",
     "author": "Javier Soliz",
     "updated": "2026-11"
+  },
+  {
+    "id": "client-account-views",
+    "title": "Client Account Views at App Speed",
+    "summary": "Help firms serve advisor- and client-facing account views directly from their analytics data, avoiding a duplicate operational reporting database.",
+    "industry": "Wealth Management",
+    "function": "Operations",
+    "outcome": "serve-clients",
+    "features": ["Interactive Tables", "Interactive Warehouses", "Dynamic Tables", "Cortex AI_COMPLETE", "Snowflake SQL"],
+    "tags": ["account summary", "positions", "holdings", "advisor platform", "low latency", "concurrency", "load test", "reconciliation", "reporting database", "API"],
+    "setup": "local",
+    "images": [
+      { "src": "assets/packs/client-account-views-1.jpg", "alt": "Account desk: an advisor's book beside the Hollis Family Trust account page, each widget showing its interactive table and captured latency" },
+      { "src": "assets/packs/client-account-views-2.jpg", "alt": "Call prep: a brief for the next client call drafted with Cortex AI_COMPLETE from the rows on the page, labeled as a sample AI response" },
+      { "src": "assets/packs/client-account-views-3.jpg", "alt": "Architecture compare: nightly ETL to a reporting database versus serving from Snowflake with dynamic and interactive tables, with the accounts where the copy disagrees" },
+      { "src": "assets/packs/client-account-views-4.jpg", "alt": "Load lab: a market-open replay of concurrent advisor sessions on an interactive warehouse, with p50, p95, p99 latency and throughput" },
+      { "src": "assets/packs/client-account-views-5.jpg", "alt": "Cost model: monthly cost of a duplicate reporting database versus serving from Snowflake, computed only from the numbers the reader enters" }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-client-account-views/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-client-account-views/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-client-account-views",
+    "author": "Oz Oral",
+    "updated": "2026-11"
   }
 ]
