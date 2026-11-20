@@ -779,5 +779,71 @@
     "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-client-account-views",
     "author": "Oz Oral",
     "updated": "2026-11"
+  },
+  {
+    "id": "governed-context-layer",
+    "title": "One Answer Across Agents",
+    "summary": "Help institutions give consistent answers when several AI agents touch the same data, by capturing business context once in governed semantic views and reusing it everywhere.",
+    "industry": "Financial Services",
+    "function": "Operations",
+    "outcome": "manage-risk",
+    "features": [
+      "Semantic Views",
+      "Cortex Agents",
+      "Cortex Analyst",
+      "Cortex Search",
+      "Cortex AI_EXTRACT",
+      "Cortex AI_COMPLETE",
+      "Object Tagging",
+      "Tasks"
+    ],
+    "tags": [
+      "governed context",
+      "business glossary",
+      "agent consistency",
+      "definitions",
+      "data product owner",
+      "conflicting definitions",
+      "verified queries",
+      "orchestrator agent",
+      "evaluation",
+      "account operations"
+    ],
+    "setup": "local",
+    "images": [
+      {
+        "src": "assets/packs/governed-context-layer-1.jpg",
+        "alt": "Veritome overview: two agents give 120,402 and 98,115 active accounts, a governed answer from a semantic view awaits owner approval, with agreement KPIs and open conflicts"
+      },
+      {
+        "src": "assets/packs/governed-context-layer-2.jpg",
+        "alt": "Side by side: ungoverned agents disagree on active accounts while governed Cortex Agents give the same number and cite the Accounts semantic view"
+      },
+      {
+        "src": "assets/packs/governed-context-layer-3.jpg",
+        "alt": "Conflict resolver: two wiki definitions mined with AI_EXTRACT side by side, with an AI_COMPLETE explanation of how they differ"
+      },
+      {
+        "src": "assets/packs/governed-context-layer-4.jpg",
+        "alt": "Context inventory: glossary of governed terms with a drawer showing the active account definition, semantic view expression, synonyms and owner"
+      },
+      {
+        "src": "assets/packs/governed-context-layer-5.jpg",
+        "alt": "After owner approval: all governed agents agree and the story rail shows every step done"
+      },
+      {
+        "src": "assets/packs/governed-context-layer-6.jpg",
+        "alt": "Domain composer: one orchestrator Cortex Agent routes a three-part question to the Accounts, Service and Advisors semantic views"
+      },
+      {
+        "src": "assets/packs/governed-context-layer-7.jpg",
+        "alt": "Consistency monitor: AI_COMPLETE-judged agreement, 100 percent for governed agents and 33 percent for ungoverned on the latest run"
+      }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-governed-context-layer/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-governed-context-layer/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-governed-context-layer",
+    "author": "Oz Oral",
+    "updated": "2026-11"
   }
 ]
