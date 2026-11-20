@@ -840,5 +840,29 @@
     "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-client-account-views",
     "author": "Oz Oral",
     "updated": "2026-11"
+  },
+  {
+    "id": "governed-context-layer",
+    "title": "One Answer Across Agents",
+    "summary": "Help institutions give consistent answers when several AI agents touch the same data, by capturing business context once in governed semantic views and reusing it everywhere.",
+    "industry": "Financial Services",
+    "function": "Operations",
+    "outcome": "manage-risk",
+    "features": ["Semantic Views", "Cortex Agents", "Cortex Analyst", "Cortex Search", "Cortex AI_EXTRACT", "Cortex AI_COMPLETE", "Object Tagging", "Tasks"],
+    "tags": ["governed context", "business glossary", "agent consistency", "definitions", "data product owner", "conflicting definitions", "verified queries", "orchestrator agent", "evaluation", "account operations"],
+    "setup": "local",
+    "images": [
+      { "src": "assets/packs/governed-context-layer-1.jpg", "alt": "Side by side: two own-prompt agents give 120,402 and 98,115 active accounts while governed Cortex Agents agree from one semantic view" },
+      { "src": "assets/packs/governed-context-layer-2.jpg", "alt": "Context inventory: glossary terms with owner, source, and status, conflicts flagged, and Horizon Catalog status tags on each semantic view" },
+      { "src": "assets/packs/governed-context-layer-3.jpg", "alt": "Conflict resolver: two definitions mined with AI_EXTRACT side by side, an AI_COMPLETE explanation, and owner approval" },
+      { "src": "assets/packs/governed-context-layer-4.jpg", "alt": "After approval: governed agents give the same address-change steps from Cortex Search while own-prompt agents still disagree" },
+      { "src": "assets/packs/governed-context-layer-5.jpg", "alt": "Domain composer: one orchestrator Cortex Agent answers across Accounts, Service, and Advisors semantic views without merging them" },
+      { "src": "assets/packs/governed-context-layer-6.jpg", "alt": "Consistency monitor: nightly agreement rate for governed and ungoverned agents, judged by AI_COMPLETE, climbing after approval" }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-governed-context-layer/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-governed-context-layer/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-governed-context-layer",
+    "author": "Oz Oral",
+    "updated": "2026-11"
   }
 ]
