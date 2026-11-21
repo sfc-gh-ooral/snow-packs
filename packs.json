@@ -1037,7 +1037,7 @@
     "features": [
       "Dynamic Tables",
       "Data Metric Functions",
-      "Anomaly Detection",
+      "Snowflake ML Anomaly Detection",
       "Cortex Search",
       "Cortex AI_COMPLETE",
       "Cortex AI_SIMILARITY",
