@@ -231,36 +231,91 @@
     "updated": "2026-11"
   },
   {
-    "id": "claims-triage-insights",
-    "title": "Claims Triage Insights",
-    "summary": "A planned workspace for exploring claim complexity, handling delays, and supporting documents to inform adjuster-led prioritization.",
+    "id": "claims-intake-assistant",
+    "title": "Claims Intake and Triage Assistant",
+    "summary": "Help claims teams turn first notice of loss (FNOL) emails, forms, photos, and repair estimates into structured, triaged claims with an AI summary for every adjuster.",
     "industry": "Insurance",
     "function": "Claims",
     "outcome": "serve-clients",
-    "workInProgress": true,
-    "features": [],
-    "tags": ["claims management", "adjusters", "first notice of loss"],
-    "pagesUrl": "",
-    "demoUrl": "",
-    "repoUrl": "",
-    "author": "Snow Packs",
-    "updated": "2026-10"
+    "features": ["Cortex AI_PARSE_DOCUMENT", "Cortex AI_EXTRACT", "Cortex AI_CLASSIFY", "Cortex AI_COMPLETE", "Cortex Search", "Streams",
+      "Tasks", "Directory Tables", "Snowflake SQL"],
+    "tags": ["claims", "first notice of loss", "FNOL", "triage", "adjusters", "document AI", "SIU", "repair estimate", "claims management"],
+    "setup": "local",
+    "images": [
+      { "src": "assets/packs/claims-intake-assistant-1.jpg", "alt": "Intake inbox: every incoming document with its AI_CLASSIFY type, extraction status and lowest AI_EXTRACT confidence, fed by a stage, stream and task" },
+      { "src": "assets/packs/claims-intake-assistant-2.jpg", "alt": "Claim file: the AI_PARSE_DOCUMENT source document with extracted values highlighted, AI_EXTRACT fields with confidence, and an AI_COMPLETE summary with an AI_CLASSIFY tier suggesting an SIU referral" },
+      { "src": "assets/packs/claims-intake-assistant-3.jpg", "alt": "Estimate check: AI_EXTRACT table extraction of repair line items shows the estimate total is $1,250 more than the line items" },
+      { "src": "assets/packs/claims-intake-assistant-4.jpg", "alt": "Triage board: fast track, standard, complex and SIU lanes from AI_CLASSIFY, with red-flag tags, suggested adjusters, adjuster workload and cycle-time charts" },
+      { "src": "assets/packs/claims-intake-assistant-5.jpg", "alt": "Ask the claims file: Cortex Search and AI_COMPLETE trace a claim's medical bills with numbered citations" },
+      { "src": "assets/packs/claims-intake-assistant-6.jpg", "alt": "Damage photo: AI_COMPLETE describes a windshield crack in a synthetic illustration for a fast-track glass claim" }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-claims-intake-assistant/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-claims-intake-assistant/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-claims-intake-assistant",
+    "author": "Oz Oral",
+    "updated": "2026-11"
   },
   {
-    "id": "underwriting-submission-review",
-    "title": "Underwriting Submission Review",
-    "summary": "A planned exploration of submission completeness, risk context, and portfolio fit to support underwriter-led assessment.",
+    "id": "underwriting-submission-intelligence",
+    "title": "Underwriting Submission Intelligence",
+    "summary": "Help commercial underwriters clear submission backlogs by extracting broker submissions, checking appetite and completeness, and prioritizing the best-fit risks.",
     "industry": "Insurance",
     "function": "Underwriting",
     "outcome": "manage-risk",
-    "workInProgress": true,
-    "features": [],
-    "tags": ["commercial insurance", "submissions", "risk assessment"],
-    "pagesUrl": "",
-    "demoUrl": "",
-    "repoUrl": "",
-    "author": "Snow Packs",
-    "updated": "2026-10"
+    "features": [
+      "Cortex AI_PARSE_DOCUMENT",
+      "Cortex AI_EXTRACT",
+      "Cortex AI_CLASSIFY",
+      "Cortex AI_COMPLETE",
+      "Cortex Search",
+      "Cortex Agents",
+      "Cortex Analyst",
+      "Semantic Views",
+      "Geospatial",
+      "Snowflake SQL"
+    ],
+    "tags": [
+      "commercial insurance",
+      "submissions",
+      "broker",
+      "appetite",
+      "loss runs",
+      "document extraction",
+      "accumulation",
+      "coastal exposure"
+    ],
+    "setup": "local",
+    "images": [
+      {
+        "src": "assets/packs/underwriting-submission-intelligence-1.jpg",
+        "alt": "Morning docket: 136 waiting submissions with KPIs, intake chart, appetite donut, and a work queue ranked by fit score from AI_EXTRACT, AI_CLASSIFY, and the SUBMISSION_SCORES view"
+      },
+      {
+        "src": "assets/packs/underwriting-submission-intelligence-2.jpg",
+        "alt": "Submission file: the broker application parsed with AI_PARSE_DOCUMENT, AI_EXTRACT fields, and AI_CLASSIFY flagging a fireworks class as out of appetite, capping the fit score at 15"
+      },
+      {
+        "src": "assets/packs/underwriting-submission-intelligence-3.jpg",
+        "alt": "Underwriting memo drafted by AI_COMPLETE with Cortex Search appetite-guide passages, beside the fit-score breakdown and decision actions"
+      },
+      {
+        "src": "assets/packs/underwriting-submission-intelligence-4.jpg",
+        "alt": "Appetite and completeness check with Cortex Search guide passages, a missing five-year loss run, and an editable AI_COMPLETE broker email asking for it"
+      },
+      {
+        "src": "assets/packs/underwriting-submission-intelligence-5.jpg",
+        "alt": "Portfolio fit: new coastal hotel locations on an exposure map with distance to coast and coastal TIV share from ST_DISTANCE, ST_DWITHIN, and H3"
+      },
+      {
+        "src": "assets/packs/underwriting-submission-intelligence-6.jpg",
+        "alt": "Ask the desk: a Cortex Agent answers a pipeline question with Cortex Analyst SQL on the SUBMISSIONS_SV semantic view, with the results table"
+      }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-underwriting-submission-intelligence/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-underwriting-submission-intelligence/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-underwriting-submission-intelligence",
+    "author": "Oz Oral",
+    "updated": "2026-11"
   },
   {
     "id": "trade-surveillance",
@@ -1027,6 +1082,198 @@
     "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-trade-reporting-validation/",
     "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-trade-reporting-validation/try/",
     "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-trade-reporting-validation",
+    "author": "Oz Oral",
+    "updated": "2026-11"
+  },
+  {
+    "id": "complaints-intelligence",
+    "title": "Complaints Intelligence",
+    "summary": "Help complaint teams classify every complaint across channels, spot emerging conduct-risk themes early, and evidence timely resolution.",
+    "industry": "Banking",
+    "function": "Compliance",
+    "outcome": "prove-compliance",
+    "features": [
+      "Cortex AI_CLASSIFY",
+      "Cortex AI_SENTIMENT",
+      "Cortex AI_EMBED",
+      "Cortex AI_REDACT",
+      "Cortex AI_AGG",
+      "Cortex AI_COMPLETE",
+      "Dynamic Tables",
+      "Cortex Agents",
+      "Cortex Analyst",
+      "Semantic Views"
+    ],
+    "tags": [
+      "complaints",
+      "UDAAP",
+      "fair lending",
+      "conduct risk",
+      "PII masking",
+      "duplicates",
+      "emerging themes"
+    ],
+    "setup": "local",
+    "images": [
+      {
+        "src": "assets/packs/complaints-intelligence-1.jpg",
+        "alt": "Overview: 40,141 complaints, 41.2 percent flagged high-risk, 94.0 percent resolved on time, weekly volume by product, and UDAAP, fair-lending and servicing flags from AI_CLASSIFY in a Dynamic Table"
+      },
+      {
+        "src": "assets/packs/complaints-intelligence-2.jpg",
+        "alt": "Emerging themes: a six-week heatmap with overdraft fee complaints up 1,013 percent in week 3, and an AI_AGG root-cause summary citing example complaints masked by AI_REDACT"
+      },
+      {
+        "src": "assets/packs/complaints-intelligence-3.jpg",
+        "alt": "Complaint queue on the fair-lending review filter, with a quick-view drawer showing the AI_REDACT masked text and AI classification for one complaint"
+      },
+      {
+        "src": "assets/packs/complaints-intelligence-4.jpg",
+        "alt": "Case file: a mortgage application-denied complaint flagged as a possible fair-lending concern, with masked text, AI_CLASSIFY and AI_SENTIMENT results, and an AI_COMPLETE response draft labeled as a sample response"
+      },
+      {
+        "src": "assets/packs/complaints-intelligence-5.jpg",
+        "alt": "Case file: an unauthorized-transaction complaint with two earlier complaints from the same customer marked as likely duplicates by AI_EMBED and VECTOR_COSINE_SIMILARITY"
+      },
+      {
+        "src": "assets/packs/complaints-intelligence-6.jpg",
+        "alt": "Regulatory view: AI subcategories rolled up to a regulator-style product and issue list, with on-time resolution by product and CSV export"
+      }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-complaints-intelligence/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-complaints-intelligence/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-complaints-intelligence",
+    "author": "Oz Oral",
+    "updated": "2026-11"
+  }
+,
+  {
+    "id": "payment-fraud-workbench",
+    "title": "Payment Fraud Investigation Workbench",
+    "summary": "Help fraud analysts score card and real-time payments, see linked accounts and devices, and close cases faster with an AI case summary.",
+    "industry": "Payments",
+    "function": "Risk",
+    "outcome": "catch-financial-crime",
+    "features": [
+      "Snowpark ML",
+      "Feature Store",
+      "Model Registry",
+      "Dynamic Tables",
+      "Geospatial",
+      "Cortex AI_COMPLETE",
+      "Cortex Agents",
+      "Cortex Analyst",
+      "Semantic Views"
+    ],
+    "tags": [
+      "payment fraud",
+      "card fraud",
+      "card testing",
+      "account takeover",
+      "mule ring",
+      "impossible travel",
+      "P2P",
+      "instant payments",
+      "XGBoost",
+      "link analysis",
+      "alert queue",
+      "case management"
+    ],
+    "setup": "local",
+    "images": [
+      {
+        "src": "assets/packs/payment-fraud-workbench-1.jpg",
+        "alt": "Fraud overview: fraud rate of 14.0 bps, losses, alerts raised and precision, a daily alert and fraud-rate chart from Snowflake SQL, and the top reason codes"
+      },
+      {
+        "src": "assets/packs/payment-fraud-workbench-2.jpg",
+        "alt": "Alert queue: XGBoost scores with reason codes, overdue SLA pills and actions, and a detail drawer with the payment's Feature Store inputs and a re-score from the Model Registry, labeled Sample model response"
+      },
+      {
+        "src": "assets/packs/payment-fraud-workbench-3.jpg",
+        "alt": "Account takeover case: an AI case summary with signals and a recommended next step from AI_COMPLETE, labeled Sample AI response, beside the analyst decision checklist"
+      },
+      {
+        "src": "assets/packs/payment-fraud-workbench-4.jpg",
+        "alt": "Mule-ring case: a link graph of 13 accounts, 4 devices and 3 IPs from a recursive CTE, a map of where the card was used, and the alert timeline"
+      },
+      {
+        "src": "assets/packs/payment-fraud-workbench-5.jpg",
+        "alt": "Impossible travel case: a map path from a Boston swipe to a flagged Miami swipe 28 minutes later, 2,019 km apart at 4,400 km/h by ST_DISTANCE, beside a single-account link graph"
+      },
+      {
+        "src": "assets/packs/payment-fraud-workbench-6.jpg",
+        "alt": "Model and rules: threshold slider at 0.80 with precision, recall, alerts per day and fraud caught on labeled synthetic payments"
+      },
+      {
+        "src": "assets/packs/payment-fraud-workbench-7.jpg",
+        "alt": "Ask: a Cortex Agent over Cortex Analyst answers which merchants had card-testing patterns this week, labeled Sample AI response, with the SQL it ran"
+      }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-payment-fraud-workbench/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-payment-fraud-workbench/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-payment-fraud-workbench",
+    "author": "Oz Oral",
+    "updated": "2026-11"
+  },
+  {
+    "id": "loan-file-review",
+    "title": "Mortgage Loan File Review",
+    "summary": "Help loan processors and QC reviewers extract borrower documents, verify them against the application, and clear conditions faster.",
+    "industry": "Banking",
+    "function": "Operations",
+    "outcome": "manage-risk",
+    "features": [
+      "Cortex AI_PARSE_DOCUMENT",
+      "Cortex AI_EXTRACT",
+      "Cortex AI_CLASSIFY",
+      "Cortex AI_COMPLETE",
+      "Cortex Search",
+      "Streams", "Tasks"
+    ],
+    "tags": [
+      "mortgage",
+      "loan processing",
+      "conditions",
+      "income verification",
+      "quality control",
+      "document AI",
+      "lending"
+    ],
+    "setup": "local",
+    "images": [
+      {
+        "src": "assets/packs/loan-file-review-1.jpg",
+        "alt": "Pipeline: 54 active loans by stage, 51 open conditions, 512 of 512 documents extracted, a sortable work queue and the files with a mismatch, from a stage, stream and task pipeline"
+      },
+      {
+        "src": "assets/packs/loan-file-review-2.jpg",
+        "alt": "Loan file: stated monthly income of $9,440 fails against $8,000.01 verified from the pay stub by AI_EXTRACT and a SQL tolerance rule, beside the parsed pay stub and its extracted fields"
+      },
+      {
+        "src": "assets/packs/loan-file-review-3.jpg",
+        "alt": "Loan file: an $18,500 mobile check deposit pulled from a bank statement with AI_EXTRACT table extraction fails the 50 percent of monthly income threshold"
+      },
+      {
+        "src": "assets/packs/loan-file-review-4.jpg",
+        "alt": "Borrower request: an editable email drafted with AI_COMPLETE for the open income condition, labeled as a sample response"
+      },
+      {
+        "src": "assets/packs/loan-file-review-5.jpg",
+        "alt": "QC sampling: findings by type against 158 post-closing reviews, the share of loans with a finding over time, the pre-closing sample, and an AI_COMPLETE QC narrative"
+      },
+      {
+        "src": "assets/packs/loan-file-review-6.jpg",
+        "alt": "Ask the file: Cortex Search and AI_COMPLETE answer the borrower's verified monthly income with the arithmetic and six numbered citations"
+      },
+      {
+        "src": "assets/packs/loan-file-review-7.jpg",
+        "alt": "Pipeline in dark mode: the same stage line, KPI tiles and work queue"
+      }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-loan-file-review/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-loan-file-review/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-loan-file-review",
     "author": "Oz Oral",
     "updated": "2026-11"
   },
