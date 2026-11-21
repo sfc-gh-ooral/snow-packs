@@ -231,36 +231,91 @@
     "updated": "2026-11"
   },
   {
-    "id": "claims-triage-insights",
-    "title": "Claims Triage Insights",
-    "summary": "A planned workspace for exploring claim complexity, handling delays, and supporting documents to inform adjuster-led prioritization.",
+    "id": "claims-intake-assistant",
+    "title": "Claims Intake and Triage Assistant",
+    "summary": "Help claims teams turn first notice of loss (FNOL) emails, forms, photos, and repair estimates into structured, triaged claims with an AI summary for every adjuster.",
     "industry": "Insurance",
     "function": "Claims",
     "outcome": "serve-clients",
-    "workInProgress": true,
-    "features": [],
-    "tags": ["claims management", "adjusters", "first notice of loss"],
-    "pagesUrl": "",
-    "demoUrl": "",
-    "repoUrl": "",
-    "author": "Snow Packs",
-    "updated": "2026-10"
+    "features": ["Cortex AI_PARSE_DOCUMENT", "Cortex AI_EXTRACT", "Cortex AI_CLASSIFY", "Cortex AI_COMPLETE", "Cortex Search", "Streams",
+      "Tasks", "Directory Tables", "Snowflake SQL"],
+    "tags": ["claims", "first notice of loss", "FNOL", "triage", "adjusters", "document AI", "SIU", "repair estimate", "claims management"],
+    "setup": "local",
+    "images": [
+      { "src": "assets/packs/claims-intake-assistant-1.jpg", "alt": "Intake inbox: every incoming document with its AI_CLASSIFY type, extraction status and lowest AI_EXTRACT confidence, fed by a stage, stream and task" },
+      { "src": "assets/packs/claims-intake-assistant-2.jpg", "alt": "Claim file: the AI_PARSE_DOCUMENT source document with extracted values highlighted, AI_EXTRACT fields with confidence, and an AI_COMPLETE summary with an AI_CLASSIFY tier suggesting an SIU referral" },
+      { "src": "assets/packs/claims-intake-assistant-3.jpg", "alt": "Estimate check: AI_EXTRACT table extraction of repair line items shows the estimate total is $1,250 more than the line items" },
+      { "src": "assets/packs/claims-intake-assistant-4.jpg", "alt": "Triage board: fast track, standard, complex and SIU lanes from AI_CLASSIFY, with red-flag tags, suggested adjusters, adjuster workload and cycle-time charts" },
+      { "src": "assets/packs/claims-intake-assistant-5.jpg", "alt": "Ask the claims file: Cortex Search and AI_COMPLETE trace a claim's medical bills with numbered citations" },
+      { "src": "assets/packs/claims-intake-assistant-6.jpg", "alt": "Damage photo: AI_COMPLETE describes a windshield crack in a synthetic illustration for a fast-track glass claim" }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-claims-intake-assistant/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-claims-intake-assistant/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-claims-intake-assistant",
+    "author": "Oz Oral",
+    "updated": "2026-11"
   },
   {
-    "id": "underwriting-submission-review",
-    "title": "Underwriting Submission Review",
-    "summary": "A planned exploration of submission completeness, risk context, and portfolio fit to support underwriter-led assessment.",
+    "id": "underwriting-submission-intelligence",
+    "title": "Underwriting Submission Intelligence",
+    "summary": "Help commercial underwriters clear submission backlogs by extracting broker submissions, checking appetite and completeness, and prioritizing the best-fit risks.",
     "industry": "Insurance",
     "function": "Underwriting",
     "outcome": "manage-risk",
-    "workInProgress": true,
-    "features": [],
-    "tags": ["commercial insurance", "submissions", "risk assessment"],
-    "pagesUrl": "",
-    "demoUrl": "",
-    "repoUrl": "",
-    "author": "Snow Packs",
-    "updated": "2026-10"
+    "features": [
+      "Cortex AI_PARSE_DOCUMENT",
+      "Cortex AI_EXTRACT",
+      "Cortex AI_CLASSIFY",
+      "Cortex AI_COMPLETE",
+      "Cortex Search",
+      "Cortex Agents",
+      "Cortex Analyst",
+      "Semantic Views",
+      "Geospatial",
+      "Snowflake SQL"
+    ],
+    "tags": [
+      "commercial insurance",
+      "submissions",
+      "broker",
+      "appetite",
+      "loss runs",
+      "document extraction",
+      "accumulation",
+      "coastal exposure"
+    ],
+    "setup": "local",
+    "images": [
+      {
+        "src": "assets/packs/underwriting-submission-intelligence-1.jpg",
+        "alt": "Morning docket: 136 waiting submissions with KPIs, intake chart, appetite donut, and a work queue ranked by fit score from AI_EXTRACT, AI_CLASSIFY, and the SUBMISSION_SCORES view"
+      },
+      {
+        "src": "assets/packs/underwriting-submission-intelligence-2.jpg",
+        "alt": "Submission file: the broker application parsed with AI_PARSE_DOCUMENT, AI_EXTRACT fields, and AI_CLASSIFY flagging a fireworks class as out of appetite, capping the fit score at 15"
+      },
+      {
+        "src": "assets/packs/underwriting-submission-intelligence-3.jpg",
+        "alt": "Underwriting memo drafted by AI_COMPLETE with Cortex Search appetite-guide passages, beside the fit-score breakdown and decision actions"
+      },
+      {
+        "src": "assets/packs/underwriting-submission-intelligence-4.jpg",
+        "alt": "Appetite and completeness check with Cortex Search guide passages, a missing five-year loss run, and an editable AI_COMPLETE broker email asking for it"
+      },
+      {
+        "src": "assets/packs/underwriting-submission-intelligence-5.jpg",
+        "alt": "Portfolio fit: new coastal hotel locations on an exposure map with distance to coast and coastal TIV share from ST_DISTANCE, ST_DWITHIN, and H3"
+      },
+      {
+        "src": "assets/packs/underwriting-submission-intelligence-6.jpg",
+        "alt": "Ask the desk: a Cortex Agent answers a pipeline question with Cortex Analyst SQL on the SUBMISSIONS_SV semantic view, with the results table"
+      }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-underwriting-submission-intelligence/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-underwriting-submission-intelligence/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-underwriting-submission-intelligence",
+    "author": "Oz Oral",
+    "updated": "2026-11"
   },
   {
     "id": "trade-surveillance",
@@ -764,6 +819,154 @@
     "updated": "2026-11"
   },
   {
+    "id": "client-account-views",
+    "title": "Client Account Views at App Speed",
+    "summary": "Help firms serve advisor- and client-facing account views directly from their analytics data, avoiding a duplicate operational reporting database.",
+    "industry": "Wealth Management",
+    "function": "Operations",
+    "outcome": "serve-clients",
+    "features": ["Interactive Tables", "Interactive Warehouses", "Dynamic Tables", "Cortex AI_COMPLETE", "Snowflake SQL"],
+    "tags": ["account summary", "positions", "holdings", "advisor platform", "low latency", "concurrency", "load test", "reconciliation", "reporting database", "API"],
+    "setup": "local",
+    "images": [
+      { "src": "assets/packs/client-account-views-1.jpg", "alt": "Account desk: an advisor's book beside the Hollis Family Trust account page, each widget showing its interactive table and captured latency" },
+      { "src": "assets/packs/client-account-views-2.jpg", "alt": "Call prep: a brief for the next client call drafted with Cortex AI_COMPLETE from the rows on the page, labeled as a sample AI response" },
+      { "src": "assets/packs/client-account-views-3.jpg", "alt": "Architecture compare: nightly ETL to a reporting database versus serving from Snowflake with dynamic and interactive tables, with the accounts where the copy disagrees" },
+      { "src": "assets/packs/client-account-views-4.jpg", "alt": "Load lab: a market-open replay of concurrent advisor sessions on an interactive warehouse, with p50, p95, p99 latency and throughput" },
+      { "src": "assets/packs/client-account-views-5.jpg", "alt": "Cost model: monthly cost of a duplicate reporting database versus serving from Snowflake, computed only from the numbers the reader enters" }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-client-account-views/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-client-account-views/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-client-account-views",
+    "author": "Oz Oral",
+    "updated": "2026-11"
+  },
+  {
+    "id": "governed-context-layer",
+    "title": "One Answer Across Agents",
+    "summary": "Help institutions give consistent answers when several AI agents touch the same data, by capturing business context once in governed semantic views and reusing it everywhere.",
+    "industry": "Financial Services",
+    "function": "Operations",
+    "outcome": "manage-risk",
+    "features": [
+      "Semantic Views",
+      "Cortex Agents",
+      "Cortex Analyst",
+      "Cortex Search",
+      "Cortex AI_EXTRACT",
+      "Cortex AI_COMPLETE",
+      "Object Tagging",
+      "Tasks"
+    ],
+    "tags": [
+      "governed context",
+      "business glossary",
+      "agent consistency",
+      "definitions",
+      "data product owner",
+      "conflicting definitions",
+      "verified queries",
+      "orchestrator agent",
+      "evaluation",
+      "account operations"
+    ],
+    "setup": "local",
+    "images": [
+      {
+        "src": "assets/packs/governed-context-layer-1.jpg",
+        "alt": "Veritome overview: two agents give 120,402 and 98,115 active accounts, a governed answer from a semantic view awaits owner approval, with agreement KPIs and open conflicts"
+      },
+      {
+        "src": "assets/packs/governed-context-layer-2.jpg",
+        "alt": "Side by side: ungoverned agents disagree on active accounts while governed Cortex Agents give the same number and cite the Accounts semantic view"
+      },
+      {
+        "src": "assets/packs/governed-context-layer-3.jpg",
+        "alt": "Conflict resolver: two wiki definitions mined with AI_EXTRACT side by side, with an AI_COMPLETE explanation of how they differ"
+      },
+      {
+        "src": "assets/packs/governed-context-layer-4.jpg",
+        "alt": "Context inventory: glossary of governed terms with a drawer showing the active account definition, semantic view expression, synonyms and owner"
+      },
+      {
+        "src": "assets/packs/governed-context-layer-5.jpg",
+        "alt": "After owner approval: all governed agents agree and the story rail shows every step done"
+      },
+      {
+        "src": "assets/packs/governed-context-layer-6.jpg",
+        "alt": "Domain composer: one orchestrator Cortex Agent routes a three-part question to the Accounts, Service and Advisors semantic views"
+      },
+      {
+        "src": "assets/packs/governed-context-layer-7.jpg",
+        "alt": "Consistency monitor: AI_COMPLETE-judged agreement, 100 percent for governed agents and 33 percent for ungoverned on the latest run"
+      }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-governed-context-layer/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-governed-context-layer/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-governed-context-layer",
+    "author": "Oz Oral",
+    "updated": "2026-11"
+  },
+  {
+    "id": "market-data-discovery",
+    "title": "Market Data Discovery Agent",
+    "summary": "Help research and data teams find, understand, and query licensed market and reference data in plain English, from a provider share, without copying it into pipelines.",
+    "industry": "Wealth Management",
+    "function": "Investments",
+    "outcome": "serve-clients",
+    "features": [
+      "Secure Data Sharing",
+      "Cortex Agents",
+      "Cortex Analyst",
+      "Semantic Views",
+      "Cortex Search",
+      "Access History"
+    ],
+    "tags": [
+      "market data",
+      "reference data",
+      "data dictionary",
+      "zero-copy",
+      "corporate actions",
+      "adjusted close",
+      "license usage",
+      "ESG",
+      "concentration"
+    ],
+    "setup": "local",
+    "images": [
+      {
+        "src": "assets/packs/market-data-discovery-1.jpg",
+        "alt": "Dataset catalog: KPI tiles for 7 licensed datasets, 1,067,800 rows, 0 vendor tables copied and $296K annual license spend, a dictionary search showing CLOSE_UNADJ and CLOSE_ADJ, and the Guide panel docked on the right"
+      },
+      {
+        "src": "assets/packs/market-data-discovery-2.jpg",
+        "alt": "The Guide, a Cortex Agent, answering a split-adjusted price history question with a Sample AI response label, a chart of adjusted and unadjusted close, and dictionary sources found with Cortex Search"
+      },
+      {
+        "src": "assets/packs/market-data-discovery-3.jpg",
+        "alt": "Daily prices dataset page: adjusted versus as-printed close read from the provider tables behind the share, with a dashed line marking a 4-for-1 split"
+      },
+      {
+        "src": "assets/packs/market-data-discovery-4.jpg",
+        "alt": "Join to my book: client holdings joined to vendor prices in a view, with Technology share, accounts over 10% and before-and-after sector bars around a merger"
+      },
+      {
+        "src": "assets/packs/market-data-discovery-5.jpg",
+        "alt": "Review queue of accounts over a 10% single-name guideline, with a drawer showing where one client's weight came from and a confirmation that it was sent to the advisor"
+      },
+      {
+        "src": "assets/packs/market-data-discovery-6.jpg",
+        "alt": "Usage and value: 2 of 7 licensed datasets barely used, $76K a year on them, a weekly query chart from a synthetic usage log, with one live ACCESS_HISTORY column in Live mode, and upcoming renewals"
+      }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-market-data-discovery/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-market-data-discovery/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-market-data-discovery",
+    "author": "Oz Oral",
+    "updated": "2026-11"
+  },
+  {
     "id": "continuous-control-testing",
     "title": "Continuous Control Testing",
     "summary": "Help risk and audit teams test entire populations instead of samples, triage exceptions with an AI assistant, and keep evidence for every run.",
@@ -779,8 +982,8 @@
       "Semantic Views",
       "Cortex Search",
       "Cortex AI_COMPLETE",
-      "AI_CLASSIFY",
-      "AI_SIMILARITY",
+      "Cortex AI_CLASSIFY",
+      "Cortex AI_SIMILARITY",
       "Time Travel",
       "Snowflake SQL"
     ],
@@ -799,23 +1002,23 @@
     "images": [
       {
         "src": "assets/packs/continuous-control-testing-1.jpg",
-        "alt": "Control coverage: 8 of 25 controls tested monthly on the full population by a Snowflake task, with exceptions by month and an August Payments spike, open counts from a Dynamic Table"
+        "alt": "Control coverage: 1,930 records tested in October and 8 of 25 controls automated by Snowflake Tasks, with an exceptions-per-control heatmap from data metric functions and a quarterly sample vs. full population chart"
       },
       {
         "src": "assets/packs/continuous-control-testing-2.jpg",
-        "alt": "Exception queue: open exceptions grouped by root cause, with a data metric function flagging a wire feed batch that arrived without second approvers"
+        "alt": "Exception queue: 383 open exceptions in 169 clusters from a Dynamic Table, with a data metric function flagging feed batch WIRE-202608-03 as a likely data issue"
       },
       {
         "src": "assets/packs/continuous-control-testing-3.jpg",
-        "alt": "Exception detail: the evidence row, feed quality by batch from a data metric function, and an AI_COMPLETE explanation suggesting Data issue for a reviewer to confirm"
+        "alt": "Exception detail: the failed wire record, second-approver nulls by feed batch from a data metric function, and an AI_COMPLETE explanation suggesting Data issue for a reviewer to confirm"
       },
       {
         "src": "assets/packs/continuous-control-testing-4.jpg",
-        "alt": "Triage assistant: a Cortex Agent with Cortex Analyst, Cortex Search, and stored-procedure tools drafts a finding and a route, with Approve, Edit, and Reject"
+        "alt": "Triage: a ticket backlog where AI_CLASSIFY and AI_SIMILARITY run first, then a Cortex Agent with Cortex Analyst, Cortex Search and a data-quality tool drafts a finding and route, with Approve, Edit and Reject"
       },
       {
         "src": "assets/packs/continuous-control-testing-5.jpg",
-        "alt": "Evidence pack: each monthly run with its query ID, counts, and dispositions, and a Time Travel recount of the source table as of the run"
+        "alt": "Evidence pack: each August test run with its query ID, counts and dispositions, and a Time Travel recount of the source table as of the run"
       }
     ],
     "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-continuous-control-testing/",
@@ -825,25 +1028,379 @@
     "updated": "2026-11"
   },
   {
-    "id": "client-account-views",
-    "title": "Client Account Views at App Speed",
-    "summary": "Help firms serve advisor- and client-facing account views directly from their analytics data, avoiding a duplicate operational reporting database.",
-    "industry": "Wealth Management",
-    "function": "Operations",
-    "outcome": "serve-clients",
-    "features": ["Interactive Tables", "Interactive Warehouses", "Dynamic Tables", "Cortex AI_COMPLETE", "Snowflake SQL"],
-    "tags": ["account summary", "positions", "holdings", "advisor platform", "low latency", "concurrency", "load test", "reconciliation", "reporting database", "API"],
+    "id": "trade-reporting-validation",
+    "title": "Regulatory Trade Reporting Validation",
+    "summary": "Help broker-dealer reporting teams catch errors before submission, reconcile against the books, and work regulator feedback faster, for the Consolidated Audit Trail (CAT) and Customer and Account Information System (CAIS).",
+    "industry": "Capital Markets",
+    "function": "Compliance",
+    "outcome": "prove-compliance",
+    "features": [
+      "Dynamic Tables",
+      "Data Metric Functions",
+      "Anomaly Detection",
+      "Cortex Search",
+      "Cortex AI_COMPLETE",
+      "Cortex AI_SIMILARITY",
+      "Window Functions"
+    ],
+    "tags": [
+      "CAT",
+      "CAIS",
+      "consolidated audit trail",
+      "regulatory reporting",
+      "trade reporting",
+      "broker-dealer",
+      "rejects",
+      "linkage errors",
+      "reconciliation",
+      "books and records",
+      "entity matching",
+      "order lifecycle",
+      "evidence"
+    ],
     "setup": "local",
     "images": [
-      { "src": "assets/packs/client-account-views-1.jpg", "alt": "Advisor account page: summary, holdings, and activity served from interactive tables, each widget with its measured query latency" },
-      { "src": "assets/packs/client-account-views-2.jpg", "alt": "Architecture compare: duplicate reporting database path vs serving from Snowflake, with reconciliation breaks the nightly copy caused" },
-      { "src": "assets/packs/client-account-views-3.jpg", "alt": "Load test: p50, p95, and p99 latency for a peak-hour burst of concurrent sessions on an interactive warehouse" },
-      { "src": "assets/packs/client-account-views-4.jpg", "alt": "Cost model: before and after monthly cost computed only from the inputs the reader enters" },
-      { "src": "assets/packs/client-account-views-5.jpg", "alt": "Performance vs benchmark chart and a call prep brief drafted with AI_COMPLETE, labeled as a sample response" }
+      {
+        "src": "assets/packs/trade-reporting-validation-1.jpg",
+        "alt": "Cadrel submission health for trade date October 29: a reject-spike banner reading 38 rejects against a 7.8 per-day average with 26 LNK-01 linkage breaks from ALGO-X, KPI tiles for 542 events, 38 check failures, 38 rejects, 100 percent caught before submission and a repair backlog of 68, and a stacked bar chart of rejects by error code that spikes on October 29"
+      },
+      {
+        "src": "assets/packs/trade-reporting-validation-2.jpg",
+        "alt": "Rule library for October 29: six rule tiles with pass or fail status, R-LNK-01 selected with 26 failures out of 52 routes and R-SEQ-02 with 12, and a table of failing records from ALGO-X program trading routed to NW-ATS with PT-prefixed routed order IDs"
+      },
+      {
+        "src": "assets/packs/trade-reporting-validation-3.jpg",
+        "alt": "Order lifecycle for O-261029-03543: a swimlane timeline across the firm CAT feed, the destination ATS and the books with the ROUTE event flagged in coral, and a route linkage panel showing the firm routed order ID PT-261029-03543 against the ATS ID 261029-03543"
+      },
+      {
+        "src": "assets/packs/trade-reporting-validation-4.jpg",
+        "alt": "Reject workbench: root-cause clusters with LNK-01 ALGO-X program trading selected, 30 rejects all caught by a check, an AI explanation labeled Sample AI response with what happened, the likely root cause and three suggested repair steps, and three cited FAQ sources from Cortex Search"
+      },
+      {
+        "src": "assets/packs/trade-reporting-validation-5.jpg",
+        "alt": "CAIS customers: three account records for Elena Marchetti with similarity scores of 0.977 and 0.956, conflicting customer ID, name, date of birth and address in coral, and a proposed canonical record with one dropdown per field, an approval note and an approve button"
+      },
+      {
+        "src": "assets/packs/trade-reporting-validation-6.jpg",
+        "alt": "Anomaly monitor: 15 flagged days across source systems, and small charts of regulator rejects per day for ALGO-X, MANUAL, OMS-A and OMS-B with a shaded expected range and amber anomaly points, including ALGO-X rejecting 26 on October 29 against an expected 0 to 1"
+      }
     ],
-    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-client-account-views/",
-    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-client-account-views/try/",
-    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-client-account-views",
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-trade-reporting-validation/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-trade-reporting-validation/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-trade-reporting-validation",
+    "author": "Oz Oral",
+    "updated": "2026-11"
+  },
+  {
+    "id": "complaints-intelligence",
+    "title": "Complaints Intelligence",
+    "summary": "Help complaint teams classify every complaint across channels, spot emerging conduct-risk themes early, and evidence timely resolution.",
+    "industry": "Banking",
+    "function": "Compliance",
+    "outcome": "prove-compliance",
+    "features": [
+      "Cortex AI_CLASSIFY",
+      "Cortex AI_SENTIMENT",
+      "Cortex AI_EMBED",
+      "Cortex AI_REDACT",
+      "Cortex AI_AGG",
+      "Cortex AI_COMPLETE",
+      "Dynamic Tables",
+      "Cortex Agents",
+      "Cortex Analyst",
+      "Semantic Views"
+    ],
+    "tags": [
+      "complaints",
+      "UDAAP",
+      "fair lending",
+      "conduct risk",
+      "PII masking",
+      "duplicates",
+      "emerging themes"
+    ],
+    "setup": "local",
+    "images": [
+      {
+        "src": "assets/packs/complaints-intelligence-1.jpg",
+        "alt": "Overview: 40,141 complaints, 41.2 percent flagged high-risk, 94.0 percent resolved on time, weekly volume by product, and UDAAP, fair-lending and servicing flags from AI_CLASSIFY in a Dynamic Table"
+      },
+      {
+        "src": "assets/packs/complaints-intelligence-2.jpg",
+        "alt": "Emerging themes: a six-week heatmap with overdraft fee complaints up 1,013 percent in week 3, and an AI_AGG root-cause summary citing example complaints masked by AI_REDACT"
+      },
+      {
+        "src": "assets/packs/complaints-intelligence-3.jpg",
+        "alt": "Complaint queue on the fair-lending review filter, with a quick-view drawer showing the AI_REDACT masked text and AI classification for one complaint"
+      },
+      {
+        "src": "assets/packs/complaints-intelligence-4.jpg",
+        "alt": "Case file: a mortgage application-denied complaint flagged as a possible fair-lending concern, with masked text, AI_CLASSIFY and AI_SENTIMENT results, and an AI_COMPLETE response draft labeled as a sample response"
+      },
+      {
+        "src": "assets/packs/complaints-intelligence-5.jpg",
+        "alt": "Case file: an unauthorized-transaction complaint with two earlier complaints from the same customer marked as likely duplicates by AI_EMBED and VECTOR_COSINE_SIMILARITY"
+      },
+      {
+        "src": "assets/packs/complaints-intelligence-6.jpg",
+        "alt": "Regulatory view: AI subcategories rolled up to a regulator-style product and issue list, with on-time resolution by product and CSV export"
+      }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-complaints-intelligence/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-complaints-intelligence/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-complaints-intelligence",
+    "author": "Oz Oral",
+    "updated": "2026-11"
+  }
+,
+  {
+    "id": "payment-fraud-workbench",
+    "title": "Payment Fraud Investigation Workbench",
+    "summary": "Help fraud analysts score card and real-time payments, see linked accounts and devices, and close cases faster with an AI case summary.",
+    "industry": "Payments",
+    "function": "Risk",
+    "outcome": "catch-financial-crime",
+    "features": [
+      "Snowpark ML",
+      "Feature Store",
+      "Model Registry",
+      "Dynamic Tables",
+      "Geospatial",
+      "Cortex AI_COMPLETE",
+      "Cortex Agents",
+      "Cortex Analyst",
+      "Semantic Views"
+    ],
+    "tags": [
+      "payment fraud",
+      "card fraud",
+      "card testing",
+      "account takeover",
+      "mule ring",
+      "impossible travel",
+      "P2P",
+      "instant payments",
+      "XGBoost",
+      "link analysis",
+      "alert queue",
+      "case management"
+    ],
+    "setup": "local",
+    "images": [
+      {
+        "src": "assets/packs/payment-fraud-workbench-1.jpg",
+        "alt": "Fraud overview: fraud rate of 14.0 bps, losses, alerts raised and precision, a daily alert and fraud-rate chart from Snowflake SQL, and the top reason codes"
+      },
+      {
+        "src": "assets/packs/payment-fraud-workbench-2.jpg",
+        "alt": "Alert queue: XGBoost scores with reason codes, overdue SLA pills and actions, and a detail drawer with the payment's Feature Store inputs and a re-score from the Model Registry, labeled Sample model response"
+      },
+      {
+        "src": "assets/packs/payment-fraud-workbench-3.jpg",
+        "alt": "Account takeover case: an AI case summary with signals and a recommended next step from AI_COMPLETE, labeled Sample AI response, beside the analyst decision checklist"
+      },
+      {
+        "src": "assets/packs/payment-fraud-workbench-4.jpg",
+        "alt": "Mule-ring case: a link graph of 13 accounts, 4 devices and 3 IPs from a recursive CTE, a map of where the card was used, and the alert timeline"
+      },
+      {
+        "src": "assets/packs/payment-fraud-workbench-5.jpg",
+        "alt": "Impossible travel case: a map path from a Boston swipe to a flagged Miami swipe 28 minutes later, 2,019 km apart at 4,400 km/h by ST_DISTANCE, beside a single-account link graph"
+      },
+      {
+        "src": "assets/packs/payment-fraud-workbench-6.jpg",
+        "alt": "Model and rules: threshold slider at 0.80 with precision, recall, alerts per day and fraud caught on labeled synthetic payments"
+      },
+      {
+        "src": "assets/packs/payment-fraud-workbench-7.jpg",
+        "alt": "Ask: a Cortex Agent over Cortex Analyst answers which merchants had card-testing patterns this week, labeled Sample AI response, with the SQL it ran"
+      }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-payment-fraud-workbench/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-payment-fraud-workbench/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-payment-fraud-workbench",
+    "author": "Oz Oral",
+    "updated": "2026-11"
+  },
+  {
+    "id": "loan-file-review",
+    "title": "Mortgage Loan File Review",
+    "summary": "Help loan processors and QC reviewers extract borrower documents, verify them against the application, and clear conditions faster.",
+    "industry": "Banking",
+    "function": "Operations",
+    "outcome": "manage-risk",
+    "features": [
+      "Cortex AI_PARSE_DOCUMENT",
+      "Cortex AI_EXTRACT",
+      "Cortex AI_CLASSIFY",
+      "Cortex AI_COMPLETE",
+      "Cortex Search",
+      "Streams", "Tasks"
+    ],
+    "tags": [
+      "mortgage",
+      "loan processing",
+      "conditions",
+      "income verification",
+      "quality control",
+      "document AI",
+      "lending"
+    ],
+    "setup": "local",
+    "images": [
+      {
+        "src": "assets/packs/loan-file-review-1.jpg",
+        "alt": "Pipeline: 54 active loans by stage, 51 open conditions, 512 of 512 documents extracted, a sortable work queue and the files with a mismatch, from a stage, stream and task pipeline"
+      },
+      {
+        "src": "assets/packs/loan-file-review-2.jpg",
+        "alt": "Loan file: stated monthly income of $9,440 fails against $8,000.01 verified from the pay stub by AI_EXTRACT and a SQL tolerance rule, beside the parsed pay stub and its extracted fields"
+      },
+      {
+        "src": "assets/packs/loan-file-review-3.jpg",
+        "alt": "Loan file: an $18,500 mobile check deposit pulled from a bank statement with AI_EXTRACT table extraction fails the 50 percent of monthly income threshold"
+      },
+      {
+        "src": "assets/packs/loan-file-review-4.jpg",
+        "alt": "Borrower request: an editable email drafted with AI_COMPLETE for the open income condition, labeled as a sample response"
+      },
+      {
+        "src": "assets/packs/loan-file-review-5.jpg",
+        "alt": "QC sampling: findings by type against 158 post-closing reviews, the share of loans with a finding over time, the pre-closing sample, and an AI_COMPLETE QC narrative"
+      },
+      {
+        "src": "assets/packs/loan-file-review-6.jpg",
+        "alt": "Ask the file: Cortex Search and AI_COMPLETE answer the borrower's verified monthly income with the arithmetic and six numbered citations"
+      },
+      {
+        "src": "assets/packs/loan-file-review-7.jpg",
+        "alt": "Pipeline in dark mode: the same stage line, KPI tiles and work queue"
+      }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-loan-file-review/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-loan-file-review/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-loan-file-review",
+    "author": "Oz Oral",
+    "updated": "2026-11"
+  },
+  {
+    "id": "collections-copilot",
+    "title": "Collections Prioritization Copilot",
+    "summary": "Help collections teams contact the right delinquent customers first, with the right offer and a compliant, empathetic conversation guide.",
+    "industry": "Banking",
+    "function": "Operations",
+    "outcome": "manage-risk",
+    "features": [
+      "Snowpark ML",
+      "Model Registry",
+      "Dynamic Tables",
+      "Cortex AI_CLASSIFY",
+      "Cortex AI_COMPLETE",
+      "Cortex Agents",
+      "Cortex Analyst",
+      "Semantic Views"
+    ],
+    "tags": [
+      "collections",
+      "delinquency",
+      "roll rate",
+      "cure rate",
+      "promise to pay",
+      "hardship",
+      "contact strategy",
+      "call QA",
+      "debt collection compliance",
+      "auto loans",
+      "XGBoost"
+    ],
+    "setup": "local",
+    "images": [
+      {
+        "src": "assets/packs/collections-copilot-1.jpg",
+        "alt": "Calvessa portfolio screen: a dusk-gradient header, KPI tiles with sparklines for 1,999 delinquent loans, a 4.15% 30+ DPD rate, $2.11M past due, a 77% roll rate, a 20% cure rate and a 45% promise-kept rate, four story cards, the daily delinquency-rate chart and the roll ladder"
+      },
+      {
+        "src": "assets/packs/collections-copilot-2.jpg",
+        "alt": "Today's queue filtered to borrowers who text back in the evening, with the first row selected and a side drawer open showing days past due, past due, roll risk, the best way to reach (text in the evening) against their usual morning calls, the suggested offer and calls used out of 7"
+      },
+      {
+        "src": "assets/packs/collections-copilot-3.jpg",
+        "alt": "Account workspace for a borrower 42 days past due with a 95% roll risk and two broken promises: profile header, reach heatmap by channel and time of day, and a conversation guide panel labeled Sample AI response with its sources"
+      },
+      {
+        "src": "assets/packs/collections-copilot-4.jpg",
+        "alt": "Account workspace for a flood-area borrower in ZIP 70502 tagged Severe flooding (synthetic event): eligible for disaster forbearance, the Hardship action tab and the confirmation Enrollment requested for review"
+      },
+      {
+        "src": "assets/packs/collections-copilot-5.jpg",
+        "alt": "Call QA: 381 calls reviewed, 33 flagged, 12 high risk; the transcript TR900001 shown as chat bubbles where the agent threatens arrest and a workplace visit, with high-risk flags and a coaching note labeled Sample AI response"
+      },
+      {
+        "src": "assets/packs/collections-copilot-6.jpg",
+        "alt": "Ask screen: the question Which accounts broke promises twice this month? in a dusk chat bubble, answered with a count of accounts and a table, labeled Sample AI response, with the generated SQL and sources"
+      }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-collections-copilot/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-collections-copilot/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-collections-copilot",
+    "author": "Oz Oral",
+    "updated": "2026-11"
+  },
+  {
+    "id": "regulatory-change-tracker",
+    "title": "Regulatory Change Tracker",
+    "summary": "Help compliance teams read new rules and guidance, map obligations to internal policies and controls, and track the gaps to closure.",
+    "industry": "Financial Services",
+    "function": "Compliance",
+    "outcome": "prove-compliance",
+    "features": [
+      "Cortex AI_PARSE_DOCUMENT",
+      "Cortex AI_EXTRACT",
+      "Cortex AI_COMPLETE",
+      "Cortex AI_EMBED",
+      "Cortex Search",
+      "Cortex Agents",
+      "Streams", "Tasks"
+    ],
+    "tags": [
+      "regulatory change",
+      "obligations",
+      "policy mapping",
+      "controls",
+      "gap tracking",
+      "horizon scanning",
+      "document AI"
+    ],
+    "setup": "local",
+    "images": [
+      {
+        "src": "assets/packs/regulatory-change-tracker-1.jpg",
+        "alt": "Change inbox with five KPI tiles, an effective-date runway chart with gap months in red, a by-regulator bar list, and a three-pane docket showing notice RCN-2026-004 with its AI applicability assessment and obligations"
+      },
+      {
+        "src": "assets/packs/regulatory-change-tracker-2.jpg",
+        "alt": "Full notice RCN-2026-004 with each numbered requirement highlighted, requirement 3.2 marked Requirement not met, beside the AI assessment, decision panel and mapped obligations"
+      },
+      {
+        "src": "assets/packs/regulatory-change-tracker-3.jpg",
+        "alt": "Obligation map filtered to gaps, with KPI tiles, a similarity score histogram, a coverage verdict donut, and a details drawer showing candidate policies, the closest control and the AI verdict"
+      },
+      {
+        "src": "assets/packs/regulatory-change-tracker-4.jpg",
+        "alt": "Gap tracker with KPI tiles, a gaps-by-owner-team chart, and a board with Open, In progress, Ready for review and Closed columns of gap cards showing owner and due date"
+      },
+      {
+        "src": "assets/packs/regulatory-change-tracker-5.jpg",
+        "alt": "Ask the rulebook answering how long complaint records must be kept, labeled Sample AI response, with citation chips in the text and index cards for the notice, two policies and a control"
+      },
+      {
+        "src": "assets/packs/regulatory-change-tracker-6.jpg",
+        "alt": "Annuity suitability notice RCN-2026-016 in the inbox reading pane, with a fresh AI assessment saying it does not apply because the bank sells no insurance or annuities"
+      }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-regulatory-change-tracker/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-regulatory-change-tracker/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-regulatory-change-tracker",
     "author": "Oz Oral",
     "updated": "2026-11"
   }
