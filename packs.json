@@ -1339,5 +1339,63 @@
     "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-collections-copilot",
     "author": "Oz Oral",
     "updated": "2026-11"
+  },
+  {
+    "id": "regulatory-change-tracker",
+    "title": "Regulatory Change Tracker",
+    "summary": "Help compliance teams read new rules and guidance, map obligations to internal policies and controls, and track the gaps to closure.",
+    "industry": "Financial Services",
+    "function": "Compliance",
+    "outcome": "prove-compliance",
+    "features": [
+      "Cortex AI_PARSE_DOCUMENT",
+      "Cortex AI_EXTRACT",
+      "Cortex AI_COMPLETE",
+      "Cortex AI_EMBED",
+      "Cortex Search",
+      "Cortex Agents",
+      "Streams", "Tasks"
+    ],
+    "tags": [
+      "regulatory change",
+      "obligations",
+      "policy mapping",
+      "controls",
+      "gap tracking",
+      "horizon scanning",
+      "document AI"
+    ],
+    "setup": "local",
+    "images": [
+      {
+        "src": "assets/packs/regulatory-change-tracker-1.jpg",
+        "alt": "Change inbox with five KPI tiles, an effective-date runway chart with gap months in red, a by-regulator bar list, and a three-pane docket showing notice RCN-2026-004 with its AI applicability assessment and obligations"
+      },
+      {
+        "src": "assets/packs/regulatory-change-tracker-2.jpg",
+        "alt": "Full notice RCN-2026-004 with each numbered requirement highlighted, requirement 3.2 marked Requirement not met, beside the AI assessment, decision panel and mapped obligations"
+      },
+      {
+        "src": "assets/packs/regulatory-change-tracker-3.jpg",
+        "alt": "Obligation map filtered to gaps, with KPI tiles, a similarity score histogram, a coverage verdict donut, and a details drawer showing candidate policies, the closest control and the AI verdict"
+      },
+      {
+        "src": "assets/packs/regulatory-change-tracker-4.jpg",
+        "alt": "Gap tracker with KPI tiles, a gaps-by-owner-team chart, and a board with Open, In progress, Ready for review and Closed columns of gap cards showing owner and due date"
+      },
+      {
+        "src": "assets/packs/regulatory-change-tracker-5.jpg",
+        "alt": "Ask the rulebook answering how long complaint records must be kept, labeled Sample AI response, with citation chips in the text and index cards for the notice, two policies and a control"
+      },
+      {
+        "src": "assets/packs/regulatory-change-tracker-6.jpg",
+        "alt": "Annuity suitability notice RCN-2026-016 in the inbox reading pane, with a fresh AI assessment saying it does not apply because the bank sells no insurance or annuities"
+      }
+    ],
+    "pagesUrl": "https://sfc-gh-ooral.github.io/sfguide-regulatory-change-tracker/",
+    "demoUrl": "https://sfc-gh-ooral.github.io/sfguide-regulatory-change-tracker/try/",
+    "repoUrl": "https://github.com/sfc-gh-ooral/sfguide-regulatory-change-tracker",
+    "author": "Oz Oral",
+    "updated": "2026-11"
   }
 ]
